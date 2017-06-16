@@ -1,14 +1,13 @@
 header {
-  height: 60vw;
   width: 100vw;
-  background: #010101;
-  display: block; }
+  display: block;
+  height: 60vw;
+  background: #010101; }
 
 nav {
-  height: 60vw;
   width: 100vw;
-  background: #010101;
   display: block;
+  height: 10vh;
   position: fixed;
   top: 0;
   z-index: 100; }

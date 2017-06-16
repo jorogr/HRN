@@ -1,16 +1,16 @@
-$h_bckg_color: #010101;
 @mixin h_basic_settings() {
-    height: 60vw;
     width: 100vw;
-    background: $h_bckg_color;
     display: block;
 }
 
 header {
     @include h_basic_settings();
+    height: 60vw;
+    background: #010101;
 }
 nav {
     @include h_basic_settings();
+    height: 10vh;
     position: fixed;
     top: 0;
     z-index: 100;
