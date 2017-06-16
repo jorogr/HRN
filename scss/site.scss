@@ -1,1 +1,17 @@
-$p-text-color
+$h_bckg_color: #010101;
+@mixin h_basic_settings() {
+    height: 60vw;
+    width: 100vw;
+    background: $h_bckg_color;
+    display: block;
+}
+
+header {
+    @include h_basic_settings();
+}
+nav {
+    @include h_basic_settings();
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
