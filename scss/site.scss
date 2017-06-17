@@ -1,54 +1,169 @@
+/* Defining color variables */
 $almost_black: #010101;
 $white: #fff;
 $light_green: #99cc00;
 
-$basic_text_color: $almost_black;
-$alt_text_color: $white;
-$accent_text_color: $light_green;
+/* Defining page colors with variables */
+$basic_color: $almost_black;
+$alt_color: $white;
+$accent_color: $light_green;
 
-@mixin h_basic_settings() {
+/* Define layout for every major segment on the page */
+@mixin basic_layout() {
     width: 100%;
-    display: block;
 }
 
+/* Styling the header */
 header {
-    @include h_basic_settings();
-    height: 60vw;
-    background: url(../images/header.jpg) center top no-repeat;
-    color: $alt_text_color;
+    @include basic_layout();
+    height: 56.25vw;
+    background: url(../img/header.jpg) center top no-repeat;
     background-size: cover;
+    color: $alt_color;
 }
+
+/* Styling the sticky navbar */
 nav {
-    @include h_basic_settings();
-    height: 70px;
-    background: #010101;
+    @include basic_layout();
+    height: 75px;
+    background: $almost_black;
     position: fixed;
     top: 0;
     vertical-align: middle;
     z-index: 100;
-    & #mainMenu {
-	top: 25px;
-	position: relative;
+}
+
+/* Styling logo and elements in it */
+#siteLogo {
+    padding-top: 17.5px;
+    padding-left: 17.5px;
+    position: absolute;
+    & img {
+	height: 40px;
+    }
+} 
+
+/* Styling main menu */
+#mainMenu {
+    width: 100%;
+    top: 24px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    & li {
+	font-size: 16px;
+	line-height: 16px;
+	text-transform: uppercase;
 	display: inline-block;
-	text-align: center;
-	& li {
-	    font-size: 16px;
-	    display: inline-block;
-	    padding-left: 10px;
-	    padding-right: 10px;
-	    text-transform: uppercase;
-	&:hover {
-	    color: $accent_text_color;
-	    cursor: pointer;
-	    }
+	padding-left: 10px;
+	padding-right: 10px;
+    &:hover {
+	cursor: pointer;
 	}
     }
 }
-#futureWork {
-    height: 40vw;
-    background: #555;
+
+/* Styling "GET TICKETS" button in header */
+#getTicketsNav {
+    right: 20px;
+    position: absolute;
 }
-#mobileApp {
+
+/* Styling the page content sections and elements in it */
+@mixin sections_layout() {
     height: 40vw;
+}
+@mixin two_parallel_boxes_layout() {
+    height: inherit;
+    width: 50%;
+    display: inline-block;
+    position: relative;
+}
+/* Style first section "Future work" */
+@mixin section_buttons() {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    display: inline-block;
+    border: 1px solid $accent_color;
+}
+#futureWork {
+    @include basic_layout();
+    @include sections_layout();
+    & #futureWorkIcons {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+    }
+    & #futureWorkParagraph {
+	margin: 0 auto;
+	max-width: 760px;
+	& p {
+	    line-height: 30px; 
+	    line-break: 50px; 
+	}
+    }
+    & #futureWorkButtons {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	text-align: center;
+	& #joinCommunity {
+	    @include section_buttons();
+	}
+	& #watchTrailer {
+	    @include section_buttons();
+	}
+    }
+}
+
+/* Style second section "Mobile App" */
+#mobileApp {
+    @include basic_layout();
+    @include sections_layout();
     background: #888;
+}
+
+/* Styling the page footer */
+footer {
+    @include basic_layout();
+    height: 20vw;
+    background: $almost_black;
+}
+
+/* Define global classes */
+.accent-text {
+    color: $light_green !important;
+}
+.alt-text-accent-hover {
+    color: $alt_color;
+    &:hover {
+	color: $accent_color;
+    }
+}
+.accent-button-alt-text-hover {
+    height: 40px;
+    width: 200px;
+    color: $alt_color;
+    background: $accent_color;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 40px;
+    &:hover {
+	color: $accent_color;
+	background: $alt_color;
+	cursor: pointer;
+    }
+}
+.centeredParagraph {
+    width: 100%;
+    text-align: center;
+}
+
+/* Define sizes regarding resolutions */
+/* Most common 16:9 desktop or laptop */
+@media screen and (min-width: 1280px) {
+    header {
+	height: 56.25vw;
+    }
 }

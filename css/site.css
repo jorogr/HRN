@@ -1,41 +1,129 @@
+/* Defining color variables */
+/* Defining page colors with variables */
+/* Define layout for every major segment on the page */
+/* Styling the header */
 header {
   width: 100%;
-  display: block;
-  height: 60vw;
-  background: url(../images/header.jpg) center top no-repeat;
-  color: #fff;
-  background-size: cover; }
+  height: 56.25vw;
+  background: url(../img/header.jpg) center top no-repeat;
+  background-size: cover;
+  color: #fff; }
 
+/* Styling the sticky navbar */
 nav {
   width: 100%;
-  display: block;
-  height: 70px;
+  height: 75px;
   background: #010101;
   position: fixed;
   top: 0;
   vertical-align: middle;
   z-index: 100; }
-  nav #mainMenu {
-    top: 25px;
-    position: relative;
+
+/* Styling logo and elements in it */
+#siteLogo {
+  padding-top: 17.5px;
+  padding-left: 17.5px;
+  position: absolute; }
+  #siteLogo img {
+    height: 40px; }
+
+/* Styling main menu */
+#mainMenu {
+  width: 100%;
+  top: 24px;
+  position: relative;
+  display: inline-block;
+  text-align: center; }
+  #mainMenu li {
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
     display: inline-block;
-    text-align: center; }
-    nav #mainMenu li {
-      font-size: 16px;
-      display: inline-block;
-      padding-left: 10px;
-      padding-right: 10px;
-      text-transform: uppercase; }
-      nav #mainMenu li:hover {
-        color: #99cc00;
-        cursor: pointer; }
+    padding-left: 10px;
+    padding-right: 10px; }
+    #mainMenu li:hover {
+      cursor: pointer; }
 
+/* Styling "GET TICKETS" button in header */
+#getTicketsNav {
+  right: 20px;
+  position: absolute; }
+
+/* Styling the page content sections and elements in it */
+/* Style first section "Future work" */
 #futureWork {
-  height: 40vw;
-  background: #555; }
+  width: 100%;
+  height: 40vw; }
+  #futureWork #futureWorkIcons {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center; }
+  #futureWork #futureWorkParagraph {
+    margin: 0 auto;
+    max-width: 760px; }
+    #futureWork #futureWorkParagraph p {
+      line-height: 30px;
+      line-break: 50px; }
+  #futureWork #futureWorkButtons {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center; }
+    #futureWork #futureWorkButtons #joinCommunity {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 14px;
+      display: inline-block;
+      border: 1px solid #99cc00; }
+    #futureWork #futureWorkButtons #watchTrailer {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 14px;
+      display: inline-block;
+      border: 1px solid #99cc00; }
 
+/* Style second section "Mobile App" */
 #mobileApp {
+  width: 100%;
   height: 40vw;
   background: #888; }
+
+/* Styling the page footer */
+footer {
+  width: 100%;
+  height: 20vw;
+  background: #010101; }
+
+/* Define global classes */
+.accent-text {
+  color: #99cc00 !important; }
+
+.alt-text-accent-hover {
+  color: #fff; }
+  .alt-text-accent-hover:hover {
+    color: #99cc00; }
+
+.accent-button-alt-text-hover {
+  height: 40px;
+  width: 200px;
+  color: #fff;
+  background: #99cc00;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 40px; }
+  .accent-button-alt-text-hover:hover {
+    color: #99cc00;
+    background: #fff;
+    cursor: pointer; }
+
+.centeredParagraph {
+  width: 100%;
+  text-align: center; }
+
+/* Define sizes regarding resolutions */
+/* Most common 16:9 desktop or laptop */
+@media screen and (min-width: 1280px) {
+  header {
+    height: 56.25vw; } }
 
 /*# sourceMappingURL=site.css.map */

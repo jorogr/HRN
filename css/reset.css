@@ -1,7 +1,56 @@
+/* Reset properies globally */
 * {
   padding: 0;
   margin: 0;
+  clear: both;
   background: none;
-  font-size: 0; }
+  font-size: 0;
+  line-height: 0;
+  list-style: none;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  border: none; }
+
+/* Reset link properties */
+a {
+  font-size: 14px;
+  line-height: 1; }
+  a:link {
+    color: #fff; }
+  a:visited {
+    color: #fff; }
+  a:hover {
+    color: #fff; }
+  a:visited {
+    color: #fff; }
+
+p {
+  font-size: 14px;
+  line-height: 16px; }
+
+h1 {
+  font-size: 32px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+h2 {
+  font-size: 24px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  font-weight: bold; }
+
+h3 {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: bold; }
+
+h4 {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold; }
 
 /*# sourceMappingURL=reset.css.map */
