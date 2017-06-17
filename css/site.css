@@ -30,4 +30,12 @@ nav {
         color: #99cc00;
         cursor: pointer; }
 
+#futureWork {
+  height: 40vw;
+  background: #555; }
+
+#mobileApp {
+  height: 40vw;
+  background: #888; }
+
 /*# sourceMappingURL=site.css.map */
