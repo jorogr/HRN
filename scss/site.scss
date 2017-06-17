@@ -1,17 +1,46 @@
+$almost_black: #010101;
+$white: #fff;
+$light_green: #99cc00;
+
+$basic_text_color: $almost_black;
+$alt_text_color: $white;
+$accent_text_color: $light_green;
+
 @mixin h_basic_settings() {
-    width: 100vw;
+    width: 100%;
     display: block;
 }
 
 header {
     @include h_basic_settings();
     height: 60vw;
-    background: #010101;
+    background: url(../images/header.jpg) center top no-repeat;
+    color: $alt_text_color;
+    background-size: cover;
 }
 nav {
     @include h_basic_settings();
-    height: 10vh;
+    height: 70px;
+    background: #010101;
     position: fixed;
     top: 0;
+    vertical-align: middle;
     z-index: 100;
+    & #mainMenu {
+	top: 25px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	& li {
+	    font-size: 16px;
+	    display: inline-block;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    text-transform: uppercase;
+	&:hover {
+	    color: $accent_text_color;
+	    cursor: pointer;
+	    }
+	}
+    }
 }

@@ -1,15 +1,33 @@
 header {
-  width: 100vw;
+  width: 100%;
   display: block;
   height: 60vw;
-  background: #010101; }
+  background: url(../images/header.jpg) center top no-repeat;
+  color: #fff;
+  background-size: cover; }
 
 nav {
-  width: 100vw;
+  width: 100%;
   display: block;
-  height: 10vh;
+  height: 70px;
+  background: #010101;
   position: fixed;
   top: 0;
+  vertical-align: middle;
   z-index: 100; }
+  nav #mainMenu {
+    top: 25px;
+    position: relative;
+    display: inline-block;
+    text-align: center; }
+    nav #mainMenu li {
+      font-size: 16px;
+      display: inline-block;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-transform: uppercase; }
+      nav #mainMenu li:hover {
+        color: #99cc00;
+        cursor: pointer; }
 
 /*# sourceMappingURL=site.css.map */
