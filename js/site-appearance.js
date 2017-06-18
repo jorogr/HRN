@@ -4,8 +4,19 @@ function scrollToTop() {
     // animated scroll to top
     $('body, html').animate({
 	scrollTop: 0
+    }, {
+	duration: 1000
     });
 };
+/* Show and hide scrollToTop button */
+function showScrollButton() {
+    var scrolledFromTop = $(window).scrollTop();
+    if ( scrolledFromTop >= 700 ) {
+	$('#scrollToTop').fadeIn(500);
+    } else {
+	$('#scrollToTop').fadeOut(500);
+    }
+}
 
 /* Call funtions */
 /* Scroll to current section */
@@ -36,5 +47,11 @@ $(document).on('click', 'a[href^="#"].menuElement', function(e) {
     // animated scrolling
     $('body, html').animate({
 	scrollTop: position
+    }, {
+	duration: 1000
     });
 });
+
+/* Scroll to top */
+$('#scrollToTop').on('click', scrollToTop);
+$(window).on('scroll', showScrollButton);
