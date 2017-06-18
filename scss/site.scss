@@ -157,8 +157,11 @@ nav {
 footer {
     @include basic_layout();
     background: $basic_color;
+    & #footerSocialIcons {
+	height: 40px;
+    }
     & #footerContactInfo {
-	color: $alt_color;
+	
     }
 }
 

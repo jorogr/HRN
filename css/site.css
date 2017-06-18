@@ -124,8 +124,8 @@ nav {
 footer {
   width: 100%;
   background: #010101; }
-  footer #footerContactInfo {
-    color: #fff; }
+  footer #footerSocialIcons {
+    height: 40px; }
 
 /* Define global classes */
 /* Mixin used in global classes */
