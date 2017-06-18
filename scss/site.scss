@@ -31,60 +31,147 @@ h4 {
     width: 100%;
 }
 
+/* Define smooth resize */
+@mixin vertical_rezise() {
+    -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    -webkit-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    -o-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    transition: height 1s ease-in-out, down 1.5s ease-in-out;
+}
+@mixin horizontal_rezise() {
+    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    transition: width 1s ease-in-out, left 1.5s ease-in-out;
+}
+
+* {
+    @include horizontal_rezise();
+}
+
 /* Styling the header */
 header {
     @include basic_layout();
+    @include vertical_rezise();
     height: 56.25vw;
     background: url(../img/header/background.jpg) center top no-repeat;
     background-size: cover;
     color: $alt_color;
-}
-
-/* Styling the sticky navbar */
-nav {
-    @include basic_layout();
-    height: 75px;
-    background: $basic_color;
-    position: fixed;
-    top: 0;
-    vertical-align: middle;
-    z-index: 100;
-}
-
-/* Styling logo and elements in it */
-#siteLogo {
-    padding-top: 17.5px;
-    padding-left: 17.5px;
-    position: absolute;
-    height: 40px;
-}
-
-/* Styling main menu */
-#mainMenu {
-    width: 100%;
-    top: 29.5px;
-    position: relative;
-    display: inline-block;
-    & li {
+    /* Styling the sticky navbar */
+    & nav {
+	@include basic_layout();
+	height: 75px;
+	background: $basic_color;
+	position: fixed;
+	top: 0;
+	vertical-align: middle;
+	z-index: 100;
+    }
+    /* Styling logo and elements in it */
+    & #siteLogo {
+	padding-top: 17.5px;
+	padding-left: 17.5px;
+	position: absolute;
+	height: 40px;
+    }
+    /* Styling main menu */
+    & #mainMenu {
+	width: 100%;
+	top: 29.5px;
+	position: relative;
 	display: inline-block;
-	padding-left: 10px;
-	padding-right: 10px;
-	& a{
-	    font-size: 18px;
-	    font-weight: 400;
-	    line-height: 16px;
-	    text-transform: uppercase;
+	& li {
+	    display: inline-block;
+	    padding-left: 10px;
+	    padding-right: 10px;
+	    & a{
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 16px;
+		text-transform: uppercase;
+	    }
+	&:hover {
+	    cursor: pointer;
+	    }
 	}
-    &:hover {
-	cursor: pointer;
-	}
+    }
+    /* Styling "GET TICKETS" button in header */
+    & #getTicketsNav {
+	right: 20px;
+	position: absolute;
     }
 }
 
-/* Styling "GET TICKETS" button in header */
-#getTicketsNav {
-    right: 20px;
+/* Styling texts and images on the cover */
+#theGreates {
+    position: relative;
+    top: 8vw;
+    display: inline-block;
+    & span {
+	font-family: Playfair Display;
+	color: $alt_color;
+	text-align: left !important;
+    }
+    & #the {
+	font-size: 32px;
+	padding-left: 55px;
+	line-height: 2.5;
+    }
+    & #gratest {
+	font-size: 86px;
+	line-height: 0;
+    }
+    & #shows {
+	font-size: 32px;
+	padding-left: 55px;
+	line-height: 4;
+    }
+}
+#unleash {
+    position: relative;
+    top: 23vw;
+    & button {
+	display: inline-block;
+	margin: 5px;
+    }
+    & h1 {
+	color: $alt_color;
+    }
+}
+#sponsors {
+    position: relative;
+    top: 26vw;
+    & a {
+	height: 30px;
+	margin: 0px 10px 20px 10px;
+	display: inline-block;
+    }
+}
+@mixin speakers_layout() {
     position: absolute;
+    top: 110%;
+    & h2 {
+	color: $alt_color;
+	font-size: 26px;
+	font-weight: bolder;
+	text-transform: none;
+    }
+    & h4 {
+	color: $alt_color;
+	font-size: 18px;
+	font-weight: 200;
+	text-transform: none;
+    }
+}
+#leftSpeaker {
+    left: 5%;
+    @include speakers_layout();
+}
+#rightSpeaker {
+    right: 8%;
+    @include speakers_layout();
 }
 
 /* Styling the page content sections and elements in them */
@@ -197,6 +284,9 @@ footer {
 .text-accent {
     color: $accent_color !important;
 }
+.text-shadow {
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+}
 .alt-text-accent-hover {
     color: $alt_color;
     &:hover {
@@ -212,6 +302,15 @@ footer {
 	background: $alt_color;
     }
 }
+.alt-button-accent-text-hover {
+    @include buttons_layout();
+    color: $accent_color;
+    background: $alt_color;
+    &:hover {
+	color: $alt_color;
+	background: $accent_color;
+    }
+}
 .alt-button-basic-text-hover {
     @include buttons_layout();
     color: $basic_color;
@@ -221,6 +320,11 @@ footer {
 	background: none;
 	border: 1px solid $alt_color;
     }
+}
+.header-content-wrapper {
+    width: 100%;
+    height: inherit;
+    padding-top: 70px
 }
 .section-content-wrapper {
     width: 100%;
@@ -298,9 +402,39 @@ footer {
 }
 
 /* Define sizes regarding resolutions */
-/* Most common 16:9 desktop or laptop */
+@media only screen and (min-width: 320px) {
+    header {
+	height: 150vw;
+    }
+}
+@media only screen and (min-width: 480px) {
+    header {
+	height: 110vw;
+    }
+}
+@media only screen and (min-width: 600px) {
+    header {
+	height: 100vw;
+    }
+}
+@media only screen and (min-width: 768px) {
+    header {
+	height: 80vw;
+    }
+    #sponsors {
+	width: 50%
+    }
+}
+@media only screen and (min-width: 992px) {
+}
 @media screen and (min-width: 1280px) {
     header {
 	height: 56.25vw;
     }
+    #sponsors {
+	width: 100%
+    }
+}
+@media only screen and (min-width: 1382px) {
+    
 }

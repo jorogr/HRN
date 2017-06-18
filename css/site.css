@@ -14,53 +14,130 @@ h4 {
   text-transform: uppercase; }
 
 /* Define layout for every major segment on the page */
+/* Define smooth resize */
+* {
+  -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+  -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+  -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+  -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+  transition: width 1s ease-in-out, left 1.5s ease-in-out; }
+
 /* Styling the header */
 header {
   width: 100%;
+  -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+  -webkit-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+  -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+  -o-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+  transition: height 1s ease-in-out, down 1.5s ease-in-out;
   height: 56.25vw;
   background: url(../img/header/background.jpg) center top no-repeat;
   background-size: cover;
-  color: #fff; }
+  color: #fff;
+  /* Styling the sticky navbar */
+  /* Styling logo and elements in it */
+  /* Styling main menu */
+  /* Styling "GET TICKETS" button in header */ }
+  header nav {
+    width: 100%;
+    height: 75px;
+    background: #010101;
+    position: fixed;
+    top: 0;
+    vertical-align: middle;
+    z-index: 100; }
+  header #siteLogo {
+    padding-top: 17.5px;
+    padding-left: 17.5px;
+    position: absolute;
+    height: 40px; }
+  header #mainMenu {
+    width: 100%;
+    top: 29.5px;
+    position: relative;
+    display: inline-block; }
+    header #mainMenu li {
+      display: inline-block;
+      padding-left: 10px;
+      padding-right: 10px; }
+      header #mainMenu li a {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 16px;
+        text-transform: uppercase; }
+      header #mainMenu li:hover {
+        cursor: pointer; }
+  header #getTicketsNav {
+    right: 20px;
+    position: absolute; }
 
-/* Styling the sticky navbar */
-nav {
-  width: 100%;
-  height: 75px;
-  background: #010101;
-  position: fixed;
-  top: 0;
-  vertical-align: middle;
-  z-index: 100; }
-
-/* Styling logo and elements in it */
-#siteLogo {
-  padding-top: 17.5px;
-  padding-left: 17.5px;
-  position: absolute;
-  height: 40px; }
-
-/* Styling main menu */
-#mainMenu {
-  width: 100%;
-  top: 29.5px;
+/* Styling texts and images on the cover */
+#theGreates {
   position: relative;
+  top: 8vw;
   display: inline-block; }
-  #mainMenu li {
-    display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px; }
-    #mainMenu li a {
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 16px;
-      text-transform: uppercase; }
-    #mainMenu li:hover {
-      cursor: pointer; }
+  #theGreates span {
+    font-family: Playfair Display;
+    color: #fff;
+    text-align: left !important; }
+  #theGreates #the {
+    font-size: 32px;
+    padding-left: 55px;
+    line-height: 2.5; }
+  #theGreates #gratest {
+    font-size: 86px;
+    line-height: 0; }
+  #theGreates #shows {
+    font-size: 32px;
+    padding-left: 55px;
+    line-height: 4; }
 
-/* Styling "GET TICKETS" button in header */
-#getTicketsNav {
-  right: 20px;
-  position: absolute; }
+#unleash {
+  position: relative;
+  top: 23vw; }
+  #unleash button {
+    display: inline-block;
+    margin: 5px; }
+  #unleash h1 {
+    color: #fff; }
+
+#sponsors {
+  position: relative;
+  top: 26vw; }
+  #sponsors a {
+    height: 30px;
+    margin: 0px 10px 20px 10px;
+    display: inline-block; }
+
+#leftSpeaker {
+  left: 5%;
+  position: absolute;
+  top: 110%; }
+  #leftSpeaker h2 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: bolder;
+    text-transform: none; }
+  #leftSpeaker h4 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+    text-transform: none; }
+
+#rightSpeaker {
+  right: 8%;
+  position: absolute;
+  top: 110%; }
+  #rightSpeaker h2 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: bolder;
+    text-transform: none; }
+  #rightSpeaker h4 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+    text-transform: none; }
 
 /* Styling the page content sections and elements in them */
 /* Style first section "Future work" */
@@ -143,6 +220,9 @@ footer {
 .text-accent {
   color: #99cc00 !important; }
 
+.text-shadow {
+  text-shadow: 0px 1px 10px black; }
+
 .alt-text-accent-hover {
   color: #fff; }
   .alt-text-accent-hover:hover {
@@ -163,6 +243,21 @@ footer {
     color: #99cc00;
     background: #fff; }
 
+.alt-button-accent-text-hover {
+  height: 40px;
+  width: 200px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 40px;
+  color: #99cc00;
+  background: #fff; }
+  .alt-button-accent-text-hover:hover {
+    cursor: pointer; }
+  .alt-button-accent-text-hover:hover {
+    color: #fff;
+    background: #99cc00; }
+
 .alt-button-basic-text-hover {
   height: 40px;
   width: 200px;
@@ -178,6 +273,11 @@ footer {
     color: #fff;
     background: none;
     border: 1px solid #fff; }
+
+.header-content-wrapper {
+  width: 100%;
+  height: inherit;
+  padding-top: 70px; }
 
 .section-content-wrapper {
   width: 100%;
@@ -257,9 +357,26 @@ footer {
     /* Firefox 0.9+, Safari 2, Chrome, Opera 9+, IE 9+ */ }
 
 /* Define sizes regarding resolutions */
-/* Most common 16:9 desktop or laptop */
+@media only screen and (min-width: 320px) {
+  header {
+    height: 150vw; } }
+@media only screen and (min-width: 480px) {
+  header {
+    height: 110vw; } }
+@media only screen and (min-width: 600px) {
+  header {
+    height: 100vw; } }
+@media only screen and (min-width: 768px) {
+  header {
+    height: 80vw; }
+
+  #sponsors {
+    width: 50%; } }
 @media screen and (min-width: 1280px) {
   header {
-    height: 56.25vw; } }
+    height: 56.25vw; }
+
+  #sponsors {
+    width: 100%; } }
 
 /*# sourceMappingURL=site.css.map */
