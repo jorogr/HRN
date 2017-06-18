@@ -1,0 +1,7 @@
+function sectionScroll() {
+    
+}
+
+function scrollToTop () {
+    
+}
