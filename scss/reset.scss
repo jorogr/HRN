@@ -1,22 +1,25 @@
 /* Reset properies globally */
 * {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     clear: both;
     background: none;
+    font-family: 'Roboto';
     font-size: 0;
-    line-height: 0;
+    text-align: center;
+    line-height: 1;
     list-style: none;
     color: #000;
     text-decoration: none;
     display: block;
+    box-sizing: border-box;
     border: none;
-
 }
 
 /* Reset link properties */
 a {
     font-size: 14px;
+    font-weight: 100;
     line-height: 1;
     &:link {
 	color: #fff;
@@ -33,29 +36,43 @@ a {
 }
 p {
     font-size: 14px;
-    line-height: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+    margin: auto;
+    & br {
+	margin-top: 15px;
+	content: " ";
+    }
 }
 h1 {
     font-size: 32px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
     font-weight: bold;
 }
 h2 {
     font-size: 24px;
-    margin-top: 13px;
-    margin-bottom: 13px;
+    margin-top: 0px;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 h3 {
     font-size: 18px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-top: 0px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 h4 {
     font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
     font-weight: bold;
+}
+img {
+	height: inherit;
+}
+small {
+    font-size: 12px;
+    font-weight: 400;
 }

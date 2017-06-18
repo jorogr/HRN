@@ -1,11 +1,24 @@
 /* Defining color variables */
 /* Defining page colors with variables */
+/* Styling header tags */
+h1 {
+  text-transform: uppercase; }
+
+h2 {
+  text-transform: uppercase; }
+
+h3 {
+  text-transform: uppercase; }
+
+h4 {
+  text-transform: uppercase; }
+
 /* Define layout for every major segment on the page */
 /* Styling the header */
 header {
   width: 100%;
   height: 56.25vw;
-  background: url(../img/header.jpg) center top no-repeat;
+  background: url(../img/header/background.jpg) center top no-repeat;
   background-size: cover;
   color: #fff; }
 
@@ -23,17 +36,15 @@ nav {
 #siteLogo {
   padding-top: 17.5px;
   padding-left: 17.5px;
-  position: absolute; }
-  #siteLogo img {
-    height: 40px; }
+  position: absolute;
+  height: 40px; }
 
 /* Styling main menu */
 #mainMenu {
   width: 100%;
   top: 29.5px;
   position: relative;
-  display: inline-block;
-  text-align: center; }
+  display: inline-block; }
   #mainMenu li {
     font-size: 16px;
     line-height: 16px;
@@ -49,34 +60,26 @@ nav {
   right: 20px;
   position: absolute; }
 
-/* Styling the page content sections and elements in it */
+/* Styling the page content sections and elements in them */
 /* Style first section "Future work" */
 #futureWork {
   width: 100%;
-  height: 40vw; }
+  display: flex; }
   #futureWork #futureWorkIcons {
     padding-top: 40px;
-    padding-bottom: 40px;
-    text-align: center; }
+    padding-bottom: 40px; }
   #futureWork #futureWorkParagraph {
     margin: 0 auto;
-    max-width: 760px; }
-    #futureWork #futureWorkParagraph p {
-      line-height: 30px;
-      line-break: 50px; }
+    max-width: 860px; }
   #futureWork #futureWorkButtons {
-    padding-top: 40px;
-    padding-bottom: 20px;
-    text-align: center; }
+    padding-top: 40px; }
     #futureWork #futureWorkButtons #joinCommunity {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin: 5px 10px;
       font-size: 14px;
       display: inline-block;
       border: 1px solid #99cc00; }
     #futureWork #futureWorkButtons #watchTrailer {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin: 5px 10px;
       font-size: 14px;
       display: inline-block;
       border: 1px solid #99cc00; }
@@ -84,17 +87,56 @@ nav {
 /* Style second section "Mobile App" */
 #mobileApp {
   width: 100%;
-  height: 40vw;
-  background: #888; }
+  display: flex;
+  background: #55adb1;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(right top, #6ac274, #55adb1);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom left, #6ac274, #55adb1);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom left, #6ac274, #55adb1);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom left, #6ac274, #55adb1);
+  /* Standard syntax */ }
+  #mobileApp #appDownloadImg {
+    display: initial;
+    margin: auto; }
+    #mobileApp #appDownloadImg #predictiveHire {
+      height: 10%;
+      float: right; }
+  #mobileApp #appDownloadText {
+    max-width: 640px; }
+  #mobileApp #appDownloadButtons {
+    margin-top: 20px; }
+    #mobileApp #appDownloadButtons a {
+      height: 40px;
+      display: inline-block;
+      margin: 5px 10px; }
+  #mobileApp #tutorials {
+    float: none;
+    margin: auto;
+    vertical-align: middle; }
+    #mobileApp #tutorials #tutorialButton {
+      vertical-align: middle;
+      margin-top: 40px; }
 
 /* Styling the page footer */
 footer {
   width: 100%;
-  height: 20vw;
   background: #010101; }
+  footer #footerContactInfo {
+    color: #fff; }
 
 /* Define global classes */
-.accent-text {
+/* Mixin used in global classes */
+/* The global classes */
+.text-basic {
+  color: #010101 !important; }
+
+.text-alt {
+  color: #fff !important; }
+
+.text-accent {
   color: #99cc00 !important; }
 
 .alt-text-accent-hover {
@@ -105,20 +147,68 @@ footer {
 .accent-button-alt-text-hover {
   height: 40px;
   width: 200px;
-  color: #fff;
-  background: #99cc00;
-  text-align: center;
   text-transform: uppercase;
   font-size: 16px;
-  line-height: 40px; }
+  font-weight: 300;
+  line-height: 40px;
+  color: #fff;
+  background: #99cc00; }
+  .accent-button-alt-text-hover:hover {
+    cursor: pointer; }
   .accent-button-alt-text-hover:hover {
     color: #99cc00;
-    background: #fff;
-    cursor: pointer; }
+    background: #fff; }
 
-.centeredParagraph {
+.alt-button-basic-text-hover {
+  height: 40px;
+  width: 200px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 40px;
+  color: #010101;
+  background: #fff; }
+  .alt-button-basic-text-hover:hover {
+    cursor: pointer; }
+  .alt-button-basic-text-hover:hover {
+    color: #fff;
+    background: none;
+    border: 1px solid #fff; }
+
+.section-content-wrapper {
   width: 100%;
-  text-align: center; }
+  padding: 40px 20px; }
+
+.footer-content-wrapper {
+  width: 100%;
+  padding: 20px 20px; }
+
+.section-left-content {
+  width: 50%;
+  display: inline-block;
+  float: left; }
+  .section-left-content div {
+    right: 0; }
+
+.section-right-content {
+  width: 50%;
+  display: inline-block;
+  float: right; }
+
+.align-content-right {
+  width: 90%;
+  padding-right: 10px;
+  float: right; }
+
+.align-content-left {
+  padding-left: 10px;
+  float: left; }
+
+.reset-margin {
+  margin: 0; }
+
+.footer-logo {
+  height: 30px; }
 
 /* Define sizes regarding resolutions */
 /* Most common 16:9 desktop or laptop */

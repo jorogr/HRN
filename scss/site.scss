@@ -2,11 +2,29 @@
 $almost_black: #010101;
 $white: #fff;
 $light_green: #99cc00;
+$cyan_little_grey: #6ac274;
+$cyan_to_green_little_grey: #55adb1;
 
 /* Defining page colors with variables */
 $basic_color: $almost_black;
 $alt_color: $white;
 $accent_color: $light_green;
+$basic_content_backgroud: $cyan_to_green_little_grey;
+$accent_content_background: $cyan_little_grey;
+
+/* Styling header tags */
+h1 {
+    text-transform: uppercase;
+}
+h2 {
+    text-transform: uppercase;
+}
+h3 {
+    text-transform: uppercase;
+}
+h4 {
+    text-transform: uppercase;
+}
 
 /* Define layout for every major segment on the page */
 @mixin basic_layout() {
@@ -17,7 +35,7 @@ $accent_color: $light_green;
 header {
     @include basic_layout();
     height: 56.25vw;
-    background: url(../img/header.jpg) center top no-repeat;
+    background: url(../img/header/background.jpg) center top no-repeat;
     background-size: cover;
     color: $alt_color;
 }
@@ -26,7 +44,7 @@ header {
 nav {
     @include basic_layout();
     height: 75px;
-    background: $almost_black;
+    background: $basic_color;
     position: fixed;
     top: 0;
     vertical-align: middle;
@@ -38,10 +56,8 @@ nav {
     padding-top: 17.5px;
     padding-left: 17.5px;
     position: absolute;
-    & img {
-	height: 40px;
-    }
-} 
+    height: 40px;
+}
 
 /* Styling main menu */
 #mainMenu {
@@ -49,7 +65,6 @@ nav {
     top: 29.5px;
     position: relative;
     display: inline-block;
-    text-align: center;
     & li {
 	font-size: 16px;
 	line-height: 16px;
@@ -69,44 +84,27 @@ nav {
     position: absolute;
 }
 
-/* Styling the page content sections and elements in it */
-@mixin sections_layout() {
-    height: 40vw;
-}
-@mixin two_parallel_boxes_layout() {
-    height: inherit;
-    width: 50%;
-    display: inline-block;
-    position: relative;
-}
+/* Styling the page content sections and elements in them */
 /* Style first section "Future work" */
 @mixin section_buttons() {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 5px 10px;
     font-size: 14px;
     display: inline-block;
     border: 1px solid $accent_color;
 }
 #futureWork {
     @include basic_layout();
-    @include sections_layout();
+    display: flex;
     & #futureWorkIcons {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	text-align: center;
     }
     & #futureWorkParagraph {
 	margin: 0 auto;
-	max-width: 760px;
-	& p {
-	    line-height: 30px; 
-	    line-break: 50px; 
-	}
+	max-width: 860px;
     }
     & #futureWorkButtons {
 	padding-top: 40px;
-	padding-bottom: 20px;
-	text-align: center;
 	& #joinCommunity {
 	    @include section_buttons();
 	}
@@ -119,20 +117,77 @@ nav {
 /* Style second section "Mobile App" */
 #mobileApp {
     @include basic_layout();
-    @include sections_layout();
-    background: #888;
+    display: flex;
+    background: $basic_content_backgroud; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(right top, $accent_content_background, $basic_content_backgroud); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom left, $accent_content_background, $basic_content_backgroud); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom left, $accent_content_background, $basic_content_backgroud); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom left, $accent_content_background, $basic_content_backgroud); /* Standard syntax */
+    & #appDownloadImg {
+	display: initial;
+	margin: auto;
+	& #predictiveHire {
+	    height: 10%;
+	    float: right;
+	}
+    }
+    & #appDownloadText {
+	max-width: 640px;
+    }
+    & #appDownloadButtons {
+	    margin-top: 20px;
+	& a {
+	    height: 40px;
+	    display: inline-block;
+	    margin: 5px 10px;
+	}
+    }
+    & #tutorials {
+	float: none;
+	margin: auto;
+	vertical-align: middle;
+	& #tutorialButton {
+	    vertical-align: middle;
+	    margin-top: 40px;
+	}
+    }
 }
 
 /* Styling the page footer */
 footer {
     @include basic_layout();
-    height: 20vw;
-    background: $almost_black;
+    background: $basic_color;
+    & #footerContactInfo {
+	color: $alt_color;
+    }
 }
 
 /* Define global classes */
-.accent-text {
-    color: $light_green !important;
+/* Mixin used in global classes */
+@mixin two_parallel_boxes_layout() {
+    width: 50%;
+    display: inline-block;
+}
+@mixin buttons_layout() {
+    height: 40px;
+    width: 200px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 40px;
+    &:hover {
+	cursor: pointer;
+    }
+}
+/* The global classes */
+.text-basic {
+    color: $basic_color !important;
+}
+.text-alt {
+    color: $alt_color !important;
+}
+.text-accent {
+    color: $accent_color !important;
 }
 .alt-text-accent-hover {
     color: $alt_color;
@@ -141,23 +196,57 @@ footer {
     }
 }
 .accent-button-alt-text-hover {
-    height: 40px;
-    width: 200px;
+    @include buttons_layout();
     color: $alt_color;
     background: $accent_color;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 16px;
-    line-height: 40px;
     &:hover {
 	color: $accent_color;
 	background: $alt_color;
-	cursor: pointer;
     }
 }
-.centeredParagraph {
+.alt-button-basic-text-hover {
+    @include buttons_layout();
+    color: $basic_color;
+    background: $alt_color;
+    &:hover {
+	color: $alt_color;
+	background: none;
+	border: 1px solid $alt_color;
+    }
+}
+.section-content-wrapper {
     width: 100%;
-    text-align: center;
+    padding: 40px 20px;
+}
+.footer-content-wrapper {
+    width: 100%;
+    padding: 20px 20px;
+}
+.section-left-content {
+    @include two_parallel_boxes_layout();
+    float: left;
+    & div {
+	right: 0;
+    }
+}
+.section-right-content {
+    @include two_parallel_boxes_layout();
+    float: right;
+}
+.align-content-right {
+    width: 90%;
+    padding-right: 10px;
+    float: right;    
+}
+.align-content-left {
+    padding-left: 10px;
+    float: left;  
+}
+.reset-margin {
+    margin: 0;
+}
+.footer-logo {
+    height: 30px;
 }
 
 /* Define sizes regarding resolutions */
