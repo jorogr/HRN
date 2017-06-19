@@ -12,6 +12,93 @@ $accent_color: $light_green;
 $basic_content_backgroud: $cyan_to_green_little_grey;
 $accent_content_background: $cyan_little_grey;
 
+/* Define mixins */
+/* Default layout for every major segment on the page */
+@mixin basic_layout() {
+    width: 100%;
+}
+/* Vetical smooth resize */
+@mixin vertical_rezise() {
+    -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    -webkit-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    -o-transition: height 1s ease-in-out, down 1.5s ease-in-out;
+    transition: height 1s ease-in-out, down 1.5s ease-in-out;
+}
+/* Horizontal smooth resize */
+@mixin horizontal_rezise() {
+    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    transition: width 1s ease-in-out, left 1.5s ease-in-out;
+}
+/* Layout of the text on the speakers */
+@mixin speakers_layout() {
+    position: absolute;
+    top: 110%;
+    & h2 {
+	color: $alt_color;
+	font-size: 26px;
+	font-weight: bolder;
+	text-transform: none;
+    }
+    & h4 {
+	color: $alt_color;
+	font-size: 18px;
+	font-weight: 200;
+	text-transform: none;
+    }
+}
+/* "Future work" section buttons layout */
+@mixin section_buttons() {
+    margin: 5px 10px;
+    font-size: 14px;
+    display: inline-block;
+    border: 1px solid $accent_color;
+}
+/* Mixin used in global classes */
+@mixin two_parallel_boxes_layout() {
+    width: 50%;
+    display: inline-block;
+}
+@mixin buttons_layout() {
+    height: 40px;
+    width: 200px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 40px;
+    &:hover {
+	cursor: pointer;
+    }
+}
+/* Define @mixin for specific elements */
+@mixin rounded_corners_3() {
+    -webkit-border-radius: 3px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-border-radius: 3px; /* Firefox 1-3.6 */
+    border-radius: 3px; /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+}
+@mixin background_opacity_70 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /* IE 8 & 9 */	
+    filter: alpha(opacity=70); /* again IE 8 & 9 and 5, 6, 7 */
+    -moz-opacity: 0.7; /* Older than Firefox 0.9 */
+    -khtml-opacity: 0.7; /* Safari 1.x (pre WebKit!) */
+    opacity: 0.7; /* Firefox 0.9+, Safari 2, Chrome, Opera 9+, IE 9+ */
+}
+@mixin reset_background_opacity {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; /* IE 8 & 9 */	
+    filter: alpha(opacity=100); /* again IE 8 & 9 and 5, 6, 7 */
+    -moz-opacity: 1; /* Older than Firefox 0.9 */
+    -khtml-opacity: 1; /* Safari 1.x (pre WebKit!) */
+    opacity: 1; /* Firefox 0.9+, Safari 2, Chrome, Opera 9+, IE 9+ */
+}
+
+/* Add horizontal smooth transition to everything */
+* {
+    @include horizontal_rezise();
+}
+
 /* Styling header tags */
 h1 {
     text-transform: uppercase;
@@ -24,31 +111,6 @@ h3 {
 }
 h4 {
     text-transform: uppercase;
-}
-
-/* Define layout for every major segment on the page */
-@mixin basic_layout() {
-    width: 100%;
-}
-
-/* Define smooth resize */
-@mixin vertical_rezise() {
-    -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
-    -webkit-transition: height 1s ease-in-out, down 1.5s ease-in-out;
-    -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
-    -o-transition: height 1s ease-in-out, down 1.5s ease-in-out;
-    transition: height 1s ease-in-out, down 1.5s ease-in-out;
-}
-@mixin horizontal_rezise() {
-    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-    -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-    -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-    -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-    transition: width 1s ease-in-out, left 1.5s ease-in-out;
-}
-
-* {
-    @include horizontal_rezise();
 }
 
 /* Styling the header */
@@ -69,41 +131,40 @@ header {
 	vertical-align: middle;
 	z-index: 100;
     }
-    /* Styling logo and elements in it */
-    & #siteLogo {
-	padding-top: 17.5px;
-	padding-left: 17.5px;
-	position: absolute;
-	height: 40px;
-    }
-    /* Styling main menu */
-    & #mainMenu {
-	width: 100%;
-	top: 29.5px;
-	position: relative;
+}
+/* Styling logo and elements in it */
+#siteLogo {
+    padding-top: 17.5px;
+    padding-left: 17.5px;
+    position: absolute;
+    height: 40px;
+}
+/* Styling main menu */
+#mainMenu {
+    width: 100%;
+    top: 29.5px;
+    position: relative;
+    display: inline-block;
+    & li {
 	display: inline-block;
-	& li {
-	    display: inline-block;
-	    padding-left: 15px;
-	    padding-right: 15px;
-	    & a{
-		font-size: 18px;
-		font-weight: 400;
-		line-height: 16px;
-		text-transform: uppercase;
-	    }
-	&:hover {
-	    cursor: pointer;
-	    }
+	padding-left: 15px;
+	padding-right: 15px;
+	& a{
+	    font-size: 18px;
+	    font-weight: 400;
+	    line-height: 16px;
+	    text-transform: uppercase;
+	}
+    &:hover {
+	cursor: pointer;
 	}
     }
-    /* Styling "GET TICKETS" button in header */
-    & #getTicketsNav {
-	right: 20px;
-	position: absolute;
-    }
 }
-
+/* Styling "GET TICKETS" button in header */
+#getTicketsNav {
+    right: 20px;
+    position: absolute;
+}
 /* Styling texts and images on the cover */
 #theGreates {
     position: relative;
@@ -149,22 +210,6 @@ header {
 	display: inline-block;
     }
 }
-@mixin speakers_layout() {
-    position: absolute;
-    top: 110%;
-    & h2 {
-	color: $alt_color;
-	font-size: 26px;
-	font-weight: bolder;
-	text-transform: none;
-    }
-    & h4 {
-	color: $alt_color;
-	font-size: 18px;
-	font-weight: 200;
-	text-transform: none;
-    }
-}
 #leftSpeaker {
     left: 5%;
     @include speakers_layout();
@@ -176,33 +221,28 @@ header {
 
 /* Styling the page content sections and elements in them */
 /* Style first section "Future work" */
-@mixin section_buttons() {
-    margin: 5px 10px;
-    font-size: 14px;
-    display: inline-block;
-    border: 1px solid $accent_color;
-}
 #futureWork {
     @include basic_layout();
     display: flex;
-    & #futureWorkIcons {
-	padding-top: 40px;
-	padding-bottom: 40px;
-    }
-    & #futureWorkParagraph {
-	margin: 0 auto;
-	max-width: 860px;
-    }
-    & #futureWorkButtons {
-	padding-top: 40px;
-	& #joinCommunity {
-	    @include section_buttons();
-	}
-	& #watchTrailer {
-	    @include section_buttons();
-	}
-    }
 }
+#futureWorkIcons {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#futureWorkParagraph {
+    margin: 0 auto;
+    max-width: 860px;
+}
+#futureWorkButtons {
+    padding-top: 40px;
+}
+#joinCommunity {
+    @include section_buttons();
+}
+#watchTrailer {
+    @include section_buttons();
+}
+
 
 /* Style second section "Mobile App" */
 #mobileApp {
@@ -213,68 +253,51 @@ header {
     background: -o-linear-gradient(bottom left, $accent_content_background, $basic_content_backgroud); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(bottom left, $accent_content_background, $basic_content_backgroud); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom left, $accent_content_background, $basic_content_backgroud); /* Standard syntax */
-    & #appDownloadImg {
-	display: initial;
-	margin: auto;
-	& #predictiveHire {
-	    height: 10%;
-	    float: right;
-	}
+}
+#appDownloadImg {
+    display: initial;
+    margin: auto;
+}
+#predictiveHire {
+	height: 10%;
+	float: right;
     }
-    & #appDownloadText {
+#appDownloadText {
+    margin-top: 20px;
+    max-width: 640px;
+}
+#appDownloadButtons {
 	margin-top: 20px;
-	max-width: 640px;
+    & a {
+	height: 40px;
+	display: inline-block;
+	margin: 5px 10px;
     }
-    & #appDownloadButtons {
-	    margin-top: 20px;
-	& a {
-	    height: 40px;
-	    display: inline-block;
-	    margin: 5px 10px;
-	}
-    }
-    & #tutorials {
-	float: none;
-	margin: auto;
-	vertical-align: middle;
-	& #tutorialButton {
-	    vertical-align: middle;
-	    margin-top: 40px;
-	}
-    }
+}
+#tutorials {
+    float: none;
+    margin: auto;
+    vertical-align: middle;
+}
+#tutorialButton {
+    vertical-align: middle;
+    margin-top: 40px;
 }
 
 /* Styling the page footer */
 footer {
     @include basic_layout();
     background: $basic_color;
-    & #footerSocialIcons {
-	margin: 10px 0px;
-	height: 40px;
-    }
-    & #footerContactInfo {
-	
-    }
+}
+#footerSocialIcons {
+    margin: 10px 0px;
+    height: 40px;
+}
+#footerContactInfo {
+
 }
 
 /* Define global classes */
-/* Mixin used in global classes */
-@mixin two_parallel_boxes_layout() {
-    width: 50%;
-    display: inline-block;
-}
-@mixin buttons_layout() {
-    height: 40px;
-    width: 200px;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 40px;
-    &:hover {
-	cursor: pointer;
-    }
-}
-/* The global classes */
 .text-basic {
     color: $basic_color !important;
 }
@@ -362,26 +385,6 @@ footer {
 }
 
 /* Define specific elements */
-/* Define @mixin for specific elements */
-@mixin rounded_corners_3() {
-    -webkit-border-radius: 3px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
-    -moz-border-radius: 3px; /* Firefox 1-3.6 */
-    border-radius: 3px; /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
-}
-@mixin background_opacity_70 {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /* IE 8 & 9 */	
-    filter: alpha(opacity=70); /* again IE 8 & 9 and 5, 6, 7 */
-    -moz-opacity: 0.7; /* Older than Firefox 0.9 */
-    -khtml-opacity: 0.7; /* Safari 1.x (pre WebKit!) */
-    opacity: 0.7; /* Firefox 0.9+, Safari 2, Chrome, Opera 9+, IE 9+ */
-}
-@mixin reset_background_opacity {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; /* IE 8 & 9 */	
-    filter: alpha(opacity=100); /* again IE 8 & 9 and 5, 6, 7 */
-    -moz-opacity: 1; /* Older than Firefox 0.9 */
-    -khtml-opacity: 1; /* Safari 1.x (pre WebKit!) */
-    opacity: 1; /* Firefox 0.9+, Safari 2, Chrome, Opera 9+, IE 9+ */
-}
 #scrollToTop {
     display: none;
     height: 50px;
