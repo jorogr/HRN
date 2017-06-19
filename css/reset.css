@@ -23,7 +23,8 @@
 /* Reset link properties */
 a {
   font-size: 14px;
-  line-height: 1; }
+  line-height: 1;
+  display: inline-block; }
   a:link {
     color: #fff; }
   a:visited {
@@ -70,9 +71,18 @@ h4 {
 img {
   height: inherit; }
 
+i {
+  font-size: 20px;
+  display: inline-block;
+  color: #fff; }
+
 small {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5; }
+  small i {
+    font-size: 10px;
+    margin-left: 2px;
+    margin-right: 2px; }
 
 /*# sourceMappingURL=reset.css.map */

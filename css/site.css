@@ -156,8 +156,17 @@ header {
   display: flex; }
 
 #futureWorkIcons {
-  padding-top: 40px;
-  padding-bottom: 40px; }
+  padding-bottom: 60px; }
+  #futureWorkIcons i {
+    color: #ccc;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 0.3s ease; }
+    #futureWorkIcons i:hover {
+      transform: scale(1.8, 1.8); }
+    #futureWorkIcons i .hover {
+      transform: scale(1.8, 1.8); }
 
 #futureWorkParagraph {
   margin: 0 auto;
@@ -227,8 +236,12 @@ footer {
   background: #010101; }
 
 #footerSocialIcons {
-  margin: 10px 0px;
-  height: 40px; }
+  margin: 30px 0px 10px 0px;
+  height: 18px; }
+  #footerSocialIcons i {
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 5px; }
 
 /* Define global classes */
 .text-basic {
@@ -258,6 +271,11 @@ footer {
   color: #fff;
   background: #99cc00; }
   .accent-button-alt-text-hover:hover {
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     cursor: pointer; }
   .accent-button-alt-text-hover:hover {
     color: #99cc00;
@@ -273,6 +291,11 @@ footer {
   color: #99cc00;
   background: #fff; }
   .alt-button-accent-text-hover:hover {
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     cursor: pointer; }
   .alt-button-accent-text-hover:hover {
     color: #fff;
@@ -286,13 +309,19 @@ footer {
   font-weight: 200;
   line-height: 40px;
   color: #010101;
-  background: #fff; }
+  background: #fff;
+  border: 1px solid #fff !important; }
   .alt-button-basic-text-hover:hover {
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     cursor: pointer; }
   .alt-button-basic-text-hover:hover {
     color: #fff;
     background: none;
-    border: 1px solid #fff; }
+    border: 1px solid #fff !important; }
 
 .header-content-wrapper {
   width: 100%;
@@ -333,6 +362,281 @@ footer {
 
 .footer-logo {
   height: 30px; }
+
+/* Define icons */
+@font-face {
+  font-family: "fico";
+  src: url("../fonts/fico.eot");
+  src: url("../fonts/fico.eot?#iefix") format("embedded-opentype"), url("../fonts/fico.woff") format("woff"), url("../fonts/fico.ttf") format("truetype"), url("../fonts/fico.svg#fico") format("svg"); }
+.icon:before {
+  font-family: fico;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-transform: none !important;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased; }
+.icon:hover {
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.icon-add:before {
+  content: "\f100"; }
+
+.icon-add-alt:before {
+  content: "\f101"; }
+
+.icon-attachment:before {
+  content: "\f105"; }
+
+.icon-bell:before {
+  content: "\f102"; }
+
+.icon-bookmark:before {
+  content: "\f106"; }
+
+.icon-bubble:before {
+  content: "\f107"; }
+
+.icon-calendar:before {
+  content: "\f135"; }
+
+.icon-camera:before {
+  content: "\f10d"; }
+
+.icon-cart:before {
+  content: "\f108"; }
+
+.icon-chart:before {
+  content: "\f109"; }
+
+.icon-check:before {
+  content: "\f10e"; }
+
+.icon-clock:before {
+  content: "\f10f"; }
+
+.icon-cloud:before {
+  content: "\f110"; }
+
+.icon-creditcard:before {
+  content: "\f136"; }
+
+.icon-cross:before {
+  content: "\f111"; }
+
+.icon-cross-alt:before {
+  content: "\f112"; }
+
+.icon-crosshair:before {
+  content: "\f137"; }
+
+.icon-delete:before {
+  content: "\f113"; }
+
+.icon-delete-alt:before {
+  content: "\f114"; }
+
+.icon-denied:before {
+  content: "\f115"; }
+
+.icon-document:before {
+  content: "\f138"; }
+
+.icon-down:before {
+  content: "\f10a"; }
+
+.icon-edit:before {
+  content: "\f116"; }
+
+.icon-error:before {
+  content: "\f117"; }
+
+.icon-exit:before {
+  content: "\f139"; }
+
+.icon-eye:before {
+  content: "\f118"; }
+.icon-eye:hover {
+  color: #57b1b8 !important;
+  cursor: pointer; }
+
+.icon-facebook:before {
+  content: "\f13a"; }
+.icon-facebook:hover {
+  color: #3b5998 !important; }
+
+.icon-filter:before {
+  content: "\f119"; }
+
+.icon-flag:before {
+  content: "\f11a"; }
+
+.icon-folder:before {
+  content: "\f13b"; }
+
+.icon-fullscreen:before {
+  content: "\f11b"; }
+
+.icon-gear:before {
+  content: "\f11c"; }
+.icon-gear:hover {
+  color: #bb6e3d !important;
+  cursor: pointer; }
+
+.icon-gift:before {
+  content: "\f13c"; }
+
+.icon-globe:before {
+  content: "\f13d"; }
+
+.icon-grid:before {
+  content: "\f11d"; }
+
+.icon-group:before {
+  content: "\f13e"; }
+
+.icon-heart:before {
+  content: "\f11e"; }
+
+.icon-help:before {
+  content: "\f11f"; }
+
+.icon-home:before {
+  content: "\f120"; }
+.icon-home:hover {
+  color: #99cc00 !important;
+  cursor: pointer; }
+
+.icon-info:before {
+  content: "\f121"; }
+
+.icon-join:before {
+  content: "\f13f"; }
+
+.icon-left:before {
+  content: "\f103"; }
+
+.icon-list:before {
+  content: "\f122"; }
+
+.icon-location:before {
+  content: "\f123"; }
+
+.icon-lock:before {
+  content: "\f124"; }
+
+.icon-mail:before {
+  content: "\f125"; }
+
+.icon-move:before {
+  content: "\f126"; }
+
+.icon-music:before {
+  content: "\f127"; }
+
+.icon-navigation:before {
+  content: "\f140"; }
+
+.icon-phone:before {
+  content: "\f141"; }
+
+.icon-play:before {
+  content: "\f128"; }
+
+.icon-power:before {
+  content: "\f129"; }
+.icon-power:hover {
+  color: #ee2a7b !important;
+  cursor: pointer; }
+
+.icon-print:before {
+  content: "\f142"; }
+
+.icon-refresh:before {
+  content: "\f12a"; }
+.icon-refresh:hover {
+  color: #809453 !important;
+  cursor: pointer; }
+
+.icon-reply:before {
+  content: "\f10b"; }
+
+.icon-right:before {
+  content: "\f104"; }
+
+.icon-rss:before {
+  content: "\f12b"; }
+
+.icon-screen:before {
+  content: "\f143"; }
+
+.icon-share:before {
+  content: "\f12c"; }
+
+.icon-share-alt:before {
+  content: "\f144"; }
+
+.icon-sliders:before {
+  content: "\f12d"; }
+
+.icon-smartphone:before {
+  content: "\f145"; }
+
+.icon-speaker:before {
+  content: "\f146"; }
+
+.icon-split:before {
+  content: "\f147"; }
+
+.icon-star:before {
+  content: "\f12e"; }
+.icon-star:hover {
+  color: #e41a52 !important;
+  cursor: pointer; }
+
+.icon-tag:before {
+  content: "\f12f"; }
+
+.icon-thumbs-down:before {
+  content: "\f148"; }
+
+.icon-thumbs-up:before {
+  content: "\f149"; }
+
+.icon-trash:before {
+  content: "\f130"; }
+
+.icon-twitter:before {
+  content: "\f14a"; }
+.icon-twitter:hover {
+  color: #0084b4 !important; }
+
+.icon-unlock:before {
+  content: "\f14b"; }
+
+.icon-up:before {
+  content: "\f10c"; }
+
+.icon-user:before {
+  content: "\f131"; }
+
+.icon-video:before {
+  content: "\f132"; }
+
+.icon-video-alt:before {
+  content: "\f14c"; }
+
+.icon-warning:before {
+  content: "\f133"; }
+
+.icon-wrench:before {
+  content: "\f14d"; }
+
+.icon-zoom:before {
+  content: "\f134"; }
 
 /* Define specific elements */
 #scrollToTop {
