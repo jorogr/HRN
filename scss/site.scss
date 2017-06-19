@@ -429,7 +429,7 @@ footer {
 	-webkit-font-smoothing: antialiased;
     }
     &:hover {
-	@include smooth_transition_on_hover();
+	@include smooth_transition_on_hover(); 
     }
 }
 .icon-add:before { content: "\f100"; }
