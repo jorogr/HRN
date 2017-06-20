@@ -1,9 +1,17 @@
-/* Defining color variables */
+/* Defining global color variables */
 $almost_black: #010101;
 $white: #fff;
 $light_green: #99cc00;
 $cyan_little_grey: #6ac274;
 $cyan_to_green_little_grey: #55adb1;
+
+/* Icon colors */
+$eye: #57b1b8;
+$gear: #bb6e3d;
+$home: $light_green;
+$power: #ee2a7b;
+$refresh: #809453;
+$star: #e41a52;
 
 /* Defining page colors with variables */
 $basic_color: $almost_black;
@@ -234,17 +242,27 @@ header {
     display: flex;
 }
 #futureWorkIcons {
+    padding-top: 40px;
     padding-bottom: 60px;
-    & i {
-	color: #ccc;
-	font-size: 30px;
-	margin-left: 20px;
-	margin-right: 20px;
-	transition: all 0.3s ease;
-	&:hover {
-	    transform: scale(1.8, 1.8);
+    & .animated-icons {
+	display: inline-block;
+	& i {
+	    color: #ccc;
+	    font-size: 30px;
+	    margin-left: 20px;
+	    margin-right: 20px;
+	    transition: all 0.3s ease;
+	    &:hover {
+		-webkit-transform: scale(1.8, 1.8);
+		-moz-transform: scale(1.8, 1.8);
+		-o-transform: scale(1.8, 1.8);
+		transform: scale(1.8, 1.8);
+	    }
 	}
 	& .hover {
+	    -webkit-transform: scale(1.8, 1.8);
+	    -moz-transform: scale(1.8, 1.8);
+	    -o-transform: scale(1.8, 1.8);
 	    transform: scale(1.8, 1.8);
 	}
     }
@@ -462,7 +480,7 @@ footer {
 	content: "\f118";
     }
     &:hover {
-	color: #57b1b8 !important;
+	color: $eye !important;
 	cursor: pointer;
     }
 }
@@ -483,7 +501,7 @@ footer {
 	content: "\f11c"; 
     }
     &:hover {
-	color: #bb6e3d !important;
+	color: $gear !important;
 	cursor: pointer;
     }
 }
@@ -498,7 +516,7 @@ footer {
 	content: "\f120";
     }
     &:hover {
-	color: $accent_color !important;
+	color: $home !important;
 	cursor: pointer;
     }
 }
@@ -519,7 +537,7 @@ footer {
 	content: "\f129"; 
     }
     &:hover {
-	color: #ee2a7b !important;
+	color: $power !important;
 	cursor: pointer;
     }
 }
@@ -529,7 +547,7 @@ footer {
 	content: "\f12a"; 
     }
     &:hover {
-	color: #809453 !important;
+	color: $refresh !important;
 	cursor: pointer;
     }
 }
@@ -548,7 +566,7 @@ footer {
 	content: "\f12e"; 
     }
     &:hover {
-	color: #e41a52 !important;
+	color: $star !important;
 	cursor: pointer;
     }
 }
@@ -576,6 +594,58 @@ footer {
 .icon-warning:before { content: "\f133"; }
 .icon-wrench:before { content: "\f14d"; }
 .icon-zoom:before { content: "\f134"; }
+
+/* Define tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    &:hover .tooltip-content {
+	visibility: visible;
+    }
+    & .tooltip-content {
+	font-size: 12px;
+	visibility: hidden;
+	width: 120px;
+	background-color: #eee;
+	color: $basic_color;
+	text-align: center;
+	border-radius: 6px;
+	padding: 10px 0px;
+	position: absolute;
+	z-index: 1;
+	bottom: 200%;
+	left: 50%;
+	margin-left: -60px;
+	&.eye-icon {
+	    color: $eye !important;
+	}
+	&.gear-icon {
+	    color: $gear !important;
+	}
+	&.home-icon {
+	    color: $home !important;
+	}
+	&.power-icon {
+	    color: $power !important;
+	}
+	&.refresh-icon {
+	    color: $refresh !important;
+	}
+	&.star-icon {
+	    color: $star !important;
+	}
+	&::after {
+	    content: " ";
+	    position: absolute;
+	    top: 100%;
+	    left: 50%;
+	    margin-left: -5px;
+	    border-width: 5px;
+	    border-style: solid;
+	    border-color: #eee transparent transparent transparent;
+	}
+    }
+}
 
 /* Define specific elements */
 #scrollToTop {

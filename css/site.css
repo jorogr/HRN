@@ -1,4 +1,5 @@
-/* Defining color variables */
+/* Defining global color variables */
+/* Icon colors */
 /* Defining page colors with variables */
 /* Define mixins */
 /* Default layout for every major segment on the page */
@@ -156,16 +157,25 @@ header {
   display: flex; }
 
 #futureWorkIcons {
+  padding-top: 40px;
   padding-bottom: 60px; }
-  #futureWorkIcons i {
-    color: #ccc;
-    font-size: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-    transition: all 0.3s ease; }
-    #futureWorkIcons i:hover {
-      transform: scale(1.8, 1.8); }
-    #futureWorkIcons i .hover {
+  #futureWorkIcons .animated-icons {
+    display: inline-block; }
+    #futureWorkIcons .animated-icons i {
+      color: #ccc;
+      font-size: 30px;
+      margin-left: 20px;
+      margin-right: 20px;
+      transition: all 0.3s ease; }
+      #futureWorkIcons .animated-icons i:hover {
+        -webkit-transform: scale(1.8, 1.8);
+        -moz-transform: scale(1.8, 1.8);
+        -o-transform: scale(1.8, 1.8);
+        transform: scale(1.8, 1.8); }
+    #futureWorkIcons .animated-icons .hover {
+      -webkit-transform: scale(1.8, 1.8);
+      -moz-transform: scale(1.8, 1.8);
+      -o-transform: scale(1.8, 1.8);
       transform: scale(1.8, 1.8); }
 
 #futureWorkParagraph {
@@ -637,6 +647,48 @@ footer {
 
 .icon-zoom:before {
   content: "\f134"; }
+
+/* Define tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block; }
+  .tooltip:hover .tooltip-content {
+    visibility: visible; }
+  .tooltip .tooltip-content {
+    font-size: 12px;
+    visibility: hidden;
+    width: 120px;
+    background-color: #eee;
+    color: #010101;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 0px;
+    position: absolute;
+    z-index: 1;
+    bottom: 200%;
+    left: 50%;
+    margin-left: -60px; }
+    .tooltip .tooltip-content.eye-icon {
+      color: #57b1b8 !important; }
+    .tooltip .tooltip-content.gear-icon {
+      color: #bb6e3d !important; }
+    .tooltip .tooltip-content.home-icon {
+      color: #99cc00 !important; }
+    .tooltip .tooltip-content.power-icon {
+      color: #ee2a7b !important; }
+    .tooltip .tooltip-content.refresh-icon {
+      color: #809453 !important; }
+    .tooltip .tooltip-content.star-icon {
+      color: #e41a52 !important; }
+    .tooltip .tooltip-content::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #eee transparent transparent transparent; }
 
 /* Define specific elements */
 #scrollToTop {
