@@ -45,8 +45,16 @@ function clearHoverIcons() {
     $('.animated-icons.hover').removeClass('hover');
     clearInterval(interval);
 }
-function showMobileNav() {
-    
+function showHideMobileNav() {
+    if ( $('#mobNavButton').hasClass('closed-nav') === true ) {
+	$('#mobNavButton').removeClass('closed-nav').addClass('opened-nav');
+	$('#mobNavIcon').removeClass('icon-navigation').addClass('icon-cross');
+	$('#mobileMenu').slideDown(500);
+    } else {
+	$('#mobNavButton').removeClass('opened-nav').addClass('closed-nav');
+	$('#mobNavIcon').removeClass('icon-cross').addClass('icon-navigation');
+	$('#mobileMenu').slideUp(500);
+    }
 }
 function callModal() {
     
@@ -92,4 +100,5 @@ $(window).on('scroll', showScrollButton);
 $(document).ready(hoverIcons);
 $('.animated-icons').on('mouseenter', clearHoverIcons);
 $('.animated-icons').on('mouseleave', hoverIcons);
-$('.call-modal').on('cick', callModal);
+$('.call-modal').on('click', callModal);
+$('.mobile-menuElement').on('click', showHideMobileNav);

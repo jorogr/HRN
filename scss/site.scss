@@ -184,19 +184,18 @@ header {
     width: 100%;
     top: 75px;
     position: absolute;
-    background: $basic_color;
+    background: rgba(0,0,0,0.8);
     height: 180px;
     & li {
-	padding-top: 15px;
-	padding-left: 15px;
+	margin-top: 15px;
 	& a{
 	    font-size: 16px;
 	    font-weight: 400;
 	    line-height: 14px;
 	    text-transform: uppercase;
 	}
-    &:hover {
-	cursor: pointer;
+	&:hover {
+	    cursor: pointer;
 	}
     }
 }
@@ -206,7 +205,7 @@ header {
     position: absolute;
 }
 /* Mobile Navigation */
-#mobNav {
+#mobNavButton {
     display: none;
     right: 20px;
     position: absolute;
@@ -782,7 +781,7 @@ footer {
 	display: none;
     }
     /* Mobile Navigation */
-    #mobNav {
+    #mobNavButton {
 	display: block;
 	right: 20px;
 	top: 10px;
@@ -966,7 +965,7 @@ footer {
 	display: none;
     }
     /* Mobile Navigation */
-    #mobNav {
+    #mobNavButton {
 	display: block;
 	right: 20px;
 	top: 10px;
@@ -1119,10 +1118,12 @@ footer {
 	& h2 {
 	    font-size: 26px;
 	    font-weight: bolder;
+	    text-align: center;
 	}
 	& h4 {
 	    font-size: 18px;
 	    font-weight: 200;
+	    text-align: center;
 	}
     }
     /* "Future work" section buttons layout */
@@ -1196,7 +1197,7 @@ footer {
 	display: block;
     }
     /* Mobile Navigation */
-    #mobNav {
+    #mobNavButton {
 	display: none;
 	right: 20px;
 	position: absolute;

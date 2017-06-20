@@ -83,11 +83,10 @@ header {
   width: 100%;
   top: 75px;
   position: absolute;
-  background: #010101;
+  background: rgba(0, 0, 0, 0.8);
   height: 180px; }
   #mobileMenu li {
-    padding-top: 15px;
-    padding-left: 15px; }
+    margin-top: 15px; }
     #mobileMenu li a {
       font-size: 16px;
       font-weight: 400;
@@ -102,13 +101,13 @@ header {
   position: absolute; }
 
 /* Mobile Navigation */
-#mobNav {
+#mobNavButton {
   display: none;
   right: 20px;
   position: absolute;
   font-weight: 400;
   font-size: 32px; }
-  #mobNav:hover {
+  #mobNavButton:hover {
     cursor: pointer; }
 
 /* "GET TICKETS" button in mobile navigation */
@@ -820,7 +819,7 @@ footer {
     display: none; }
 
   /* Mobile Navigation */
-  #mobNav {
+  #mobNavButton {
     display: block;
     right: 20px;
     top: 10px;
@@ -1044,7 +1043,7 @@ footer {
     display: none; }
 
   /* Mobile Navigation */
-  #mobNav {
+  #mobNavButton {
     display: block;
     right: 20px;
     top: 10px;
@@ -1291,7 +1290,7 @@ footer {
     display: block; }
 
   /* Mobile Navigation */
-  #mobNav {
+  #mobNavButton {
     display: none;
     right: 20px;
     position: absolute;
@@ -1342,10 +1341,12 @@ footer {
     top: 93%; }
     #leftSpeaker h2 {
       font-size: 26px;
-      font-weight: bolder; }
+      font-weight: bolder;
+      text-align: center; }
     #leftSpeaker h4 {
       font-size: 18px;
-      font-weight: 200; }
+      font-weight: 200;
+      text-align: center; }
 
   #rightSpeaker {
     right: 4.5%;
@@ -1354,10 +1355,12 @@ footer {
     top: 93%; }
     #rightSpeaker h2 {
       font-size: 26px;
-      font-weight: bolder; }
+      font-weight: bolder;
+      text-align: center; }
     #rightSpeaker h4 {
       font-size: 18px;
-      font-weight: 200; }
+      font-weight: 200;
+      text-align: center; }
 
   /* Styling the page content sections and elements in them */
   /* Style first section "Future work" */
