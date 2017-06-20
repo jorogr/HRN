@@ -172,11 +172,25 @@ header {
         -moz-transform: scale(1.8, 1.8);
         -o-transform: scale(1.8, 1.8);
         transform: scale(1.8, 1.8); }
-    #futureWorkIcons .animated-icons .hover {
+    #futureWorkIcons .animated-icons.hover .tooltip-content {
+      visibility: visible; }
+    #futureWorkIcons .animated-icons.hover i {
       -webkit-transform: scale(1.8, 1.8);
       -moz-transform: scale(1.8, 1.8);
       -o-transform: scale(1.8, 1.8);
       transform: scale(1.8, 1.8); }
+      #futureWorkIcons .animated-icons.hover i.icon-eye {
+        color: #57b1b8 !important; }
+      #futureWorkIcons .animated-icons.hover i.icon-gear {
+        color: #bb6e3d !important; }
+      #futureWorkIcons .animated-icons.hover i.icon-home {
+        color: #99cc00 !important; }
+      #futureWorkIcons .animated-icons.hover i.icon-power {
+        color: #ee2a7b !important; }
+      #futureWorkIcons .animated-icons.hover i.icon-refresh {
+        color: #809453 !important; }
+      #futureWorkIcons .animated-icons.hover i.icon-star {
+        color: #e41a52 !important; }
 
 #futureWorkParagraph {
   margin: 0 auto;
@@ -685,8 +699,8 @@ footer {
       position: absolute;
       top: 100%;
       left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
+      margin-left: -10px;
+      border-width: 10px;
       border-style: solid;
       border-color: #eee transparent transparent transparent; }
 

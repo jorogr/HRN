@@ -259,11 +259,34 @@ header {
 		transform: scale(1.8, 1.8);
 	    }
 	}
-	& .hover {
-	    -webkit-transform: scale(1.8, 1.8);
-	    -moz-transform: scale(1.8, 1.8);
-	    -o-transform: scale(1.8, 1.8);
-	    transform: scale(1.8, 1.8);
+	&.hover {
+	    & .tooltip-content {
+		visibility: visible;
+	    }
+	    & i {
+		-webkit-transform: scale(1.8, 1.8);
+		-moz-transform: scale(1.8, 1.8);
+		-o-transform: scale(1.8, 1.8);
+		transform: scale(1.8, 1.8);
+		&.icon-eye {
+		    color: $eye !important;
+		}
+		&.icon-gear {
+		    color: $gear !important;
+		}
+		&.icon-home {
+		    color: $home !important;
+		}
+		&.icon-power {
+		    color: $power !important;
+		}
+		&.icon-refresh {
+		    color: $refresh !important;
+		}
+		&.icon-star {
+		    color: $star !important;
+		}
+	    }
 	}
     }
 }
@@ -639,8 +662,8 @@ footer {
 	    position: absolute;
 	    top: 100%;
 	    left: 50%;
-	    margin-left: -5px;
-	    border-width: 5px;
+	    margin-left: -10px;
+	    border-width: 10px;
 	    border-style: solid;
 	    border-color: #eee transparent transparent transparent;
 	}

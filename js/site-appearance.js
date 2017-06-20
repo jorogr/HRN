@@ -17,6 +17,35 @@ function showScrollButton() {
 	$('#scrollToTop').fadeOut(500);
     }
 }
+/* Start auto HoverOn/HoverOff icons */
+var nextSeq = 0;
+var prevSeq = 0;
+var interval = null;
+function hoverIcons() {
+    // Get all elements with a specific class, that we need to animate
+    var iconsToAnimate = $('.animated-icons');
+    // Start the changing-class function on 2s interval
+    interval = setInterval( function() {
+	console.log('Start animation!');
+	if ( nextSeq >= iconsToAnimate.length ){
+	    iconsToAnimate[prevSeq].classList.remove('hover');
+	    iconsToAnimate[0].classList.add('hover');
+	    prevSeq = 0;
+	    nextSeq = 1;
+	    return;
+	}
+	iconsToAnimate[prevSeq].classList.remove('hover');
+	iconsToAnimate[nextSeq].classList.add('hover');
+	prevSeq = nextSeq;
+	nextSeq++;
+    }, 1500);
+}
+/* Stop auto HoverOn/HoverOff icons */
+function clearHoverIcons() {
+    console.log('Stoping function started');
+    $('.animated-icons.hover').removeClass('hover');
+    clearInterval(interval);
+}
 
 /* Call funtions */
 /* Scroll to current section */
@@ -55,3 +84,6 @@ $(document).on('click', 'a[href^="#"].menuElement', function(e) {
 /* Scroll to top */
 $('#scrollToTop').on('click', scrollToTop);
 $(window).on('scroll', showScrollButton);
+$(document).ready(hoverIcons);
+$('.animated-icons').on('mouseenter', clearHoverIcons);
+$('.animated-icons').on('mouseleave', hoverIcons);
