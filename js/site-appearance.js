@@ -18,6 +18,7 @@ function showScrollButton() {
     }
 }
 /* Start auto HoverOn/HoverOff icons */
+/* Gobal variables to manipulate the animation */
 var nextSeq = 0;
 var prevSeq = 0;
 var interval = null;
@@ -26,7 +27,6 @@ function hoverIcons() {
     var iconsToAnimate = $('.animated-icons');
     // Start the changing-class function on 2s interval
     interval = setInterval( function() {
-	console.log('Start animation!');
 	if ( nextSeq >= iconsToAnimate.length ){
 	    iconsToAnimate[prevSeq].classList.remove('hover');
 	    iconsToAnimate[0].classList.add('hover');
@@ -42,9 +42,14 @@ function hoverIcons() {
 }
 /* Stop auto HoverOn/HoverOff icons */
 function clearHoverIcons() {
-    console.log('Stoping function started');
     $('.animated-icons.hover').removeClass('hover');
     clearInterval(interval);
+}
+function showMobileNav() {
+    
+}
+function callModal() {
+    
 }
 
 /* Call funtions */
@@ -87,3 +92,4 @@ $(window).on('scroll', showScrollButton);
 $(document).ready(hoverIcons);
 $('.animated-icons').on('mouseenter', clearHoverIcons);
 $('.animated-icons').on('mouseleave', hoverIcons);
+$('.call-modal').on('cick', callModal);

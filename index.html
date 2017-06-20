@@ -30,9 +30,31 @@
 			<a href="#footer" class="alt-text-accent-hover menuElement">Contact</a>
 		    </li>
 		</ul>
-		<button id="getTicketsNav" class="accent-button-alt-text-hover">
+		<ul id="mobileMenu">
+		    <li>
+			<a href="#home" class="alt-text-accent-hover mobile-menuElement">Home</a>
+		    </li>
+		    <li>
+			<a href="#futureWork" class="alt-text-accent-hover mobile-menuElement">Our future</a>
+		    </li>
+		    <li>
+			<a href="#mobileApp" class="alt-text-accent-hover mobile-menuElement">Mobile App</a>
+		    </li>
+		    <li>
+			<a href="#footer" class="alt-text-accent-hover mobile-menuElement">Contact</a>
+		    </li>
+		    <li>
+			<button id="getTicketsMobNav" class="accent-button-alt-text-hover">
+			    GET TICKETS
+			</button>
+		    </li>
+		</ul>
+		<button id="getTicketsNav" class="accent-button-alt-text-hover closed-nav">
 		    GET TICKETS
 		</button>
+		<div id="mobNav">
+		    <i class="icon icon-navigation"></i>
+		</div>
 	    </nav>
 	    <div class="header-content-wrapper">
 		<div id="theGreates">
@@ -42,10 +64,10 @@
 		</div>
 		<div id="unleash">
 		    <h1>UNLEASH YOUR PROFILE</h1>
-		    <button id="requestAgenda" class="alt-button-accent-text-hover">
+		    <button id="requestAgenda" class="alt-button-accent-text-hover call-modal">
 			REQUEST AGENDA
 		    </button>
-		    <button id="getTicketsHead" class="accent-button-alt-text-hover">
+		    <button id="getTicketsHead" class="accent-button-alt-text-hover call-modal">
 			GET TICKETS
 		    </button>
 		</div>
@@ -149,13 +171,15 @@
 		    </div>
 		</div>
 		<div id="tutorials" class="section-right-content">
-		    <div id="tutorialImg">
-			<img src="img/home-page/mobile-app/tutorials.svg" alt="TUTORIALS">
-		    </div>
-		    <div id="tutorialButton">
-			<button id="watchTrailer" class="alt-button-basic-text-hover">
-			    VIEW TUTORIALS
-			</button>
+		    <div class="align-content-left">
+			<div id="tutorialImg">
+			    <img src="img/home-page/mobile-app/tutorials.svg" alt="TUTORIALS">
+			</div>
+			<div id="tutorialButton">
+			    <button id="watchTrailer" class="alt-button-basic-text-hover">
+				VIEW TUTORIALS
+			    </button>
+			</div>
 		    </div>
 		</div>
 	    </div>
@@ -173,7 +197,7 @@
 			<i class="icon icon-twitter"></i>
 		    </a>
 		</div>
-		<div id="footerContactInfo">
+		<div>
 		    <small class="text-alt"><i class="icon icon-mail"></i>info@hrtechcongress.com | <i class="icon icon-phone"></i> +44 20 34 689 689
 			<br>
 			HR Tech World London | Terms & Conditions | Cookie Policy | Copyright © 2017 HRN. All Rights Reserved.

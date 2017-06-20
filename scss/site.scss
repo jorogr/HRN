@@ -21,7 +21,6 @@ $basic_content_backgroud: $cyan_to_green_little_grey;
 $accent_content_background: $cyan_little_grey;
 
 /* Define mixins */
-/* Default layout for every major segment on the page */
 @mixin basic_layout() {
     width: 100%;
 }
@@ -44,17 +43,19 @@ $accent_content_background: $cyan_little_grey;
 /* Layout of the text on the speakers */
 @mixin speakers_layout() {
     position: absolute;
-    top: 110%;
+    top: 93%;
     & h2 {
 	color: $alt_color;
 	font-size: 26px;
 	font-weight: bolder;
+	text-align: center;
 	text-transform: none;
     }
     & h4 {
 	color: $alt_color;
 	font-size: 18px;
 	font-weight: 200;
+	text-align: center;
 	text-transform: none;
     }
 }
@@ -133,10 +134,11 @@ h4 {
 header {
     @include basic_layout();
     @include vertical_rezise();
-    height: 56.25vw;
-    background: url(../img/header/background.jpg) center top no-repeat;
+    height: 52vw;
+    background: url(../img/header/background-uhd.jpg) center top no-repeat;
     background-size: cover;
     color: $alt_color;
+    overflow: hidden;
     /* Styling the sticky navbar */
     & nav {
 	@include basic_layout();
@@ -176,10 +178,48 @@ header {
 	}
     }
 }
+/* Styling mobile menu */
+#mobileMenu {
+    display: none;
+    width: 100%;
+    top: 75px;
+    position: absolute;
+    background: $basic_color;
+    height: 180px;
+    & li {
+	padding-top: 15px;
+	padding-left: 15px;
+	& a{
+	    font-size: 16px;
+	    font-weight: 400;
+	    line-height: 14px;
+	    text-transform: uppercase;
+	}
+    &:hover {
+	cursor: pointer;
+	}
+    }
+}
 /* Styling "GET TICKETS" button in header */
 #getTicketsNav {
     right: 20px;
     position: absolute;
+}
+/* Mobile Navigation */
+#mobNav {
+    display: none;
+    right: 20px;
+    position: absolute;
+    font-weight: 400;
+    font-size: 32px;
+    &:hover {
+	cursor: pointer;
+    }
+}
+/* "GET TICKETS" button in mobile navigation */
+#getTicketsMobNav{
+    height: 30px;
+    line-height: 30px;
 }
 /* Styling texts and images on the cover */
 #theGreates {
@@ -208,7 +248,7 @@ header {
 }
 #unleash {
     position: relative;
-    top: 20vw;
+    top: 15vw;
     & button {
 	display: inline-block;
 	margin: 5px;
@@ -219,7 +259,7 @@ header {
 }
 #sponsors {
     position: relative;
-    top: 23vw;
+    top: 16vw;
     & a {
 	height: 30px;
 	margin: 0px 10px 20px 10px;
@@ -227,11 +267,13 @@ header {
     }
 }
 #leftSpeaker {
-    left: 5%;
+    left: 1.5%;
+    text-shadow: 2px 2px 3px black;
     @include speakers_layout();
 }
 #rightSpeaker {
-    right: 8%;
+    right: 4.5%;
+    text-shadow: 2px 2px 3px black;
     @include speakers_layout();
 }
 
@@ -314,18 +356,24 @@ header {
     background: -o-linear-gradient(bottom left, $accent_content_background, $basic_content_backgroud); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(bottom left, $accent_content_background, $basic_content_backgroud); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom left, $accent_content_background, $basic_content_backgroud); /* Standard syntax */
+    & .section-content-wrapper {
+	display: table;
+    }
 }
 #appDownloadImg {
     display: initial;
     margin: auto;
 }
 #predictiveHire {
-	height: 10%;
+	height: 3vw;
 	float: right;
+	position: relative;
+	margin-right: 27%;
+	margin-top: -5%;
     }
 #appDownloadText {
-    margin-top: 20px;
-    max-width: 640px;
+    margin-top: 40px;
+    max-width: 560px;
 }
 #appDownloadButtons {
 	margin-top: 20px;
@@ -358,9 +406,6 @@ footer {
 	margin-left: 5px;
 	margin-right: 5px;
     }
-}
-#footerContactInfo {
-
 }
 
 /* Define global classes */
@@ -414,7 +459,7 @@ footer {
 .header-content-wrapper {
     width: 100%;
     height: inherit;
-    padding-top: 70px
+    padding-top: 70px;
 }
 .section-content-wrapper {
     width: 100%;
@@ -426,7 +471,9 @@ footer {
 }
 .section-left-content {
     @include two_parallel_boxes_layout();
+    width: 100%;
     float: left;
+    display: table-cell;
     & div {
 	right: 0;
     }
@@ -434,6 +481,7 @@ footer {
 .section-right-content {
     @include two_parallel_boxes_layout();
     float: right;
+    display: table-cell;
 }
 .align-content-right {
     width: 90%;
@@ -441,6 +489,7 @@ footer {
     float: right;    
 }
 .align-content-left {
+    width: 90%;
     padding-left: 10px;
     float: left;  
 }
@@ -692,38 +741,734 @@ footer {
 
 /* Define sizes regarding resolutions */
 @media only screen and (min-width: 320px) {
-    header {
-	height: 250vw;
+    /* Layout of the text on the speakers */
+    @mixin speakers_layout() {
+	top: 100vw;/**/
+	& h2 {
+	    font-size: 5vw;/**/
+	    font-weight: bold;/**/
+	}
+	& h4 {
+	    font-size: 4vw;/**/
+	}
     }
-}
-@media only screen and (min-width: 480px) {
-    header {
-	height: 120vw;
+    @mixin buttons_layout() {
+	height: 30px;/**/
+	line-height: 30px;/**/
     }
-}
-@media only screen and (min-width: 600px) {
-    header {
-	height: 90vw;
+    /* Define @mixin for specific elements */
+    @mixin rounded_corners_3() {
+	-webkit-border-radius: 3px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+	-moz-border-radius: 3px; /* Firefox 1-3.6 */
+	border-radius: 3px; /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
     }
-}
-@media only screen and (min-width: 768px) {
+    
+    /* Styling the header */
     header {
-	height: 80vw;
+	height: 200vw;/**/
+	background: url(../img/header/background-phone.jpg) center top no-repeat;/**/
+	background-size: cover;/**/
+	/* Styling the sticky navbar */
+	& nav {
+	    text-align: left;/**/
+	}
+    }
+    /* Styling main menu */
+    #mainMenu {
+	display: none;
+    }
+    /* Styling "GET TICKETS" button in header */
+    #getTicketsNav {
+	display: none;
+    }
+    /* Mobile Navigation */
+    #mobNav {
+	display: block;
+	right: 20px;
+	top: 10px;
+	position: absolute;
+	font-size: 40px;
+	line-height: 40px;
+    }
+    /* Styling texts and images on the cover */
+    #theGreates {
+	top: 4vw;/**/
+	& #the {
+	    font-size: 4vw;/**/
+	    padding-left: 8vw;/**/
+	}
+	& #gratest {
+	    font-size: 10vw;/**/
+	}
+	& #shows {
+	    font-size: 4vw;/**/
+	    padding-left: 8vw;/**/
+	    line-height: 3.5;/**/
+	}
+    }
+    #unleash {
+	top: 75vw;/**/
     }
     #sponsors {
-	width: 50%
+	top: 85vw;/**/
+	& a {
+	    height: 25px;/**/
+	    margin: 0px 5px 10px 5px;/**/
+	}
+    }
+    #leftSpeaker {
+	left: 1.5%;/**/
+	@include speakers_layout();/**/
+	& h2 {
+	    text-align: left;/**/
+	}
+	& h4 {
+	    text-align: left;/**/
+	}
+    }
+    #rightSpeaker {
+	right: 4.5%;/**/
+	@include speakers_layout();/**/
+	& h2 {
+	    text-align: right;/**/
+	}
+	& h4 {
+	    text-align: right;/**/
+	}
+    }
+
+    /* Styling the page content sections and elements in them */
+    /* Style first section "Future work" */
+    #futureWorkIcons {
+	display: none;/**/
+    }
+    #futureWorkParagraph {
+	max-width: 300px;/**/
+    }
+    #futureWorkButtons {
+	padding-top: 20px;/**/
+    }
+
+    /* Style second section "Mobile App" */
+    #mobileApp {
+	& .section-content-wrapper {
+	    display: inline-block;/**/
+	}
+    }
+    #predictiveHire {
+	    height: 10vw;/**/
+	    margin-right: 8vw;/**/
+	    margin-top: -8vw;/**/
+	}
+    #appDownloadText {
+	margin-top: 40px;
+	max-width: 300px;
+    }
+    #appDownloadButtons {
+	margin-top: 15px;/**/
+    }
+    #tutorials {
+	float: none;/**/
+	margin-top: 30px;/**/
+    }
+    #tutorialButton {
+	margin-top: 30px;/**/
+    }
+
+    .accent-button-alt-text-hover {
+	@include buttons_layout();
+    }
+    .alt-button-accent-text-hover {
+	@include buttons_layout();
+    }
+    .alt-button-basic-text-hover {
+	@include buttons_layout();
+    }
+    .header-content-wrapper {
+	width: 100%;
+	height: inherit;
+	padding-top: 70px;
+    }
+    .section-content-wrapper {
+	padding: 20px 10px;/**/
+    }
+    .footer-content-wrapper {
+	padding: 20px 10px;/**/
+    }
+    .section-left-content {
+	width: 100%;/**/
+	display: inline-block;/**/
+    }
+    .section-right-content {
+	width: 100%;/**/
+	display: inline-block;/**/
+    }
+    .align-content-right {
+	width: 100%;/**/
+	padding-right: 0px;/**/
+	float: none;/**/
+    }
+    .align-content-left {
+	width: 100%;/**/
+	padding-left: 0px;/**/
+	float: none;/**/
+    }
+    .footer-logo {
+	height: 25px;/**/
+    }
+
+    /* Define specific elements */
+    #scrollToTop {
+	height: 40px;/**/
+	width: 40px;/**/
+	line-height: 40px;/**/
     }
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 640px) {
+    /* Layout of the text on the speakers */
+    @mixin speakers_layout() {
+	top: 100vw;/**/
+	& h2 {
+	    font-size: 5vw;/**/
+	    font-weight: bold;/**/
+	}
+	& h4 {
+	    font-size: 4vw;/**/
+	}
+    }
+    @mixin buttons_layout() {
+	height: 30px;/**/
+	line-height: 30px;/**/
+    }
+    /* Define @mixin for specific elements */
+    @mixin rounded_corners_3() {
+	-webkit-border-radius: 3px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+	-moz-border-radius: 3px; /* Firefox 1-3.6 */
+	border-radius: 3px; /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+    }
+    
+    /* Styling the header */
+    header {
+	height: 80vw;/**/
+	background: url(../img/header/background-tablet.jpg) center top no-repeat;/**/
+	background-size: cover;/**/
+	/* Styling the sticky navbar */
+	& nav {
+	    text-align: left;/**/
+	}
+    }
+    /* Styling main menu */
+    #mainMenu {
+	display: none;
+    }
+    /* Styling "GET TICKETS" button in header */
+    #getTicketsNav {
+	display: none;
+    }
+    /* Mobile Navigation */
+    #mobNav {
+	display: block;
+	right: 20px;
+	top: 10px;
+	position: absolute;
+	font-size: 40px;
+	line-height: 40px;
+    }
+    /* Styling texts and images on the cover */
+    #theGreates {
+	top: 4vw;/**/
+	& #the {
+	    font-size: 4vw;/**/
+	    padding-left: 8vw;/**/
+	}
+	& #gratest {
+	    font-size: 10vw;/**/
+	}
+	& #shows {
+	    font-size: 4vw;/**/
+	    padding-left: 8vw;/**/
+	    line-height: 3.5;/**/
+	}
+    }
+    #unleash {
+	top: 75vw;/**/
+    }
+    #sponsors {
+	top: 85vw;/**/
+	& a {
+	    height: 25px;/**/
+	    margin: 0px 5px 10px 5px;/**/
+	}
+    }
+    #leftSpeaker {
+	left: 1.5%;/**/
+	@include speakers_layout();/**/
+	& h2 {
+	    text-align: left;/**/
+	}
+	& h4 {
+	    text-align: left;/**/
+	}
+    }
+    #rightSpeaker {
+	right: 4.5%;/**/
+	@include speakers_layout();/**/
+	& h2 {
+	    text-align: right;/**/
+	}
+	& h4 {
+	    text-align: right;/**/
+	}
+    }
+
+    /* Styling the page content sections and elements in them */
+    /* Style first section "Future work" */
+    #futureWorkIcons {
+	display: none;/**/
+    }
+    #futureWorkParagraph {
+	max-width: 300px;/**/
+    }
+    #futureWorkButtons {
+	padding-top: 20px;/**/
+    }
+
+    /* Style second section "Mobile App" */
+    #mobileApp {
+	& .section-content-wrapper {
+	    display: inline-block;/**/
+	}
+    }
+    #predictiveHire {
+	    height: 10vw;/**/
+	    margin-right: 8vw;/**/
+	    margin-top: -8vw;/**/
+	}
+    #appDownloadText {
+	margin-top: 40px;
+	max-width: 300px;
+    }
+    #appDownloadButtons {
+	margin-top: 15px;/**/
+    }
+    #tutorials {
+	float: none;/**/
+	margin-top: 30px;/**/
+    }
+    #tutorialButton {
+	margin-top: 30px;/**/
+    }
+
+    .accent-button-alt-text-hover {
+	@include buttons_layout();
+    }
+    .alt-button-accent-text-hover {
+	@include buttons_layout();
+    }
+    .alt-button-basic-text-hover {
+	@include buttons_layout();
+    }
+    .header-content-wrapper {
+	width: 100%;
+	height: inherit;
+	padding-top: 70px;
+    }
+    .section-content-wrapper {
+	padding: 20px 10px;/**/
+    }
+    .footer-content-wrapper {
+	padding: 20px 10px;/**/
+    }
+    .section-left-content {
+	width: 100%;/**/
+	display: inline-block;/**/
+    }
+    .section-right-content {
+	width: 100%;/**/
+	display: inline-block;/**/
+    }
+    .align-content-right {
+	width: 100%;/**/
+	padding-right: 0px;/**/
+	float: none;/**/
+    }
+    .align-content-left {
+	width: 100%;/**/
+	padding-left: 0px;/**/
+	float: none;/**/
+    }
+    .footer-logo {
+	height: 25px;/**/
+    }
+
+    /* Define specific elements */
+    #scrollToTop {
+	height: 40px;/**/
+	width: 40px;/**/
+	line-height: 40px;/**/
+    }
 }
 @media screen and (min-width: 1280px) {
+    
+}
+@media only screen and (min-width: 1366px) {
+    /* Layout of the text on the speakers */
+    @mixin speakers_layout() {
+	position: absolute;
+	top: 93%;
+	& h2 {
+	    font-size: 26px;
+	    font-weight: bolder;
+	}
+	& h4 {
+	    font-size: 18px;
+	    font-weight: 200;
+	}
+    }
+    /* "Future work" section buttons layout */
+    @mixin section_buttons() {
+	margin: 5px 10px;
+	font-size: 14px;
+	display: inline-block;
+    }
+    /* Mixin used in global classes */
+    @mixin two_parallel_boxes_layout() {
+	width: 50%;
+	display: inline-block;
+    }
+    @mixin buttons_layout() {
+	height: 40px;
+	width: 200px;
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 40px;
+    }
+    /* Define @mixin for specific elements */
+    @mixin rounded_corners_3() {
+	-webkit-border-radius: 3px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+	-moz-border-radius: 3px; /* Firefox 1-3.6 */
+	border-radius: 3px; /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+    }
+    
+    /* Styling the header */
     header {
-	height: 56.25vw;
+	height: 52vw;
+	background: url(../img/header/background-uhd.jpg) center top no-repeat;
+	background-size: cover;
+	/* Styling the sticky navbar */
+	& nav {
+	    @include basic_layout();
+	    height: 75px;
+	    position: fixed;
+	    top: 0;
+	    vertical-align: middle;
+	    z-index: 100;
+	}
+    }
+    /* Styling logo and elements in it */
+    #siteLogo {
+	padding-top: 17.5px;
+	padding-left: 17.5px;
+	position: absolute;
+	height: 40px;
+    }
+    /* Styling main menu */
+    #mainMenu {
+	width: 100%;
+	top: 29.5px;
+	position: relative;
+	display: inline-block;
+	& li {
+	    display: inline-block;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    & a {
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 16px;
+	    }
+	}
+    }
+    /* Styling "GET TICKETS" button in header */
+    #getTicketsNav {
+	right: 20px;
+	position: absolute;
+	display: block;
+    }
+    /* Mobile Navigation */
+    #mobNav {
+	display: none;
+	right: 20px;
+	position: absolute;
+	font-weight: 400;
+	font-size: 32px;
+    }
+    /* "GET TICKETS" button in mobile navigation */
+    #getTicketsMobNav{
+	height: 30px;
+	line-height: 30px;
+    }
+    /* Styling texts and images on the cover */
+    #theGreates {
+	position: relative;
+	top: 8vw;
+	display: inline-block;
+	& #the {
+	    font-size: 32px;
+	    padding-left: 60px;
+	    line-height: 2.5;
+	}
+	& #gratest {
+	    font-size: 86px;
+	    line-height: 0;
+	}
+	& #shows {
+	    font-size: 32px;
+	    padding-left: 60px;
+	    line-height: 4;
+	}
+    }
+    #unleash {
+	position: relative;
+	top: 15vw;
+	& button {
+	    display: inline-block;
+	    margin: 5px;
+	}
     }
     #sponsors {
-	width: 100%
+	position: relative;
+	top: 16vw;
+	& a {
+	    height: 30px;
+	    margin: 0px 10px 20px 10px;
+	    display: inline-block;
+	}
     }
-}
-@media only screen and (min-width: 1382px) {
-    
+    #leftSpeaker {
+	left: 1.5%;
+	text-shadow: 2px 2px 3px black;
+	@include speakers_layout();
+    }
+    #rightSpeaker {
+	right: 4.5%;
+	text-shadow: 2px 2px 3px black;
+	@include speakers_layout();
+    }
+
+    /* Styling the page content sections and elements in them */
+    /* Style first section "Future work" */
+    #futureWork {
+	@include basic_layout();
+	display: flex;
+    }
+    #futureWorkIcons {
+	padding-top: 40px;
+	padding-bottom: 60px;
+	& .animated-icons {
+	    display: inline-block;
+	    & i {
+		font-size: 30px;
+		margin-left: 20px;
+		margin-right: 20px;
+		&:hover {
+		    -webkit-transform: scale(1.8, 1.8);
+		    -moz-transform: scale(1.8, 1.8);
+		    -o-transform: scale(1.8, 1.8);
+		    transform: scale(1.8, 1.8);
+		}
+	    }
+	    &.hover {
+		& i {
+		    -webkit-transform: scale(1.8, 1.8);
+		    -moz-transform: scale(1.8, 1.8);
+		    -o-transform: scale(1.8, 1.8);
+		    transform: scale(1.8, 1.8);
+		}
+	    }
+	}
+    }
+    #futureWorkParagraph {
+	margin: 0 auto;
+	max-width: 860px;
+    }
+    #futureWorkButtons {
+	padding-top: 40px;
+    }
+    #joinCommunity {
+	@include section_buttons();
+    }
+    #watchTrailer {
+	@include section_buttons();
+    }
+
+
+    /* Style second section "Mobile App" */
+    #mobileApp {
+	@include basic_layout();
+	display: flex;
+	& .section-content-wrapper {
+	    display: table;
+	}
+    }
+    #appDownloadImg {
+	display: initial;
+	margin: auto;
+    }
+    #predictiveHire {
+	    height: 3vw;
+	    float: right;
+	    position: relative;
+	    margin-right: 27%;
+	    margin-top: -5%;
+	}
+    #appDownloadText {
+	margin-top: 40px;
+	max-width: 560px;
+    }
+    #appDownloadButtons {
+	    margin-top: 20px;
+	& a {
+	    height: 40px;
+	    display: inline-block;
+	    margin: 5px 10px;
+	}
+    }
+    #tutorials {
+	float: none;
+	margin: auto;
+	vertical-align: middle;
+    }
+    #tutorialButton {
+	vertical-align: middle;
+	margin-top: 40px;
+    }
+
+    /* Styling the page footer */
+    footer {
+	@include basic_layout();
+	background: $basic_color;
+    }
+    #footerSocialIcons {
+	margin: 30px 0px 10px 0px;
+	height: 18px;
+	& i {
+	    font-size: 18px;
+	    margin-left: 5px;
+	    margin-right: 5px;
+	}
+    }
+
+    .accent-button-alt-text-hover {
+	@include buttons_layout();
+    }
+    .alt-button-accent-text-hover {
+	@include buttons_layout();
+    }
+    .alt-button-basic-text-hover {
+	@include buttons_layout();
+    }
+    .header-content-wrapper {
+	width: 100%;
+	height: inherit;
+	padding-top: 70px;
+    }
+    .section-content-wrapper {
+	width: 100%;
+	padding: 40px 20px;
+    }
+    .footer-content-wrapper {
+	width: 100%;
+	padding: 20px 20px;
+    }
+    .section-left-content {
+	@include two_parallel_boxes_layout();
+	width: 100%;
+	float: left;
+	display: table-cell;
+	& div {
+	    right: 0;
+	}
+    }
+    .section-right-content {
+	@include two_parallel_boxes_layout();
+	float: right;
+	display: table-cell;
+    }
+    .align-content-right {
+	width: 90%;
+	padding-right: 10px;
+	float: right;    
+    }
+    .align-content-left {
+	width: 90%;
+	padding-left: 10px;
+	float: left;  
+    }
+    .reset-margin {
+	margin: 0;
+    }
+    .footer-logo {
+	height: 30px;
+    }
+
+    /* Define icons */
+    .icon {
+	&:before {
+	    font-family: fico;
+	    font-weight: normal !important;
+	    font-style: normal !important;
+	    text-transform: none !important;
+	    vertical-align: baseline;
+	    -webkit-font-smoothing: antialiased;
+	}
+	&:hover {
+	    @include smooth_transition_on_hover(); 
+	}
+    }
+
+    /* Define tooltips */
+    .tooltip {
+	position: relative;
+	display: inline-block;
+	&:hover .tooltip-content {
+	    visibility: visible;
+	}
+	& .tooltip-content {
+	    font-size: 12px;
+	    visibility: hidden;
+	    width: 120px;
+	    text-align: center;
+	    border-radius: 6px;
+	    padding: 10px 0px;
+	    position: absolute;
+	    z-index: 1;
+	    bottom: 200%;
+	    left: 50%;
+	    margin-left: -60px;
+	    &::after {
+		content: " ";
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin-left: -10px;
+		border-width: 10px;
+		border-style: solid;
+		border-color: #eee transparent transparent transparent;
+	    }
+	}
+    }
+
+    /* Define specific elements */
+    #scrollToTop {
+	display: none;
+	height: 50px;
+	width: 50px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	font-size: 20px;
+	line-height: 50px;
+	@include rounded_corners_3();
+    }
 }
