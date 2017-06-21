@@ -329,6 +329,23 @@ footer {
   .alt-text-accent-hover:hover {
     color: #99cc00; }
 
+.accent-button-alt-text {
+  height: 40px;
+  width: 200px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 40px;
+  color: #fff;
+  background: #99cc00; }
+  .accent-button-alt-text:hover {
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer; }
+
 .accent-button-alt-text-hover {
   height: 40px;
   width: 200px;
@@ -435,6 +452,7 @@ footer {
 .footer-logo {
   height: 30px; }
 
+/* Modals START */
 .modal {
   display: none;
   width: 100%;
@@ -473,9 +491,12 @@ footer {
           font-size: 14px;
           color: #999; }
       .modal .modal-wrap .modal-dialog .modal-content {
-        height: inherit;
+        width: 100%;
         padding: 2vw; }
+        .modal .modal-wrap .modal-dialog .modal-content .modal-content-title {
+          color: #99cc00; }
 
+/* Modals END */
 /* Define icons */
 @font-face {
   font-family: "fico";

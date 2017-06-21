@@ -1,5 +1,5 @@
-/* Define functions */
-/* Scroll to top */
+/* Define functions START */
+/* Scroll to top START */
 function scrollToTop() {
     // animated scroll to top
     $('body, html').animate({
@@ -8,7 +8,9 @@ function scrollToTop() {
 	duration: 1000
     });
 };
-/* Show and hide scrollToTop button */
+/* Scroll to top END */
+
+/* Show and hide scrollToTop button START */
 function showScrollButton() {
     var scrolledFromTop = $(window).scrollTop();
     if ( scrolledFromTop >= 700 ) {
@@ -16,8 +18,10 @@ function showScrollButton() {
     } else {
 	$('#scrollToTop').fadeOut(500);
     }
-}
-/* Start auto HoverOn/HoverOff icons */
+};
+/* Show and hide scrollToTop button END */
+
+/* Start and stop auto HoverOn/HoverOff icons START */
 /* Gobal variables to manipulate the animation */
 var nextSeq = 0;
 var prevSeq = 0;
@@ -39,12 +43,15 @@ function hoverIcons() {
 	prevSeq = nextSeq;
 	nextSeq++;
     }, 1500);
-}
+};
 /* Stop auto HoverOn/HoverOff icons */
 function clearHoverIcons() {
     $('.animated-icons.hover').removeClass('hover');
     clearInterval(interval);
-}
+};
+/* Start and stop auto HoverOn/HoverOff icons END */
+
+/* Show and hide mobile nav onclick START */
 function showHideMobileNav() {
     if ( $('#mobNavButton').hasClass('closed-nav') === true ) {
 	$('#mobNavButton').removeClass('closed-nav').addClass('opened-nav');
@@ -55,13 +62,24 @@ function showHideMobileNav() {
 	$('#mobNavIcon').removeClass('icon-cross').addClass('icon-navigation');
 	$('#mobileMenu').slideUp(500);
     }
-}
-function callModal() {
-    
-}
+};
+/* Show and hide mobile nav onclick END */
+
+/* Modal functions START */
+/* Show modals onclick */
+function openModal() {
+    var modalId = $(this).attr('id') + '-modal';
+    $('#' + modalId).fadeIn(250);
+};
+/* Close modals onclick */
+function closeModal() {
+    var modal = $(this).parent().parent().parent();
+    modal.fadeOut(250);
+};
+/* Modal functions END */
 
 /* Call funtions */
-/* Scroll to current section */
+/* Scroll to current section START */
 $(document).on('click', 'a[href^="#"].menuElement', function(e) {
     // get ID of element to scroll
     var id = $(this).attr('href');
@@ -93,12 +111,13 @@ $(document).on('click', 'a[href^="#"].menuElement', function(e) {
 	duration: 1000
     });
 });
+/* Scroll to current section END */
 
-/* Scroll to top */
 $('#scrollToTop').on('click', scrollToTop);
 $(window).on('scroll', showScrollButton);
 $(document).ready(hoverIcons);
 $('.animated-icons').on('mouseenter', clearHoverIcons);
 $('.animated-icons').on('mouseleave', hoverIcons);
-$('.call-modal').on('click', callModal);
+$('.modal-open').on('click', openModal);
+$('.modal-close').on('click', closeModal);
 $('.mobile-menuElement').on('click', showHideMobileNav);

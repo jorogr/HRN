@@ -426,6 +426,11 @@ footer {
 	color: $accent_color;
     }
 }
+.accent-button-alt-text {
+    @include buttons_layout();
+    color: $alt_color;
+    background: $accent_color;
+}
 .accent-button-alt-text-hover {
     @include buttons_layout();
     color: $alt_color;
@@ -498,6 +503,7 @@ footer {
 .footer-logo {
     height: 30px;
 }
+/* Modals START */
 .modal {
     display: none;
     width: 100%;
@@ -534,21 +540,19 @@ footer {
 		}
 	    }
 	    & .modal-content {
-		height: inherit;
+		width: 100%;
 		padding: 2vw;
 		& .modal-content-title {
-		    
+		    color: $accent_color;
 		}
 		& .modal-content-text {
-		    
-		}
-		& .modal-content-submit {
 		    
 		}
 	    }
 	}
     }
 }
+/* Modals END */
 
 /* Define icons */
 @font-face {
