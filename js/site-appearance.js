@@ -69,11 +69,21 @@ function showHideMobileNav() {
 /* Show modals onclick */
 function openModal() {
     var modalId = $(this).attr('id') + '-modal';
-    $('#' + modalId).fadeIn(250);
+    var theModal = $('#' + modalId);
+    theModal.fadeIn(250);
 };
 /* Close modals onclick */
 function closeModal() {
-    var modal = $(this).parent().parent().parent();
+    // If it's a modal with video
+    if ( $(this).hasClass('modal-video-close') ) {
+	console.log('if starts');
+	// Replace the iframe src. This reset the video and stop it
+	var videoUrl = $('#watchTrailer-video').attr("src");
+	$('#watchTrailer-video').attr("src", videoUrl);
+	console.log('videoUrl = ' + videoUrl);
+    }
+    // Close the opened modal
+    var modal = $(this).parents('.modal');
     modal.fadeOut(250);
 };
 /* Modal functions END */

@@ -46,14 +46,12 @@ $accent_content_background: $cyan_little_grey;
     top: 93%;
     & h2 {
 	color: $alt_color;
-	font-size: 26px;
 	font-weight: bolder;
 	text-align: center;
 	text-transform: none;
     }
     & h4 {
 	color: $alt_color;
-	font-size: 18px;
 	font-weight: 200;
 	text-align: center;
 	text-transform: none;
@@ -184,7 +182,7 @@ header {
     width: 100%;
     top: 75px;
     position: absolute;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     height: 180px;
     & li {
 	margin-top: 15px;
@@ -283,8 +281,8 @@ header {
     display: flex;
 }
 #futureWorkIcons {
-    padding-top: 40px;
-    padding-bottom: 60px;
+    margin-top: 40px;
+    margin-bottom: 60px;
     & .animated-icons {
 	display: inline-block;
 	& i {
@@ -503,13 +501,14 @@ footer {
 .footer-logo {
     height: 30px;
 }
-/* Modals START */
+
+/* Modals */
 .modal {
     display: none;
     width: 100%;
     height: 100vh;
     z-index: 100;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     top: 0;
     position: fixed;
     & .modal-wrap {
@@ -550,9 +549,26 @@ footer {
 		}
 	    }
 	}
+	& .modal-video-container {
+	    height: 100vh;
+	    width: 100vw;
+	    & .modal-video-close {
+		font-size: 4vw;
+		color: $alt_color;
+		position: absolute;
+		left: 2vw;
+		top: 2vw;
+		&:hover {
+		    cursor: pointer;
+		}
+	    }
+	    & iframe {
+		height: inherit;
+		width: 100%;
+	    }
+	}
     }
 }
-/* Modals END */
 
 /* Define icons */
 @font-face {
@@ -799,11 +815,7 @@ footer {
     @mixin speakers_layout() {
 	top: 100vw;/**/
 	& h2 {
-	    font-size: 5vw;/**/
 	    font-weight: bold;/**/
-	}
-	& h4 {
-	    font-size: 4vw;/**/
 	}
     }
     @mixin buttons_layout() {
@@ -819,7 +831,7 @@ footer {
     
     /* Styling the header */
     header {
-	height: 200vw;/**/
+	height: 195vw;/**/
 	background: url(../img/header/background-phone.jpg) center top no-repeat;/**/
 	background-size: cover;/**/
 	/* Styling the sticky navbar */
@@ -861,10 +873,10 @@ footer {
 	}
     }
     #unleash {
-	top: 75vw;/**/
+	top: 78vw;/**/
     }
     #sponsors {
-	top: 85vw;/**/
+	top: 88vw;/**/
 	& a {
 	    height: 25px;/**/
 	    margin: 0px 5px 10px 5px;/**/
@@ -911,9 +923,9 @@ footer {
     }
     #predictiveHire {
 	    height: 10vw;/**/
-	    margin-right: 8vw;/**/
+	    margin-right: 10vw;/**/
 	    margin-top: -8vw;/**/
-	}
+    }
     #appDownloadText {
 	margin-top: 40px;
 	max-width: 300px;
@@ -922,7 +934,6 @@ footer {
 	margin-top: 15px;/**/
     }
     #tutorials {
-	float: none;/**/
 	margin-top: 30px;/**/
     }
     #tutorialButton {
@@ -937,11 +948,6 @@ footer {
     }
     .alt-button-basic-text-hover {
 	@include buttons_layout();
-    }
-    .header-content-wrapper {
-	width: 100%;
-	height: inherit;
-	padding-top: 70px;
     }
     .section-content-wrapper {
 	padding: 20px 10px;/**/
@@ -970,149 +976,173 @@ footer {
     .footer-logo {
 	height: 25px;/**/
     }
-
+    
+    /* Modals */
+    .modal {
+	& .modal-wrap {
+	    & .modal-dialog {
+		width: 90vw;/**/
+		& .modal-close {
+		    top: 2vw;/**/
+		    right: 2vw;/**/
+		    & i {
+			font-size: 12px;/**/
+		    }
+		}
+		& .modal-content {
+		    padding: 6vw;/**/
+		}
+	    }
+	    & .modal-video-container {
+		& modal-video-close {
+		    font-size: 4vw;
+		    left: 2vw;
+		    top: 2vw;
+		}
+	    }
+	}
+    }
+    
     /* Define specific elements */
     #scrollToTop {
 	height: 40px;/**/
 	width: 40px;/**/
 	line-height: 40px;/**/
     }
+}
+@media only screen and (min-width: 360px) {
+    @mixin speakers_layout() {
+	top: 90vw;/**/
+    }
+    header {
+	height: 175vw;/**/
+    }
+    #unleash {
+	top: 73vw;/**/
+    }
+    #sponsors {
+	top: 85vw;/**/
+    }
+    #leftSpeaker {
+	@include speakers_layout();/**/
+    }
+    #rightSpeaker {
+	@include speakers_layout();/**/
+    }
+    #predictiveHire {
+	margin-right: 13vw;/**/
+    }
+}
+@media only screen and (min-width: 480px) {
+    header {
+	height: 160vw;/**/
+    }
+    #sponsors {
+	& a {
+	    height: 30px;/**/
+	    margin: 0px 5px 10px 5px;/**/
+	}
+    }
+    #futureWorkIcons {
+	display: block;/**/
+	margin-top: 60px;/**/
+	margin-bottom: 50px;/**/
+    }
+    #futureWorkParagraph {
+	max-width: 400px;/**/
+    }
+    #appDownloadText {
+	max-width: 400px;/**/
+    }
+    #align-content-left {
+	width: 90%;/**/
+    }
+    #predictiveHire {
+	margin-top: -6vw;/**/
+	margin-right: 16vw;/**/
+    }
+    
+    
 }
 @media only screen and (min-width: 640px) {
     /* Layout of the text on the speakers */
     @mixin speakers_layout() {
-	top: 100vw;/**/
-	& h2 {
-	    font-size: 5vw;/**/
-	    font-weight: bold;/**/
-	}
-	& h4 {
-	    font-size: 4vw;/**/
-	}
+	top: 13vw;/**/
     }
     @mixin buttons_layout() {
-	height: 30px;/**/
-	line-height: 30px;/**/
+	height: 40px;/**/
+	line-height: 40px;/**/
     }
-    /* Define @mixin for specific elements */
-    @mixin rounded_corners_3() {
-	-webkit-border-radius: 3px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
-	-moz-border-radius: 3px; /* Firefox 1-3.6 */
-	border-radius: 3px; /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
-    }
-    
     /* Styling the header */
     header {
-	height: 80vw;/**/
+	height: 85vw;/**/
 	background: url(../img/header/background-tablet.jpg) center top no-repeat;/**/
 	background-size: cover;/**/
-	/* Styling the sticky navbar */
-	& nav {
-	    text-align: left;/**/
-	}
-    }
-    /* Styling main menu */
-    #mainMenu {
-	display: none;
-    }
-    /* Styling "GET TICKETS" button in header */
-    #getTicketsNav {
-	display: none;
-    }
-    /* Mobile Navigation */
-    #mobNavButton {
-	display: block;
-	right: 20px;
-	top: 10px;
-	position: absolute;
-	font-size: 40px;
-	line-height: 40px;
     }
     /* Styling texts and images on the cover */
     #theGreates {
-	top: 4vw;/**/
+	top: 15vw;/**/
 	& #the {
-	    font-size: 4vw;/**/
-	    padding-left: 8vw;/**/
+	    font-size: 3vw;/**/
+	    padding-left: 6vw;/**/
 	}
 	& #gratest {
-	    font-size: 10vw;/**/
+	    font-size: 8vw;/**/
 	}
 	& #shows {
-	    font-size: 4vw;/**/
-	    padding-left: 8vw;/**/
-	    line-height: 3.5;/**/
+	    font-size: 3vw;/**/
+	    padding-left: 6vw;/**/
 	}
     }
     #unleash {
-	top: 75vw;/**/
+	top: 30vw;/**/
     }
     #sponsors {
-	top: 85vw;/**/
+	top: 34vw;/**/
 	& a {
 	    height: 25px;/**/
-	    margin: 0px 5px 10px 5px;/**/
 	}
     }
     #leftSpeaker {
-	left: 1.5%;/**/
+	left: 2%;/**/
 	@include speakers_layout();/**/
 	& h2 {
-	    text-align: left;/**/
+	    text-align: center;/**/
 	}
 	& h4 {
-	    text-align: left;/**/
+	    text-align: center;/**/
 	}
     }
     #rightSpeaker {
-	right: 4.5%;/**/
+	right: 2%;/**/
 	@include speakers_layout();/**/
 	& h2 {
-	    text-align: right;/**/
+	    text-align: center;/**/
 	}
 	& h4 {
-	    text-align: right;/**/
+	    text-align: center;/**/
 	}
     }
 
-    /* Styling the page content sections and elements in them */
-    /* Style first section "Future work" */
     #futureWorkIcons {
-	display: none;/**/
+	display: block;/**/
+	margin-top: 40px;
+	margin-bottom: 40px;
     }
     #futureWorkParagraph {
-	max-width: 300px;/**/
-    }
-    #futureWorkButtons {
-	padding-top: 20px;/**/
+	max-width: 560px;/**/
     }
 
-    /* Style second section "Mobile App" */
-    #mobileApp {
-	& .section-content-wrapper {
-	    display: inline-block;/**/
-	}
-    }
     #predictiveHire {
-	    height: 10vw;/**/
-	    margin-right: 8vw;/**/
-	    margin-top: -8vw;/**/
-	}
+	    height: 8vw;/**/
+	    margin-right: 24vw;/**/
+	    margin-top: -5vw;/**/
+    }
     #appDownloadText {
-	margin-top: 40px;
-	max-width: 300px;
+	margin-top: 50px;
+	max-width: 500px;
     }
-    #appDownloadButtons {
-	margin-top: 15px;/**/
-    }
-    #tutorials {
-	float: none;/**/
-	margin-top: 30px;/**/
-    }
-    #tutorialButton {
-	margin-top: 30px;/**/
-    }
-
+    
     .accent-button-alt-text-hover {
 	@include buttons_layout();
     }
@@ -1122,48 +1152,148 @@ footer {
     .alt-button-basic-text-hover {
 	@include buttons_layout();
     }
-    .header-content-wrapper {
-	width: 100%;
-	height: inherit;
-	padding-top: 70px;
-    }
     .section-content-wrapper {
-	padding: 20px 10px;/**/
+	padding: 40px 20px;/**/
     }
     .footer-content-wrapper {
-	padding: 20px 10px;/**/
-    }
-    .section-left-content {
-	width: 100%;/**/
-	display: inline-block;/**/
-    }
-    .section-right-content {
-	width: 100%;/**/
-	display: inline-block;/**/
-    }
-    .align-content-right {
-	width: 100%;/**/
-	padding-right: 0px;/**/
-	float: none;/**/
+	padding: 20px 20px;/**/
     }
     .align-content-left {
-	width: 100%;/**/
-	padding-left: 0px;/**/
-	float: none;/**/
+	width: 85%;/**/
     }
     .footer-logo {
-	height: 25px;/**/
+	height: 30px;/**/
     }
-
-    /* Define specific elements */
+    
+    .modal {
+	& .modal-wrap {
+	    & .modal-dialog {
+		width: 65vw;
+	    }
+	}
+    }
+}
+@media only screen and (min-width: 800px) {
+    #theGreates {
+	top: 22vw;/**/
+    }
+    #sponsors {
+	top: 36vw;
+	& a {
+	    height: 30px;/**/
+	}
+    }
+    #rightSpeaker {
+	& h2 {
+	    text-align: right;
+	}
+	& h4 {
+	    text-align: right;
+	}
+    }
+    #leftSpeaker {
+	left: 1%;/**/
+	& h2 {
+	    text-align: left;
+	}
+	& h4 {
+	    text-align: left;
+	}
+    }
+    
+    .modal {
+	& .modal-wrap {
+	    & .modal-dialog {
+		width: 50vw;
+	    }
+	}
+    }
+}
+@media only screen and (min-width: 980px) {
+    @mixin speakers_layout() {
+	top: 12vw;/**/
+    }
+    @mixin two_parallel_boxes_layout() {
+	width: 50%;
+	display: inline-block;
+    }
+    header {
+	height: 75vw;
+    }
+    #mainMenu {
+	display: block;
+    }
+    #mobileMenu {
+	display: none;
+    }
+    #getTicketsNav {
+	display: block;
+    }
+    #mobNavButton {
+	display: none;
+    }
+    #sponsors {
+	top: 33vw;
+    }
+    #leftSpeaker {
+	left: 1.5%;/**/
+	@include speakers_layout();/**/
+	& h2 {
+	    text-align: center;/**/
+	}
+	& h4 {
+	    text-align: center;/**/
+	}
+    }
+    #rightSpeaker {
+	right: 6%;/**/
+	@include speakers_layout();/**/
+	& h2 {
+	    text-align: center;/**/
+	}
+	& h4 {
+	    text-align: center;/**/
+	}
+    }
+    #futureWorkParagraph {
+	max-width: 800px;
+    }
+    #appDownloadText {
+	max-width: 800px;
+    }
+    #predictiveHire {
+	height: 6vw;
+	margin-right: 30vw;
+	margin-top: -4vw;
+    }
+    
+    .align-content-left {
+	width: 65%;
+    }
+    
+    .modal {
+	& .modal-wrap {
+	    & .modal-dialog {
+		width: 45vw;
+	    }
+	}
+    }
+    
     #scrollToTop {
-	height: 40px;/**/
-	width: 40px;/**/
-	line-height: 40px;/**/
+	height: 50px;
+	width: 50px;
+	bottom: 20px;
+	right: 20px;
+	font-size: 20px;
+	line-height: 50px;
     }
 }
 @media screen and (min-width: 1280px) {
-    
+    header {
+	height: 60vw;
+	background: url(../img/header/background-hd.jpg) center top no-repeat;
+	background-size: cover;
+    }
 }
 @media only screen and (min-width: 1366px) {
     /* Layout of the text on the speakers */
@@ -1319,8 +1449,8 @@ footer {
 	display: flex;
     }
     #futureWorkIcons {
-	padding-top: 40px;
-	padding-bottom: 60px;
+	margin-top: 40px;
+	margin-bottom: 60px;
 	& .animated-icons {
 	    display: inline-block;
 	    & i {
@@ -1391,7 +1521,6 @@ footer {
 	}
     }
     #tutorials {
-	float: none;
 	margin: auto;
 	vertical-align: middle;
     }

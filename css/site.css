@@ -83,7 +83,7 @@ header {
   width: 100%;
   top: 75px;
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   height: 180px; }
   #mobileMenu li {
     margin-top: 15px; }
@@ -160,13 +160,11 @@ header {
   top: 93%; }
   #leftSpeaker h2 {
     color: #fff;
-    font-size: 26px;
     font-weight: bolder;
     text-align: center;
     text-transform: none; }
   #leftSpeaker h4 {
     color: #fff;
-    font-size: 18px;
     font-weight: 200;
     text-align: center;
     text-transform: none; }
@@ -178,13 +176,11 @@ header {
   top: 93%; }
   #rightSpeaker h2 {
     color: #fff;
-    font-size: 26px;
     font-weight: bolder;
     text-align: center;
     text-transform: none; }
   #rightSpeaker h4 {
     color: #fff;
-    font-size: 18px;
     font-weight: 200;
     text-align: center;
     text-transform: none; }
@@ -196,8 +192,8 @@ header {
   display: flex; }
 
 #futureWorkIcons {
-  padding-top: 40px;
-  padding-bottom: 60px; }
+  margin-top: 40px;
+  margin-bottom: 60px; }
   #futureWorkIcons .animated-icons {
     display: inline-block; }
     #futureWorkIcons .animated-icons i {
@@ -452,13 +448,13 @@ footer {
 .footer-logo {
   height: 30px; }
 
-/* Modals START */
+/* Modals */
 .modal {
   display: none;
   width: 100%;
   height: 100vh;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   top: 0;
   position: fixed; }
   .modal .modal-wrap {
@@ -495,8 +491,21 @@ footer {
         padding: 2vw; }
         .modal .modal-wrap .modal-dialog .modal-content .modal-content-title {
           color: #99cc00; }
+    .modal .modal-wrap .modal-video-container {
+      height: 100vh;
+      width: 100vw; }
+      .modal .modal-wrap .modal-video-container .modal-video-close {
+        font-size: 4vw;
+        color: #fff;
+        position: absolute;
+        left: 2vw;
+        top: 2vw; }
+        .modal .modal-wrap .modal-video-container .modal-video-close:hover {
+          cursor: pointer; }
+      .modal .modal-wrap .modal-video-container iframe {
+        height: inherit;
+        width: 100%; }
 
-/* Modals END */
 /* Define icons */
 @font-face {
   font-family: "fico";
@@ -861,7 +870,7 @@ footer {
   /* Define @mixin for specific elements */
   /* Styling the header */
   header {
-    height: 200vw;
+    height: 195vw;
     /**/
     background: url(../img/header/background-phone.jpg) center top no-repeat;
     /**/
@@ -910,11 +919,11 @@ footer {
       /**/ }
 
   #unleash {
-    top: 75vw;
+    top: 78vw;
     /**/ }
 
   #sponsors {
-    top: 85vw;
+    top: 88vw;
     /**/ }
     #sponsors a {
       height: 25px;
@@ -929,12 +938,7 @@ footer {
     /**/
     /**/ }
     #leftSpeaker h2 {
-      font-size: 5vw;
-      /**/
       font-weight: bold;
-      /**/ }
-    #leftSpeaker h4 {
-      font-size: 4vw;
       /**/ }
     #leftSpeaker h2 {
       text-align: left;
@@ -950,12 +954,7 @@ footer {
     /**/
     /**/ }
     #rightSpeaker h2 {
-      font-size: 5vw;
-      /**/
       font-weight: bold;
-      /**/ }
-    #rightSpeaker h4 {
-      font-size: 4vw;
       /**/ }
     #rightSpeaker h2 {
       text-align: right;
@@ -986,7 +985,7 @@ footer {
   #predictiveHire {
     height: 10vw;
     /**/
-    margin-right: 8vw;
+    margin-right: 10vw;
     /**/
     margin-top: -8vw;
     /**/ }
@@ -1000,8 +999,6 @@ footer {
     /**/ }
 
   #tutorials {
-    float: none;
-    /**/
     margin-top: 30px;
     /**/ }
 
@@ -1026,11 +1023,6 @@ footer {
     /**/
     line-height: 30px;
     /**/ }
-
-  .header-content-wrapper {
-    width: 100%;
-    height: inherit;
-    padding-top: 70px; }
 
   .section-content-wrapper {
     padding: 20px 10px;
@@ -1072,6 +1064,26 @@ footer {
     height: 25px;
     /**/ }
 
+  /* Modals */
+  .modal .modal-wrap .modal-dialog {
+    width: 90vw;
+    /**/ }
+    .modal .modal-wrap .modal-dialog .modal-close {
+      top: 2vw;
+      /**/
+      right: 2vw;
+      /**/ }
+      .modal .modal-wrap .modal-dialog .modal-close i {
+        font-size: 12px;
+        /**/ }
+    .modal .modal-wrap .modal-dialog .modal-content {
+      padding: 6vw;
+      /**/ }
+  .modal .modal-wrap .modal-video-container modal-video-close {
+    font-size: 4vw;
+    left: 2vw;
+    top: 2vw; }
+
   /* Define specific elements */
   #scrollToTop {
     height: 40px;
@@ -1080,230 +1092,292 @@ footer {
     /**/
     line-height: 40px;
     /**/ } }
+@media only screen and (min-width: 360px) {
+  header {
+    height: 175vw;
+    /**/ }
+
+  #unleash {
+    top: 73vw;
+    /**/ }
+
+  #sponsors {
+    top: 85vw;
+    /**/ }
+
+  #leftSpeaker {
+    top: 90vw;
+    /**/
+    /**/ }
+
+  #rightSpeaker {
+    top: 90vw;
+    /**/
+    /**/ }
+
+  #predictiveHire {
+    margin-right: 13vw;
+    /**/ } }
+@media only screen and (min-width: 480px) {
+  header {
+    height: 160vw;
+    /**/ }
+
+  #sponsors a {
+    height: 30px;
+    /**/
+    margin: 0px 5px 10px 5px;
+    /**/ }
+
+  #futureWorkIcons {
+    display: block;
+    /**/
+    margin-top: 60px;
+    /**/
+    margin-bottom: 50px;
+    /**/ }
+
+  #futureWorkParagraph {
+    max-width: 400px;
+    /**/ }
+
+  #appDownloadText {
+    max-width: 400px;
+    /**/ }
+
+  #align-content-left {
+    width: 90%;
+    /**/ }
+
+  #predictiveHire {
+    margin-top: -6vw;
+    /**/
+    margin-right: 16vw;
+    /**/ } }
 @media only screen and (min-width: 640px) {
   /* Layout of the text on the speakers */
-  /* Define @mixin for specific elements */
   /* Styling the header */
   header {
-    height: 80vw;
+    height: 85vw;
     /**/
     background: url(../img/header/background-tablet.jpg) center top no-repeat;
     /**/
     background-size: cover;
-    /**/
-    /* Styling the sticky navbar */ }
-    header nav {
-      text-align: left;
-      /**/ }
-
-  /* Styling main menu */
-  #mainMenu {
-    display: none; }
-
-  /* Styling "GET TICKETS" button in header */
-  #getTicketsNav {
-    display: none; }
-
-  /* Mobile Navigation */
-  #mobNavButton {
-    display: block;
-    right: 20px;
-    top: 10px;
-    position: absolute;
-    font-size: 40px;
-    line-height: 40px; }
+    /**/ }
 
   /* Styling texts and images on the cover */
   #theGreates {
-    top: 4vw;
+    top: 15vw;
     /**/ }
     #theGreates #the {
-      font-size: 4vw;
+      font-size: 3vw;
       /**/
-      padding-left: 8vw;
+      padding-left: 6vw;
       /**/ }
     #theGreates #gratest {
-      font-size: 10vw;
+      font-size: 8vw;
       /**/ }
     #theGreates #shows {
-      font-size: 4vw;
+      font-size: 3vw;
       /**/
-      padding-left: 8vw;
-      /**/
-      line-height: 3.5;
+      padding-left: 6vw;
       /**/ }
 
   #unleash {
-    top: 75vw;
+    top: 30vw;
     /**/ }
 
   #sponsors {
-    top: 85vw;
+    top: 34vw;
     /**/ }
     #sponsors a {
       height: 25px;
-      /**/
-      margin: 0px 5px 10px 5px;
       /**/ }
+
+  #leftSpeaker {
+    left: 2%;
+    /**/
+    top: 13vw;
+    /**/
+    /**/ }
+    #leftSpeaker h2 {
+      text-align: center;
+      /**/ }
+    #leftSpeaker h4 {
+      text-align: center;
+      /**/ }
+
+  #rightSpeaker {
+    right: 2%;
+    /**/
+    top: 13vw;
+    /**/
+    /**/ }
+    #rightSpeaker h2 {
+      text-align: center;
+      /**/ }
+    #rightSpeaker h4 {
+      text-align: center;
+      /**/ }
+
+  #futureWorkIcons {
+    display: block;
+    /**/
+    margin-top: 40px;
+    margin-bottom: 40px; }
+
+  #futureWorkParagraph {
+    max-width: 560px;
+    /**/ }
+
+  #predictiveHire {
+    height: 8vw;
+    /**/
+    margin-right: 24vw;
+    /**/
+    margin-top: -5vw;
+    /**/ }
+
+  #appDownloadText {
+    margin-top: 50px;
+    max-width: 500px; }
+
+  .accent-button-alt-text-hover {
+    height: 40px;
+    /**/
+    line-height: 40px;
+    /**/ }
+
+  .alt-button-accent-text-hover {
+    height: 40px;
+    /**/
+    line-height: 40px;
+    /**/ }
+
+  .alt-button-basic-text-hover {
+    height: 40px;
+    /**/
+    line-height: 40px;
+    /**/ }
+
+  .section-content-wrapper {
+    padding: 40px 20px;
+    /**/ }
+
+  .footer-content-wrapper {
+    padding: 20px 20px;
+    /**/ }
+
+  .align-content-left {
+    width: 85%;
+    /**/ }
+
+  .footer-logo {
+    height: 30px;
+    /**/ }
+
+  .modal .modal-wrap .modal-dialog {
+    width: 65vw; } }
+@media only screen and (min-width: 800px) {
+  #theGreates {
+    top: 22vw;
+    /**/ }
+
+  #sponsors {
+    top: 36vw; }
+    #sponsors a {
+      height: 30px;
+      /**/ }
+
+  #rightSpeaker h2 {
+    text-align: right; }
+  #rightSpeaker h4 {
+    text-align: right; }
+
+  #leftSpeaker {
+    left: 1%;
+    /**/ }
+    #leftSpeaker h2 {
+      text-align: left; }
+    #leftSpeaker h4 {
+      text-align: left; }
+
+  .modal .modal-wrap .modal-dialog {
+    width: 50vw; } }
+@media only screen and (min-width: 980px) {
+  header {
+    height: 75vw; }
+
+  #mainMenu {
+    display: block; }
+
+  #mobileMenu {
+    display: none; }
+
+  #getTicketsNav {
+    display: block; }
+
+  #mobNavButton {
+    display: none; }
+
+  #sponsors {
+    top: 33vw; }
 
   #leftSpeaker {
     left: 1.5%;
     /**/
-    top: 100vw;
+    top: 12vw;
     /**/
     /**/ }
     #leftSpeaker h2 {
-      font-size: 5vw;
-      /**/
-      font-weight: bold;
+      text-align: center;
       /**/ }
     #leftSpeaker h4 {
-      font-size: 4vw;
-      /**/ }
-    #leftSpeaker h2 {
-      text-align: left;
-      /**/ }
-    #leftSpeaker h4 {
-      text-align: left;
+      text-align: center;
       /**/ }
 
   #rightSpeaker {
-    right: 4.5%;
+    right: 6%;
     /**/
-    top: 100vw;
+    top: 12vw;
     /**/
     /**/ }
     #rightSpeaker h2 {
-      font-size: 5vw;
-      /**/
-      font-weight: bold;
+      text-align: center;
       /**/ }
     #rightSpeaker h4 {
-      font-size: 4vw;
+      text-align: center;
       /**/ }
-    #rightSpeaker h2 {
-      text-align: right;
-      /**/ }
-    #rightSpeaker h4 {
-      text-align: right;
-      /**/ }
-
-  /* Styling the page content sections and elements in them */
-  /* Style first section "Future work" */
-  #futureWorkIcons {
-    display: none;
-    /**/ }
 
   #futureWorkParagraph {
-    max-width: 300px;
-    /**/ }
-
-  #futureWorkButtons {
-    padding-top: 20px;
-    /**/ }
-
-  /* Style second section "Mobile App" */
-  #mobileApp .section-content-wrapper {
-    display: inline-block;
-    /**/ }
-
-  #predictiveHire {
-    height: 10vw;
-    /**/
-    margin-right: 8vw;
-    /**/
-    margin-top: -8vw;
-    /**/ }
+    max-width: 800px; }
 
   #appDownloadText {
-    margin-top: 40px;
-    max-width: 300px; }
+    max-width: 800px; }
 
-  #appDownloadButtons {
-    margin-top: 15px;
-    /**/ }
-
-  #tutorials {
-    float: none;
-    /**/
-    margin-top: 30px;
-    /**/ }
-
-  #tutorialButton {
-    margin-top: 30px;
-    /**/ }
-
-  .accent-button-alt-text-hover {
-    height: 30px;
-    /**/
-    line-height: 30px;
-    /**/ }
-
-  .alt-button-accent-text-hover {
-    height: 30px;
-    /**/
-    line-height: 30px;
-    /**/ }
-
-  .alt-button-basic-text-hover {
-    height: 30px;
-    /**/
-    line-height: 30px;
-    /**/ }
-
-  .header-content-wrapper {
-    width: 100%;
-    height: inherit;
-    padding-top: 70px; }
-
-  .section-content-wrapper {
-    padding: 20px 10px;
-    /**/ }
-
-  .footer-content-wrapper {
-    padding: 20px 10px;
-    /**/ }
-
-  .section-left-content {
-    width: 100%;
-    /**/
-    display: inline-block;
-    /**/ }
-
-  .section-right-content {
-    width: 100%;
-    /**/
-    display: inline-block;
-    /**/ }
-
-  .align-content-right {
-    width: 100%;
-    /**/
-    padding-right: 0px;
-    /**/
-    float: none;
-    /**/ }
+  #predictiveHire {
+    height: 6vw;
+    margin-right: 30vw;
+    margin-top: -4vw; }
 
   .align-content-left {
-    width: 100%;
-    /**/
-    padding-left: 0px;
-    /**/
-    float: none;
-    /**/ }
+    width: 65%; }
 
-  .footer-logo {
-    height: 25px;
-    /**/ }
+  .modal .modal-wrap .modal-dialog {
+    width: 45vw; }
 
-  /* Define specific elements */
   #scrollToTop {
-    height: 40px;
-    /**/
-    width: 40px;
-    /**/
-    line-height: 40px;
-    /**/ } }
+    height: 50px;
+    width: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    line-height: 50px; } }
+@media screen and (min-width: 1280px) {
+  header {
+    height: 60vw;
+    background: url(../img/header/background-hd.jpg) center top no-repeat;
+    background-size: cover; } }
 @media only screen and (min-width: 1366px) {
   /* Layout of the text on the speakers */
   /* "Future work" section buttons layout */
@@ -1431,8 +1505,8 @@ footer {
     display: flex; }
 
   #futureWorkIcons {
-    padding-top: 40px;
-    padding-bottom: 60px; }
+    margin-top: 40px;
+    margin-bottom: 60px; }
     #futureWorkIcons .animated-icons {
       display: inline-block; }
       #futureWorkIcons .animated-icons i {
@@ -1497,7 +1571,6 @@ footer {
       margin: 5px 10px; }
 
   #tutorials {
-    float: none;
     margin: auto;
     vertical-align: middle; }
 
