@@ -192,6 +192,7 @@ function changeParagraph() {
 
 /////////////////////////////////////////////
 /* Call funtions on specific events START */
+///////////////////////////////////////////
 $(document).ready(hoverIcons);
 $(document).on('click', 'a[href^="#"].menuElement', function(e) { scrollPage(e, this); });
 $(window).on('scroll', showScrollButton);
