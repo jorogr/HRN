@@ -37,9 +37,6 @@ header {
   -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
   -o-transition: height 1s ease-in-out, down 1.5s ease-in-out;
   transition: height 1s ease-in-out, down 1.5s ease-in-out;
-  height: 52vw;
-  background: url(../img/header/background-uhd.jpg) center top no-repeat;
-  background-size: cover;
   color: #fff;
   overflow: hidden;
   /* Styling the sticky navbar */ }
@@ -118,27 +115,20 @@ header {
 /* Styling texts and images on the cover */
 #theGreates {
   position: relative;
-  top: 8vw;
   display: inline-block; }
   #theGreates span {
     font-family: Playfair Display;
     color: #fff;
     text-align: left !important; }
   #theGreates #the {
-    font-size: 32px;
-    padding-left: 60px;
     line-height: 2.5; }
   #theGreates #gratest {
-    font-size: 86px;
     line-height: 0; }
   #theGreates #shows {
-    font-size: 32px;
-    padding-left: 60px;
     line-height: 4; }
 
 #unleash {
-  position: relative;
-  top: 15vw; }
+  position: relative; }
   #unleash button {
     display: inline-block;
     margin: 5px; }
@@ -146,18 +136,15 @@ header {
     color: #fff; }
 
 #sponsors {
-  position: relative;
-  top: 16vw; }
+  position: relative; }
   #sponsors a {
     height: 30px;
     margin: 0px 10px 20px 10px;
     display: inline-block; }
 
 #leftSpeaker {
-  left: 1.5%;
   text-shadow: 2px 2px 3px black;
-  position: absolute;
-  top: 93%; }
+  position: absolute; }
   #leftSpeaker h2 {
     color: #fff;
     font-weight: bolder;
@@ -170,10 +157,8 @@ header {
     text-transform: none; }
 
 #rightSpeaker {
-  right: 4.5%;
   text-shadow: 2px 2px 3px black;
-  position: absolute;
-  top: 93%; }
+  position: absolute; }
   #rightSpeaker h2 {
     color: #fff;
     font-weight: bolder;
@@ -227,9 +212,9 @@ header {
       #futureWorkIcons .animated-icons.hover i.icon-star {
         color: #e41a52 !important; }
 
-#futureWorkParagraph {
+#futureWorkParagraphs {
   margin: 0 auto;
-  max-width: 860px; }
+  min-height: 100px; }
 
 #futureWorkButtons {
   padding-top: 40px; }
@@ -268,15 +253,11 @@ header {
   margin: auto; }
 
 #predictiveHire {
-  height: 3vw;
   float: right;
-  position: relative;
-  margin-right: 27%;
-  margin-top: -5%; }
+  position: relative; }
 
 #appDownloadText {
-  margin-top: 40px;
-  max-width: 560px; }
+  margin-top: 50px; }
 
 #appDownloadButtons {
   margin-top: 20px; }
@@ -289,6 +270,10 @@ header {
   float: none;
   margin: auto;
   vertical-align: middle; }
+
+#tutorialImg {
+  width: 100%;
+  height: 100%; }
 
 #tutorialButton {
   vertical-align: middle;
@@ -308,14 +293,46 @@ footer {
     margin-right: 5px; }
 
 /* Define global classes */
+.visible {
+  display: block; }
+
+.invisible {
+  display: none; }
+
+.paragraph {
+  width: 100%; }
+
 .text-basic {
   color: #010101 !important; }
 
 .text-alt {
   color: #fff !important; }
 
+.text-alt-accent-hover {
+  color: #fff !important; }
+  .text-alt-accent-hover:hover {
+    color: #99cc00 !important; }
+
 .text-accent {
   color: #99cc00 !important; }
+
+.text-eye {
+  color: #57b1b8 !important; }
+
+.text-gear {
+  color: #bb6e3d !important; }
+
+.text-home {
+  color: #99cc00 !important; }
+
+.text-power {
+  color: #ee2a7b !important; }
+
+.text-refresh {
+  color: #809453 !important; }
+
+.text-star {
+  color: #e41a52 !important; }
 
 .text-shadow {
   text-shadow: 0px 1px 10px black; }
@@ -448,6 +465,12 @@ footer {
 .footer-logo {
   height: 30px; }
 
+.accept-terms-wrap {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+  .accept-terms-wrap input[type="checkbox"] {
+    margin-right: 5px; }
+
 /* Modals */
 .modal {
   display: none;
@@ -488,20 +511,22 @@ footer {
           color: #999; }
       .modal .modal-wrap .modal-dialog .modal-content {
         width: 100%;
-        padding: 2vw; }
+        padding: 5px; }
         .modal .modal-wrap .modal-dialog .modal-content .modal-content-title {
           color: #99cc00; }
     .modal .modal-wrap .modal-video-container {
       height: 100vh;
       width: 100vw; }
       .modal .modal-wrap .modal-video-container .modal-video-close {
-        font-size: 4vw;
+        font-size: 20px;
         color: #fff;
         position: absolute;
-        left: 2vw;
-        top: 2vw; }
+        right: 20px;
+        top: 35px;
+        opacity: 0.9; }
         .modal .modal-wrap .modal-video-container .modal-video-close:hover {
-          cursor: pointer; }
+          cursor: pointer;
+          opacity: 1; }
       .modal .modal-wrap .modal-video-container iframe {
         height: inherit;
         width: 100%; }
@@ -871,15 +896,11 @@ footer {
   /* Styling the header */
   header {
     height: 195vw;
-    /**/
     background: url(../img/header/background-phone.jpg) center top no-repeat;
-    /**/
     background-size: cover;
-    /**/
     /* Styling the sticky navbar */ }
     header nav {
-      text-align: left;
-      /**/ }
+      text-align: left; }
 
   /* Styling main menu */
   #mainMenu {
@@ -900,343 +921,262 @@ footer {
 
   /* Styling texts and images on the cover */
   #theGreates {
-    top: 4vw;
-    /**/ }
+    top: 4vw; }
     #theGreates #the {
       font-size: 4vw;
-      /**/
-      padding-left: 8vw;
-      /**/ }
+      padding-left: 8vw; }
     #theGreates #gratest {
-      font-size: 10vw;
-      /**/ }
+      font-size: 10vw; }
     #theGreates #shows {
       font-size: 4vw;
-      /**/
       padding-left: 8vw;
-      /**/
-      line-height: 3.5;
-      /**/ }
+      line-height: 3.5; }
 
   #unleash {
-    top: 78vw;
-    /**/ }
+    top: 78vw; }
 
   #sponsors {
-    top: 88vw;
-    /**/ }
+    top: 88vw; }
     #sponsors a {
       height: 25px;
-      /**/
-      margin: 0px 5px 10px 5px;
-      /**/ }
+      margin: 0px 5px 10px 5px; }
 
   #leftSpeaker {
     left: 1.5%;
-    /**/
-    top: 100vw;
-    /**/
-    /**/ }
+    top: 100vw; }
     #leftSpeaker h2 {
-      font-weight: bold;
-      /**/ }
+      font-weight: bold; }
     #leftSpeaker h2 {
-      text-align: left;
-      /**/ }
+      text-align: left; }
     #leftSpeaker h4 {
-      text-align: left;
-      /**/ }
+      text-align: left; }
 
   #rightSpeaker {
     right: 4.5%;
-    /**/
-    top: 100vw;
-    /**/
-    /**/ }
+    top: 100vw; }
     #rightSpeaker h2 {
-      font-weight: bold;
-      /**/ }
+      font-weight: bold; }
     #rightSpeaker h2 {
-      text-align: right;
-      /**/ }
+      text-align: right; }
     #rightSpeaker h4 {
-      text-align: right;
-      /**/ }
+      text-align: right; }
 
   /* Styling the page content sections and elements in them */
   /* Style first section "Future work" */
   #futureWorkIcons {
-    display: none;
-    /**/ }
+    display: none; }
 
-  #futureWorkParagraph {
-    max-width: 300px;
-    /**/ }
+  #futureWorkParagraphs {
+    max-width: 300px; }
 
   #futureWorkButtons {
-    padding-top: 20px;
-    /**/ }
+    padding-top: 20px; }
 
   /* Style second section "Mobile App" */
   #mobileApp .section-content-wrapper {
-    display: inline-block;
-    /**/ }
+    display: inline-block; }
 
   #predictiveHire {
     height: 10vw;
-    /**/
     margin-right: 10vw;
-    /**/
-    margin-top: -8vw;
-    /**/ }
+    margin-top: -8vw; }
 
   #appDownloadText {
     margin-top: 40px;
     max-width: 300px; }
 
   #appDownloadButtons {
-    margin-top: 15px;
-    /**/ }
+    margin-top: 15px; }
 
   #tutorials {
-    margin-top: 30px;
-    /**/ }
+    margin-top: 30px; }
 
   #tutorialButton {
-    margin-top: 30px;
-    /**/ }
+    margin-top: 30px; }
 
   .accent-button-alt-text-hover {
     height: 30px;
-    /**/
     line-height: 30px;
-    /**/ }
+    margin-top: 5px; }
+
+  .accent-button-alt-text {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px; }
 
   .alt-button-accent-text-hover {
     height: 30px;
-    /**/
     line-height: 30px;
-    /**/ }
+    margin-top: 5px; }
 
   .alt-button-basic-text-hover {
     height: 30px;
-    /**/
     line-height: 30px;
-    /**/ }
+    margin-top: 5px; }
 
   .section-content-wrapper {
-    padding: 20px 10px;
-    /**/ }
+    padding: 20px 10px; }
 
   .footer-content-wrapper {
-    padding: 20px 10px;
-    /**/ }
+    padding: 20px 10px; }
 
   .section-left-content {
     width: 100%;
-    /**/
-    display: inline-block;
-    /**/ }
+    display: inline-block; }
 
   .section-right-content {
     width: 100%;
-    /**/
-    display: inline-block;
-    /**/ }
+    display: inline-block; }
 
   .align-content-right {
     width: 100%;
-    /**/
     padding-right: 0px;
-    /**/
-    float: none;
-    /**/ }
+    float: none; }
 
   .align-content-left {
     width: 100%;
-    /**/
     padding-left: 0px;
-    /**/
-    float: none;
-    /**/ }
+    float: none; }
 
   .footer-logo {
-    height: 25px;
-    /**/ }
+    height: 25px; }
 
   /* Modals */
   .modal .modal-wrap .modal-dialog {
     width: 90vw;
-    /**/ }
+    height: 90%; }
     .modal .modal-wrap .modal-dialog .modal-close {
       top: 2vw;
-      /**/
-      right: 2vw;
-      /**/ }
+      right: 2vw; }
       .modal .modal-wrap .modal-dialog .modal-close i {
-        font-size: 12px;
-        /**/ }
+        font-size: 12px; }
     .modal .modal-wrap .modal-dialog .modal-content {
-      padding: 6vw;
-      /**/ }
-  .modal .modal-wrap .modal-video-container modal-video-close {
-    font-size: 4vw;
-    left: 2vw;
-    top: 2vw; }
+      padding: 10px; }
+      .modal .modal-wrap .modal-dialog .modal-content .modal-content-text {
+        width: 95%; }
+  .modal .modal-wrap .modal-video-container .modal-video-close {
+    right: 20px;
+    top: 35px; }
 
   /* Define specific elements */
   #scrollToTop {
     height: 40px;
-    /**/
     width: 40px;
-    /**/
-    line-height: 40px;
-    /**/ } }
+    line-height: 40px; } }
 @media only screen and (min-width: 360px) {
   header {
-    height: 175vw;
-    /**/ }
+    height: 175vw; }
 
   #unleash {
-    top: 73vw;
-    /**/ }
+    top: 68vw; }
 
   #sponsors {
-    top: 85vw;
-    /**/ }
+    top: 78vw; }
 
   #leftSpeaker {
     top: 90vw;
-    /**/
-    /**/ }
+    left: 3.5%; }
 
   #rightSpeaker {
-    top: 90vw;
-    /**/
-    /**/ }
+    top: 90vw; }
 
   #predictiveHire {
-    margin-right: 13vw;
-    /**/ } }
+    margin-right: 13vw; }
+
+  #appDownloadText {
+    margin-top: 40px;
+    max-width: 320px; } }
 @media only screen and (min-width: 480px) {
   header {
-    height: 160vw;
-    /**/ }
+    height: 160vw; }
 
   #sponsors a {
     height: 30px;
-    /**/
-    margin: 0px 5px 10px 5px;
-    /**/ }
+    margin: 0px 5px 10px 5px; }
 
   #futureWorkIcons {
     display: block;
-    /**/
     margin-top: 60px;
-    /**/
-    margin-bottom: 50px;
-    /**/ }
+    margin-bottom: 50px; }
 
-  #futureWorkParagraph {
-    max-width: 400px;
-    /**/ }
+  #futureWorkParagraphs {
+    max-width: 400px; }
 
   #appDownloadText {
-    max-width: 400px;
-    /**/ }
+    max-width: 400px; }
 
   #align-content-left {
-    width: 90%;
-    /**/ }
+    width: 90%; }
 
   #predictiveHire {
     margin-top: -6vw;
-    /**/
-    margin-right: 16vw;
-    /**/ } }
+    margin-right: 16vw; }
+
+  .align-content-right {
+    width: 90%; }
+
+  .align-content-left {
+    width: 90%; }
+
+  .modal .modal-wrap .modal-dialog {
+    width: 65vw;
+    height: 90%; } }
 @media only screen and (min-width: 640px) {
   /* Layout of the text on the speakers */
   /* Styling the header */
   header {
     height: 85vw;
-    /**/
     background: url(../img/header/background-tablet.jpg) center top no-repeat;
-    /**/
-    background-size: cover;
-    /**/ }
+    background-size: cover; }
 
   /* Styling texts and images on the cover */
   #theGreates {
-    top: 15vw;
-    /**/ }
+    top: 15vw; }
     #theGreates #the {
       font-size: 3vw;
-      /**/
-      padding-left: 6vw;
-      /**/ }
+      padding-left: 6vw; }
     #theGreates #gratest {
-      font-size: 8vw;
-      /**/ }
+      font-size: 8vw; }
     #theGreates #shows {
       font-size: 3vw;
-      /**/
-      padding-left: 6vw;
-      /**/ }
+      padding-left: 6vw; }
 
   #unleash {
-    top: 30vw;
-    /**/ }
+    top: 30vw; }
 
   #sponsors {
-    top: 34vw;
-    /**/ }
+    top: 34vw; }
     #sponsors a {
-      height: 25px;
-      /**/ }
+      height: 25px; }
 
   #leftSpeaker {
     left: 2%;
-    /**/
-    top: 13vw;
-    /**/
-    /**/ }
+    top: 13vw; }
     #leftSpeaker h2 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
     #leftSpeaker h4 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
 
   #rightSpeaker {
     right: 2%;
-    /**/
-    top: 13vw;
-    /**/
-    /**/ }
+    top: 13vw; }
     #rightSpeaker h2 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
     #rightSpeaker h4 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
 
   #futureWorkIcons {
     display: block;
-    /**/
     margin-top: 40px;
     margin-bottom: 40px; }
 
-  #futureWorkParagraph {
-    max-width: 560px;
-    /**/ }
+  #futureWorkParagraphs {
+    max-width: 560px; }
 
   #predictiveHire {
     height: 8vw;
-    /**/
-    margin-right: 24vw;
-    /**/
-    margin-top: -5vw;
-    /**/ }
+    margin-right: 20vw;
+    margin-top: -5vw; }
 
   #appDownloadText {
     margin-top: 50px;
@@ -1244,66 +1184,58 @@ footer {
 
   .accent-button-alt-text-hover {
     height: 40px;
-    /**/
-    line-height: 40px;
-    /**/ }
+    line-height: 40px; }
 
   .alt-button-accent-text-hover {
     height: 40px;
-    /**/
-    line-height: 40px;
-    /**/ }
+    line-height: 40px; }
 
   .alt-button-basic-text-hover {
     height: 40px;
-    /**/
-    line-height: 40px;
-    /**/ }
+    line-height: 40px; }
 
   .section-content-wrapper {
-    padding: 40px 20px;
-    /**/ }
+    padding: 40px 20px; }
 
   .footer-content-wrapper {
-    padding: 20px 20px;
-    /**/ }
+    padding: 20px 20px; }
 
   .align-content-left {
-    width: 85%;
-    /**/ }
+    width: 85%; }
 
   .footer-logo {
-    height: 30px;
-    /**/ }
+    height: 30px; }
 
   .modal .modal-wrap .modal-dialog {
-    width: 65vw; } }
+    width: 65vw;
+    height: 90%; }
+    .modal .modal-wrap .modal-dialog .modal-content .modal-content-text {
+      width: 85%; }
+  .modal .modal-wrap .modal-video-container .modal-video-close {
+    right: 50px;
+    top: 15px; } }
 @media only screen and (min-width: 800px) {
-  #theGreates {
-    top: 22vw;
-    /**/ }
-
   #sponsors {
     top: 36vw; }
     #sponsors a {
-      height: 30px;
-      /**/ }
+      height: 30px; }
 
   #rightSpeaker h2 {
-    text-align: right; }
+    text-align: center; }
   #rightSpeaker h4 {
-    text-align: right; }
+    text-align: center; }
 
   #leftSpeaker {
-    left: 1%;
-    /**/ }
+    left: 1%; }
     #leftSpeaker h2 {
-      text-align: left; }
+      text-align: center; }
     #leftSpeaker h4 {
-      text-align: left; }
+      text-align: center; }
 
   .modal .modal-wrap .modal-dialog {
-    width: 50vw; } }
+    width: 50vw; }
+  .modal .modal-wrap .modal-content {
+    padding: 15px; } }
 @media only screen and (min-width: 980px) {
   header {
     height: 75vw; }
@@ -1325,31 +1257,21 @@ footer {
 
   #leftSpeaker {
     left: 1.5%;
-    /**/
-    top: 12vw;
-    /**/
-    /**/ }
+    top: 12vw; }
     #leftSpeaker h2 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
     #leftSpeaker h4 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
 
   #rightSpeaker {
     right: 6%;
-    /**/
-    top: 12vw;
-    /**/
-    /**/ }
+    top: 12vw; }
     #rightSpeaker h2 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
     #rightSpeaker h4 {
-      text-align: center;
-      /**/ }
+      text-align: center; }
 
-  #futureWorkParagraph {
+  #futureWorkParagraphs {
     max-width: 800px; }
 
   #appDownloadText {
@@ -1357,11 +1279,11 @@ footer {
 
   #predictiveHire {
     height: 6vw;
-    margin-right: 30vw;
+    margin-right: 26vw;
     margin-top: -4vw; }
 
   .align-content-left {
-    width: 65%; }
+    width: 90%; }
 
   .modal .modal-wrap .modal-dialog {
     width: 45vw; }
@@ -1377,253 +1299,36 @@ footer {
   header {
     height: 60vw;
     background: url(../img/header/background-hd.jpg) center top no-repeat;
-    background-size: cover; } }
-@media only screen and (min-width: 1366px) {
-  /* Layout of the text on the speakers */
-  /* "Future work" section buttons layout */
-  /* Mixin used in global classes */
-  /* Define @mixin for specific elements */
-  /* Styling the header */
-  header {
-    height: 52vw;
-    background: url(../img/header/background-uhd.jpg) center top no-repeat;
-    background-size: cover;
-    /* Styling the sticky navbar */ }
-    header nav {
-      width: 100%;
-      height: 75px;
-      position: fixed;
-      top: 0;
-      vertical-align: middle;
-      z-index: 100; }
+    background-size: cover; }
 
-  /* Styling logo and elements in it */
-  #siteLogo {
-    padding-top: 17.5px;
-    padding-left: 17.5px;
-    position: absolute;
-    height: 40px; }
-
-  /* Styling main menu */
-  #mainMenu {
-    width: 100%;
-    top: 29.5px;
-    position: relative;
-    display: inline-block; }
-    #mainMenu li {
-      display: inline-block;
-      padding-left: 15px;
-      padding-right: 15px; }
-      #mainMenu li a {
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 16px; }
-
-  /* Styling "GET TICKETS" button in header */
-  #getTicketsNav {
-    right: 20px;
-    position: absolute;
-    display: block; }
-
-  /* Mobile Navigation */
-  #mobNavButton {
-    display: none;
-    right: 20px;
-    position: absolute;
-    font-weight: 400;
-    font-size: 32px; }
-
-  /* "GET TICKETS" button in mobile navigation */
-  #getTicketsMobNav {
-    height: 30px;
-    line-height: 30px; }
-
-  /* Styling texts and images on the cover */
   #theGreates {
-    position: relative;
-    top: 8vw;
-    display: inline-block; }
-    #theGreates #the {
-      font-size: 32px;
-      padding-left: 60px;
-      line-height: 2.5; }
-    #theGreates #gratest {
-      font-size: 86px;
-      line-height: 0; }
-    #theGreates #shows {
-      font-size: 32px;
-      padding-left: 60px;
-      line-height: 4; }
-
-  #unleash {
-    position: relative;
-    top: 15vw; }
-    #unleash button {
-      display: inline-block;
-      margin: 5px; }
-
-  #sponsors {
-    position: relative;
-    top: 16vw; }
-    #sponsors a {
-      height: 30px;
-      margin: 0px 10px 20px 10px;
-      display: inline-block; }
+    top: 5vw; }
 
   #leftSpeaker {
-    left: 1.5%;
-    text-shadow: 2px 2px 3px black;
-    position: absolute;
-    top: 93%; }
-    #leftSpeaker h2 {
-      font-size: 26px;
-      font-weight: bolder;
-      text-align: center; }
-    #leftSpeaker h4 {
-      font-size: 18px;
-      font-weight: 200;
-      text-align: center; }
+    left: 1%;
+    top: 48vw; }
 
   #rightSpeaker {
-    right: 4.5%;
-    text-shadow: 2px 2px 3px black;
-    position: absolute;
-    top: 93%; }
-    #rightSpeaker h2 {
-      font-size: 26px;
-      font-weight: bolder;
-      text-align: center; }
-    #rightSpeaker h4 {
-      font-size: 18px;
-      font-weight: 200;
-      text-align: center; }
+    right: 5%;
+    top: 48vw; }
 
-  /* Styling the page content sections and elements in them */
-  /* Style first section "Future work" */
-  #futureWork {
-    width: 100%;
-    display: flex; }
+  #unleash {
+    top: 20.5vw; }
 
-  #futureWorkIcons {
-    margin-top: 40px;
-    margin-bottom: 60px; }
-    #futureWorkIcons .animated-icons {
-      display: inline-block; }
-      #futureWorkIcons .animated-icons i {
-        font-size: 30px;
-        margin-left: 20px;
-        margin-right: 20px; }
-        #futureWorkIcons .animated-icons i:hover {
-          -webkit-transform: scale(1.8, 1.8);
-          -moz-transform: scale(1.8, 1.8);
-          -o-transform: scale(1.8, 1.8);
-          transform: scale(1.8, 1.8); }
-      #futureWorkIcons .animated-icons.hover i {
-        -webkit-transform: scale(1.8, 1.8);
-        -moz-transform: scale(1.8, 1.8);
-        -o-transform: scale(1.8, 1.8);
-        transform: scale(1.8, 1.8); }
+  #sponsors {
+    top: 23vw; }
+    #sponsors a {
+      margin: 0px 10px 15px 10px; }
 
-  #futureWorkParagraph {
-    margin: 0 auto;
-    max-width: 860px; }
+  #predictiveHire {
+    margin-right: 9vw;
+    height: 4vw;
+    margin-top: -3vw; }
 
-  #futureWorkButtons {
-    padding-top: 40px; }
-
-  #joinCommunity {
-    margin: 5px 10px;
-    font-size: 14px;
-    display: inline-block; }
-
-  #watchTrailer {
-    margin: 5px 10px;
-    font-size: 14px;
-    display: inline-block; }
-
-  /* Style second section "Mobile App" */
   #mobileApp {
-    width: 100%;
     display: flex; }
     #mobileApp .section-content-wrapper {
       display: table; }
-
-  #appDownloadImg {
-    display: initial;
-    margin: auto; }
-
-  #predictiveHire {
-    height: 3vw;
-    float: right;
-    position: relative;
-    margin-right: 27%;
-    margin-top: -5%; }
-
-  #appDownloadText {
-    margin-top: 40px;
-    max-width: 560px; }
-
-  #appDownloadButtons {
-    margin-top: 20px; }
-    #appDownloadButtons a {
-      height: 40px;
-      display: inline-block;
-      margin: 5px 10px; }
-
-  #tutorials {
-    margin: auto;
-    vertical-align: middle; }
-
-  #tutorialButton {
-    vertical-align: middle;
-    margin-top: 40px; }
-
-  /* Styling the page footer */
-  footer {
-    width: 100%;
-    background: #010101; }
-
-  #footerSocialIcons {
-    margin: 30px 0px 10px 0px;
-    height: 18px; }
-    #footerSocialIcons i {
-      font-size: 18px;
-      margin-left: 5px;
-      margin-right: 5px; }
-
-  .accent-button-alt-text-hover {
-    height: 40px;
-    width: 200px;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 40px; }
-
-  .alt-button-accent-text-hover {
-    height: 40px;
-    width: 200px;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 40px; }
-
-  .alt-button-basic-text-hover {
-    height: 40px;
-    width: 200px;
-    font-size: 16px;
-    font-weight: 200;
-    line-height: 40px; }
-
-  .header-content-wrapper {
-    width: 100%;
-    height: inherit;
-    padding-top: 70px; }
-
-  .section-content-wrapper {
-    width: 100%;
-    padding: 40px 20px; }
-
-  .footer-content-wrapper {
-    width: 100%;
-    padding: 20px 20px; }
 
   .section-left-content {
     width: 50%;
@@ -1642,78 +1347,275 @@ footer {
 
   .align-content-right {
     width: 90%;
-    padding-right: 10px;
     float: right; }
 
   .align-content-left {
     width: 90%;
-    padding-left: 10px;
     float: left; }
 
-  .reset-margin {
-    margin: 0; }
+  .modal .modal-wrap .modal-dialog {
+    height: 41vw; }
+    .modal .modal-wrap .modal-dialog .modal-content {
+      padding: 20px; }
+      .modal .modal-wrap .modal-dialog .modal-content h2 {
+        font-size: 28px; } }
+@media only screen and (min-width: 1366px) {
+  header {
+    height: 52vw;
+    background: url(../img/header/background-uhd.jpg) center top no-repeat;
+    background-size: cover; }
+
+  #unleash {
+    top: 15vw; }
+
+  #sponsors {
+    top: 17vw; }
+
+  #leftSpeaker {
+    top: 43vw; }
+
+  #rightSpeaker {
+    top: 43vw; }
+
+  #appDownloadText {
+    max-width: 1000px; }
+
+  .modal .modal-wrap .modal-dialog {
+    height: 33vw; }
+    .modal .modal-wrap .modal-dialog .modal-content {
+      padding: 30px; }
+      .modal .modal-wrap .modal-dialog .modal-content h2 {
+        font-size: 28px; } }
+@media only screen and (min-width: 1600px) {
+  #unleash {
+    top: 12vw; }
+
+  #sponsors {
+    top: 15.3vw; }
+
+  #predictiveHire {
+    margin-right: 10vw;
+    margin-top: -2vw; } }
+@media only screen and (min-width: 1920px) {
+  header nav {
+    height: 3.90625vw; }
+
+  #siteLogo {
+    padding-top: 0.91145vw;
+    padding-left: 0.91145vw;
+    height: 2.08333vw;
+    /* 40px */ }
+
+  #mainMenu {
+    top: 1.5364vw; }
+    #mainMenu li {
+      padding-left: 0.78125vw;
+      /* 15px */
+      padding-right: 0.78125vw;
+      /* 15px */ }
+      #mainMenu li a {
+        font-size: 0.9375vw;
+        /* 18px */
+        line-height: 0.83333vw;
+        /* 16px */ }
+
+  #getTicketsNav {
+    right: 1.04166vw;
+    /* 20px */ }
+
+  #sponsors {
+    top: 18.8vw; }
+    #sponsors a {
+      height: 2.08333vw;
+      /* 40px */
+      margin: 0vw 0.52093vw 1.04166vw 0.52093vw;
+      /* 10px and 20px */ }
+
+  #leftSpeaker {
+    left: 2.5vw; }
+
+  #rightSpeaker {
+    right: 8vw; }
+
+  #futureWorkParagraphs {
+    max-width: 52.08333vw;
+    /* 1000px */ }
+
+  #futureWorkIcons {
+    margin-top: 2.08333vw;
+    /* 40px */
+    margin-bottom: 3.125vw;
+    /* 60px */ }
+    #futureWorkIcons .animated-icons i {
+      font-size: 1.5625vw;
+      /* 30px */
+      margin-left: 1.04166vw;
+      /* 20px */
+      margin-right: 1.04166vw;
+      /* 20px */ }
+
+  #futureWorkParagraphs {
+    margin: 0 auto;
+    min-height: 100px; }
+
+  #futureWorkButtons {
+    padding-top: 40px; }
+
+  #joinCommunity {
+    margin: 0.26vw 0.52vw;
+    font-size: 0.72916vw;
+    /* 14px */ }
+
+  #watchTrailer {
+    margin: 0.26vw 0.52vw;
+    font-size: 0.72916vw;
+    /* 14px */ }
+
+  #predictiveHire {
+    height: 3vw;
+    right: 3vw; }
+
+  #appDownloadText {
+    max-width: 31.25vw;
+    /* 600px */ }
+
+  #appDownloadText {
+    margin-top: 3.125vw;
+    /* 60px */ }
+
+  #appDownloadButtons {
+    margin-top: 1.04166vw;
+    /* 20px */ }
+    #appDownloadButtons a {
+      height: 3.125vw;
+      /* 60px */
+      margin: 0.52093vw 1.04166vw;
+      /* 10px 20px */ }
+
+  #footerSocialIcons {
+    margin: 1.5625vw 0vw 0.52093vw 0vw;
+    /* 30px 10px */
+    height: 0.9375vw;
+    /* 18px */ }
+    #footerSocialIcons i {
+      font-size: 0.9375vw;
+      /* 18px */
+      margin-left: 0.26vw;
+      /* 5px */
+      margin-right: 0.26vw;
+      /* 5px */ }
+
+  .accent-button-alt-text {
+    height: 2.08333vw;
+    /* 40px */
+    width: 10.41666vw;
+    /* 200px */
+    font-size: 0.83333vw;
+    /* 16px */
+    line-height: 2.08333vw;
+    /* 40px */ }
+
+  .accent-button-alt-text-hover {
+    height: 2.08333vw;
+    /* 40px */
+    width: 10.41666vw;
+    /* 200px */
+    font-size: 0.83333vw;
+    /* 16px */
+    line-height: 2.08333vw;
+    /* 40px */ }
+
+  .alt-button-accent-text-hover {
+    height: 2.08333vw;
+    /* 40px */
+    width: 10.41666vw;
+    /* 200px */
+    font-size: 0.83333vw;
+    /* 16px */
+    line-height: 2.08333vw;
+    /* 40px */ }
+
+  .alt-button-basic-text-hover {
+    height: 2.08333vw;
+    /* 40px */
+    width: 10.41666vw;
+    /* 200px */
+    font-size: 0.83333vw;
+    /* 16px */
+    line-height: 2.08333vw;
+    /* 40px */ }
+
+  .section-content-wrapper {
+    padding: 2.08333vw 1.04166vw;
+    /* 40px 20px */ }
 
   .footer-logo {
-    height: 30px; }
+    height: 1.5625vw;
+    /* 30px */ }
 
-  /* Define icons */
-  .icon:before {
-    font-family: fico;
-    font-weight: normal !important;
-    font-style: normal !important;
-    text-transform: none !important;
-    vertical-align: baseline;
-    -webkit-font-smoothing: antialiased; }
-  .icon:hover {
-    -o-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -webkit-transition: 0.3s;
-    transition: 0.3s; }
+  .modal .modal-wrap .modal-dialog {
+    -webkit-border-radius: 0.15625px;
+    /* 3px */
+    -moz-border-radius: 0.15625px;
+    /* 3px */
+    border-radius: 0.15625px;
+    /* 3px */
+    width: 35vw;
+    height: 50%; }
+    .modal .modal-wrap .modal-dialog .modal-close {
+      top: 1vw;
+      right: 1vw; }
+    .modal .modal-wrap .modal-dialog .modal-content {
+      padding: 2.08333vw;
+      /* 40px */ }
+      .modal .modal-wrap .modal-dialog .modal-content h2 {
+        font-size: 1.458vw;
+        /* 28px */ }
+  .modal .modal-wrap .modal-video-container .modal-video-close {
+    font-size: 1.04166vw;
+    /* 20px */
+    right: 1.04166vw;
+    /* 20px */
+    top: 1.822vw;
+    /* 35px */ }
 
-  /* Define tooltips */
-  .tooltip {
-    position: relative;
-    display: inline-block; }
-    .tooltip:hover .tooltip-content {
-      visibility: visible; }
-    .tooltip .tooltip-content {
-      font-size: 12px;
-      visibility: hidden;
-      width: 120px;
-      text-align: center;
-      border-radius: 6px;
-      padding: 10px 0px;
-      position: absolute;
-      z-index: 1;
-      bottom: 200%;
-      left: 50%;
-      margin-left: -60px; }
-      .tooltip .tooltip-content::after {
-        content: " ";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -10px;
-        border-width: 10px;
-        border-style: solid;
-        border-color: #eee transparent transparent transparent; }
+  .tooltip .tooltip-content {
+    font-size: 0.72916vw;
+    /* 14px */
+    width: 6.25vw;
+    /* 120px */
+    border-radius: 0.3125vw;
+    /* 6px */
+    padding: 0.52093vw 0vw;
+    /* -10px */
+    bottom: 200%;
+    left: 50%;
+    margin-left: -3.125vw;
+    /* 60px */ }
+    .tooltip .tooltip-content::after {
+      margin-left: -0.52093vw;
+      /* -10px */
+      border-width: 0.52093vw;
+      /* 10px */ }
 
-  /* Define specific elements */
   #scrollToTop {
-    display: none;
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 20px;
-    line-height: 50px;
-    -webkit-border-radius: 3px;
-    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
-    -moz-border-radius: 3px;
-    /* Firefox 1-3.6 */
-    border-radius: 3px;
-    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */ } }
+    height: 2.6041vw;
+    /* 50px */
+    width: 2.6041vw;
+    /* 50px */
+    bottom: 1.04166vw;
+    /* 20px */
+    right: 1.04166vw;
+    /* 20px */
+    font-size: 1.04166vw;
+    /* 20px */
+    line-height: 2.6041vw;
+    /* 50px */
+    -webkit-border-radius: 0.15625px;
+    /* 3px */
+    -moz-border-radius: 0.15625px;
+    /* 3px */
+    border-radius: 0.15625px;
+    /* 3px */ } }
 
 /*# sourceMappingURL=site.css.map */

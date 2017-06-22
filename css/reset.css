@@ -13,12 +13,7 @@
   text-decoration: none;
   display: block;
   box-sizing: border-box;
-  border: none;
-  -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-  -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-  -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-  -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
-  transition: width 1s ease-in-out, left 1.5s ease-in-out; }
+  border: none; }
 
 /* Reset link properties */
 a {
@@ -84,60 +79,196 @@ small {
     font-size: 10px;
     margin-left: 2px;
     margin-right: 2px; }
+  small * {
+    font-size: 12px; }
+
+medium {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5; }
+
+span {
+  font-size: 14px;
+  font-weight: 300; }
+
+input {
+  color: #000;
+  background: #ccc;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px; }
+  input[type=number] {
+    -moz-appearance: textfield;
+    /* Mozilla */ }
+    input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+  input[type=checkbox] {
+    display: inline-block;
+    margin: auto; }
 
 @media only screen and (min-width: 320px) {
   h1 {
-    font-size: 6vw;
-    /**/ }
+    font-size: 20px; }
 
   h2 {
-    font-size: 5vw;
-    /**/ }
+    font-size: 16px; }
+
+  h3 {
+    font-size: 14px; }
 
   h4 {
-    font-size: 3.8vw;
-    /**/ } }
+    font-size: 12px; }
+
+  a {
+    font-size: 14px; }
+
+  p {
+    font-size: 14px; }
+
+  span {
+    font-size: 14px; }
+
+  small {
+    font-size: 12px; }
+    small * {
+      font-size: 12px; }
+
+  medium {
+    font-size: 14px; }
+
+  i {
+    font-size: 20px; }
+
+  input {
+    font-size: 14px;
+    height: 40px;
+    width: 100%; }
+    input[type=checkbox] {
+      height: 12px;
+      width: 12px; } }
 @media only screen and (min-width: 480px) {
   h1 {
-    font-size: 5vw;
-    /**/ }
+    font-size: 26px; }
 
   h2 {
-    font-size: 4vw;
-    /**/ }
+    font-size: 20px; }
+
+  h3 {
+    font-size: 18px; }
 
   h4 {
-    font-size: 3vw;
-    /**/ } }
-@media only screen and (min-width: 640px) {
-  h1 {
-    font-size: 4vw;
-    /**/ }
-
-  h2 {
-    font-size: 3.7vw;
-    /**/ }
-
-  h4 {
-    font-size: 2.7vw;
-    /**/ } }
+    font-size: 16px; } }
 @media only screen and (min-width: 800px) {
-  small {
-    font-size: 1.6vw; } }
+  h1 {
+    font-size: 32px; }
+
+  h2 {
+    font-size: 24px; }
+
+  h3 {
+    font-size: 20px; }
+
+  h4 {
+    font-size: 18px; } }
 @media only screen and (min-width: 980px) {
   h1 {
-    font-size: 3.3vw;
-    /**/ }
+    font-size: 36px; }
 
   h2 {
-    font-size: 3vw;
-    /**/ }
+    font-size: 26px; }
+
+  h3 {
+    font-size: 24px; }
 
   h4 {
-    font-size: 2vw;
-    /**/ }
+    font-size: 20px; } }
+@media only screen and (min-width: 1280px) {
+  h1 {
+    font-size: 40px; }
+
+  h2 {
+    font-size: 32px; }
+
+  h3 {
+    font-size: 24px; }
+
+  h4 {
+    font-size: 18px; }
+
+  a {
+    font-size: 16px; }
+
+  p {
+    font-size: 16px; }
+
+  span {
+    font-size: 16px; }
 
   small {
-    font-size: 1.4vw; } }
+    font-size: 14px; }
+    small * {
+      font-size: 14px; }
+
+  medium {
+    font-size: 16px; }
+
+  i {
+    font-size: 20px; }
+
+  input {
+    font-size: 16px;
+    height: 40px;
+    width: 100%; }
+    input[type=checkbox] {
+      height: 14px;
+      width: 14px; } }
+@media only screen and (min-width: 1920px) {
+  h1 {
+    font-size: 2.08333vw; }
+
+  h2 {
+    font-size: 1.66666vw; }
+
+  h3 {
+    font-size: 1.25vw; }
+
+  h4 {
+    font-size: 0.93750vw; }
+
+  a {
+    font-size: 0.83333vw; }
+
+  p {
+    font-size: 0.83333vw;
+    line-height: 1.5625vw;
+    /* 30px */ }
+    p br {
+      margin-top: 0.78125vw;
+      /* 15px */
+      content: " "; }
+
+  span {
+    font-size: 0.83333vw; }
+
+  small {
+    font-size: 0.72916vw; }
+    small * {
+      font-size: 0.72916vw; }
+
+  medium {
+    font-size: 0.83333vw; }
+
+  i {
+    font-size: 1.04166vw; }
+
+  input {
+    font-size: 0.83333vw;
+    height: 2.08333vw;
+    width: 100%; }
+    input[type=checkbox] {
+      height: 0.72916vw;
+      width: 0.72916vw; } }
 
 /*# sourceMappingURL=reset.css.map */
