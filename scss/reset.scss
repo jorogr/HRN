@@ -37,7 +37,7 @@ a {
 p {
     font-size: 14px;
     font-weight: 300;
-    line-height: 30px;
+    line-height: 20px;
     text-align: center;
     margin: auto;
     & br {
@@ -58,10 +58,10 @@ h2 {
     font-weight: bold;
 }
 h3 {
-    font-size: 18px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-weight: bold;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 h4 {
     font-size: 16px;
@@ -89,11 +89,6 @@ small {
     & * {
 	    font-size: 12px;
     }
-}
-medium {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.5;
 }
 span {
     font-size: 14px;
@@ -147,9 +142,6 @@ input {
 	& * {
 	    font-size: 12px;
 	}
-    }
-    medium {
-	font-size: 14px;
     }
     i {
 	font-size: 20px;
@@ -214,7 +206,7 @@ input {
 	font-size: 32px;
     }
     h3 {
-	font-size: 24px;
+	font-size: 16px;
     }
     h4 {
 	font-size: 18px;
@@ -224,6 +216,7 @@ input {
     }
     p {
 	font-size: 16px;
+	line-height: 30px;
     }
     span {
 	font-size: 16px;
@@ -233,9 +226,6 @@ input {
 	& * {
 	    font-size: 14px;
 	}
-    }
-    medium {
-	font-size: 16px;
     }
     i {
 	font-size: 20px;
@@ -258,7 +248,7 @@ input {
 	font-size: 1.66666vw;
     }
     h3 {
-	font-size: 1.25vw;
+	font-size: 0.83333vw;
     }
     h4 {
 	font-size: 0.93750vw;
@@ -282,9 +272,6 @@ input {
 	& * {
 	    font-size: 0.72916vw;
 	}
-    }
-    medium {
-	font-size: 0.83333vw;
     }
     i {
 	font-size: 1.04166vw;

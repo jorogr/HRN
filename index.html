@@ -1,21 +1,27 @@
-<!DOCTYPE HTML PUBLIC "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 	<title>London - HR Tech World</title>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Include Google Fonts -->
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet" type="text/css">
-	<link href="css/reset.css" rel="stylesheet" type="text/css"/>
-	<link href="css/site.css" rel="stylesheet" type="text/css"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+	<!-- Stylesheets START -->
+	<link href="css/reset.min.css" rel="stylesheet" type="text/css">
+	<link href="css/site.min.css" rel="stylesheet" type="text/css">
+	<!-- Stylesheets END -->
     </head>
     <body>
+	
 	<header>
 	    <nav>
 		<a id="siteLogo" href="#">
 		    <img src="img/header/logo.svg" alt="HRN Tech World">
 		</a>
+		
+		<!-- Desktop menu START -->
 		<ul id="mainMenu">
 		    <li>
 			<a href="#home" class="alt-text-accent-hover menuElement">Home</a>
@@ -30,6 +36,9 @@
 			<a href="#footer" class="alt-text-accent-hover menuElement">Contact</a>
 		    </li>
 		</ul>
+		<!-- Desktop menu END -->
+		
+		<!-- Mobile menu START -->
 		<ul id="mobileMenu">
 		    <li>
 			<a href="#home" class="alt-text-accent-hover menuElement mobile-menuElement">Home</a>
@@ -44,18 +53,21 @@
 			<a href="#footer" class="alt-text-accent-hover menuElement mobile-menuElement">Contact</a>
 		    </li>
 		    <li>
-			<button id="getTicketsMobNav" class="accent-button-alt-text-hover">
+			<a href="#get-tickets-page" class="accent-button-alt-text-hover text-alt-accent-hover">
 			    GET TICKETS
-			</button>
+			</a>
 		    </li>
 		</ul>
-		<button id="getTicketsNav" class="accent-button-alt-text-hover">
+		<!-- Mobile menu END -->
+		<a id="getTicketsNav" href="#get-tickets-page" class="accent-button-alt-text-hover">
 		    GET TICKETS
-		</button>
+		</a>
 		<div id="mobNavButton" class="mobile-menuElement closed-nav">
 		    <i id="mobNavIcon" class="icon icon-navigation"></i>
 		</div>
 	    </nav>
+	    
+	    <!-- Header inner content START -->
 	    <div class="header-content-wrapper">
 		<div id="theGreates">
 		    <span id="the" class="text-shadow">The</span>
@@ -67,25 +79,25 @@
 		    <button id="requestAgenda" class="alt-button-accent-text-hover modal-open">
 			REQUEST AGENDA
 		    </button>
-		    <button id="getTicketsHead" class="accent-button-alt-text-hover">
+		    <button id="getTicketsHead" class="accent-button-alt-text-hover modal-open">
 			GET TICKETS
 		    </button>
 		</div>
 		<div id="sponsors">
 		    <a href="https://www.avature.net/" target="_blank">
-			<img src="img/header/avature.svg">
+			<img src="img/header/avature.svg" alt="Avature">
 		    </a>
 		    <a href="https://www.benify.com/p/et-en/" target="_blank">
-			<img src="img/header/benify.svg">
+			<img src="img/header/benify.svg" alt="Benify">
 		    </a>
 		    <a href="http://www.cornerstoneondemand.co.uk/" target="_blank">
-			<img src="img/header/cornerstone.svg">
+			<img src="img/header/cornerstone.svg" alt="Corner Stone">
 		    </a>
 		    <a href="http://www.successfactors.com/en_us.html" target="_blank">
-			<img src="img/header/successfactors.svg">
+			<img src="img/header/successfactors.svg" alt="Success Factors">
 		    </a>
 		    <a href="http://www.workday.com/" target="_blank">
-			<img src="img/header/workday.svg">
+			<img src="img/header/workday.svg" alt="Work Day">
 		    </a>
 		</div>
 		<div id="leftSpeaker">
@@ -97,9 +109,14 @@
 		    <h2>Sir Ken Robinson</h2>
 		</div>
 	    </div>
+	    <!-- Header inner content END -->
 	</header>
+	
+	<!-- First section of contents START -->
 	<section id="futureWork">
 	    <div class="section-content-wrapper">
+		
+		<!-- Animated icons START -->
 		<div id="futureWorkIcons">
 		    <div id="futureWork-icon" class="animated-icons tooltip">
 			<span class="tooltip-content home-icon">Home</span>
@@ -126,6 +143,9 @@
 			<span class="tooltip-content star-icon">Product Demo</span>
 		    </div>
 		</div>
+		<!-- Animated icons END -->
+		
+		<!-- Paragraphs START -->
 		<div id="futureWorkParagraphs">
 		    <div id="futureWork-paragraph" class="paragraph visible">
 			<h1 class="text-accent">The Future of Work</h1>
@@ -197,6 +217,8 @@
 			</p>
 		    </div>
 		</div>
+		<!-- Paragraphs END -->
+		
 		<div id="futureWorkButtons">
 		    <button id="joinCommunity" class="accent-button-alt-text-hover modal-open">
 			JOIN OUR COMMUNITY
@@ -207,6 +229,9 @@
 		</div>
 	    </div>
 	</section>
+	<!-- First section of contents END -->
+	
+	<!-- Second section of contents START -->
 	<section id="mobileApp">
 	    <div class="section-content-wrapper">
 		<div class="section-left-content">
@@ -237,14 +262,16 @@
 			    <img src="img/home-page/mobile-app/tutorials.svg" alt="TUTORIALS">
 			</div>
 			<div id="tutorialButton">
-			    <button id="viewTutorials" class="alt-button-basic-text-hover">
+			    <a id="viewTutorials" href="#tutorials-page" class="alt-button-basic-text-hover">
 				VIEW TUTORIALS
-			    </button>
+			    </a>
 			</div>
 		    </div>
 		</div>
 	    </div>
 	</section>
+	<!-- Second section of contents END -->
+	
 	<footer id="footer">
 	    <div class="footer-content-wrapper">
 		<div class="footer-logo">
@@ -262,17 +289,19 @@
 		    <small class="text-alt"><i class="icon icon-mail"></i>info@hrtechcongress.com | 
 			<i class="icon icon-phone"></i> +44 20 34 689 689
 			<br>
-			<a class="text-alt-accent-hover" href="#" target="_blank">HR Tech World London</a> | 
-			<a class="text-alt-accent-hover" href="#" target="_blank">Terms & Conditions</a> | 
-			<a class="text-alt-accent-hover" href="#" target="_blank">Cookie Policy</a> | 
+			HR Tech World London | 
+			<a class="text-alt-accent-hover" href="#terms-page" target="_blank">Terms & Conditions</a> | 
+			<a class="text-alt-accent-hover" href="#cookie-policy-page" target="_blank">Cookie Policy</a> | 
 			Copyright © 2017 HRN. All Rights Reserved.
 		    </small>
 		</div>
 	    </div>
 	</footer>
+	
 	<!-- Scroller START -->
 	<div id="scrollToTop"><i class="icon icon-up"></i></div>
 	<!-- Scroller END -->
+	
 	<!-- Modals START -->
 	<div id="requestAgenda-modal" class="modal">
 	    <div class="modal-wrap">
@@ -281,7 +310,7 @@
 		    <div class="modal-content">
 			<h2 class="modal-content-title">REQUEST AGENDA</h2>
 			<div class="modal-content-text">
-			    <medium>Thank you for your interest in our event.<br>Please fill in all the fields below, and we'll get back to you soon.</medium>
+			    <h3>Thank you for your interest in our event.<br>Please fill in all the fields below, and we'll get back to you soon.</h3>
 			    <input type="text" placeholder="Full name">
 			    <input type="email" placeholder="Email">
 			    <input type="number" placeholder="Phone number">
@@ -299,6 +328,31 @@
 		</div>
 	    </div>
 	</div>
+	<div id="getTicketsHead-modal" class="modal">
+	    <div class="modal-wrap">
+		<div class="modal-dialog">
+		    <button class="modal-close"><i class="icon icon-cross"></i></button>
+		    <div class="modal-content">
+			<h2 class="modal-content-title">GET TICKETS</h2>
+			<div class="modal-content-text">
+			    <h3>Thank you for your interest in our event.<br>Please fill in all the fields below, and take your ticket.</h3>
+			    <input type="text" placeholder="Full name">
+			    <input type="email" placeholder="Email">
+			    <input type="number" placeholder="Phone number">
+			    <input type="text" placeholder="Company name">
+			    <small>By submitting data to us you give your consent that data you 
+				submit may be processed for the purposes described in the 
+				<a class="text-accent" href="#privacy-policy-page-url" target="_blank">privacy policy</a>.
+			    </small>
+			    <small class="accept-terms-wrap"><input type="checkbox">Accept</small>
+			</div>
+			<button id="submitBuyTicket" class="accent-button-alt-text">
+			    BUY TICKET
+			</button>
+		    </div>
+		</div>
+	    </div>
+	</div>
 	<div id="joinCommunity-modal" class="modal">
 	    <div class="modal-wrap">
 		<div class="modal-dialog">
@@ -306,7 +360,7 @@
 		    <div class="modal-content">
 			<h2 class="modal-content-title">JOIN OUR COMMUNITY</h2>
 			<div class="modal-content-text">
-			    <medium>Join Who’s Who on the Future of Work & Technology</medium>
+			    <h3>Join Who’s Who on the Future of Work & Technology</h3>
 			    <input type="text" placeholder="Full name">
 			    <input type="email" placeholder="Email">
 			    <input type="number" placeholder="Phone number">
@@ -328,14 +382,16 @@
 	    <div class="modal-wrap">
 		<div class="modal-video-container">
 		    <button class="modal-close modal-video-close"><i class="icon icon-cross"></i></button>
-		    <iframe id="watchTrailer-video" src="https://www.youtube.com/embed/1EOH-9Pk9Ns" frameborder="0" allowfullscreen></iframe>
+		    <iframe id="watchTrailer-video" src="https://www.youtube.com/embed/1EOH-9Pk9Ns" allowfullscreen></iframe>
 		</div>
 	    </div>
 	</div>
 	<!-- Modals END -->
+	
 	<!-- Include JS libraries and custom scripts START -->
-	<script src="lib/jquery-3.2.1.js" type="text/javascript"></script>
-	<script src="js/site-appearance.js" type="text/javascript"></script>
+	<script src="lib/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="js/site-appearance.min.js" type="text/javascript"></script>
 	<!-- Include JS libraries and custom scripts END -->
+	
     </body>
 </html>

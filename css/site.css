@@ -1,13 +1,26 @@
-/* Defining global color variables */
+/*//////////////////////////////*/
+/* Define scss variables START */
+/*////////////////////////////*/
+/*** COLORS START ***/
+/* Defining global colors */
 /* Icon colors */
-/* Defining page colors with variables */
-/* Define mixins */
+/* Defining color variables used in page */
+/* COLORS END */
+/* MIXINS START */
+/* All major sections 100% stretched */
 /* Vetical smooth resize */
 /* Horizontal smooth resize */
 /* Layout of the text on the speakers */
 /* "Future work" section buttons layout */
 /* Mixin used in global classes */
 /* Define @mixin for specific elements */
+/*** MIXINS END ***/
+/*////////////////////////////*/
+/* Define scss variables END */
+/*//////////////////////////*/
+/*/////////////////////*/
+/* Page styling START */
+/*///////////////////*/
 /* Add horizontal smooth transition to everything */
 * {
   -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
@@ -29,7 +42,7 @@ h3 {
 h4 {
   text-transform: uppercase; }
 
-/* Styling the header */
+/*** Styling the header ***/
 header {
   width: 100%;
   -moz-transition: height 1s ease-in-out, down 1.5s ease-in-out;
@@ -170,7 +183,7 @@ header {
     text-align: center;
     text-transform: none; }
 
-/* Styling the page content sections and elements in them */
+/*** Styling the page content sections and elements in them ***/
 /* Style first section "Future work" */
 #futureWork {
   width: 100%;
@@ -292,7 +305,7 @@ footer {
     margin-left: 5px;
     margin-right: 5px; }
 
-/* Define global classes */
+/*** Define global classes ***/
 .visible {
   display: block; }
 
@@ -338,9 +351,9 @@ footer {
   text-shadow: 0px 1px 10px black; }
 
 .alt-text-accent-hover {
-  color: #fff; }
+  color: #fff !important; }
   .alt-text-accent-hover:hover {
-    color: #99cc00; }
+    color: #99cc00 !important; }
 
 .accent-button-alt-text {
   height: 40px;
@@ -349,8 +362,8 @@ footer {
   font-size: 16px;
   font-weight: 200;
   line-height: 40px;
-  color: #fff;
-  background: #99cc00; }
+  color: #fff !important;
+  background: #99cc00 !important; }
   .accent-button-alt-text:hover {
     -o-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -366,8 +379,8 @@ footer {
   font-size: 16px;
   font-weight: 200;
   line-height: 40px;
-  color: #fff;
-  background: #99cc00; }
+  color: #fff !important;
+  background: #99cc00 !important; }
   .accent-button-alt-text-hover:hover {
     -o-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -376,8 +389,8 @@ footer {
     transition: 0.3s;
     cursor: pointer; }
   .accent-button-alt-text-hover:hover {
-    color: #99cc00;
-    background: #fff; }
+    color: #99cc00 !important;
+    background: #fff !important; }
 
 .alt-button-accent-text-hover {
   height: 40px;
@@ -386,8 +399,8 @@ footer {
   font-size: 16px;
   font-weight: 200;
   line-height: 40px;
-  color: #99cc00;
-  background: #fff; }
+  color: #99cc00 !important;
+  background: #fff !important; }
   .alt-button-accent-text-hover:hover {
     -o-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -396,8 +409,8 @@ footer {
     transition: 0.3s;
     cursor: pointer; }
   .alt-button-accent-text-hover:hover {
-    color: #fff;
-    background: #99cc00; }
+    color: #fff !important;
+    background: #99cc00 !important; }
 
 .alt-button-basic-text-hover {
   height: 40px;
@@ -406,8 +419,8 @@ footer {
   font-size: 16px;
   font-weight: 200;
   line-height: 40px;
-  color: #010101;
-  background: #fff;
+  color: #010101 !important;
+  background: #fff !important;
   border: 1px solid #fff !important; }
   .alt-button-basic-text-hover:hover {
     -o-transition: 0.3s;
@@ -417,8 +430,8 @@ footer {
     transition: 0.3s;
     cursor: pointer; }
   .alt-button-basic-text-hover:hover {
-    color: #fff;
-    background: none;
+    color: #fff !important;
+    background: none !important;
     border: 1px solid #fff !important; }
 
 .header-content-wrapper {
@@ -471,7 +484,7 @@ footer {
   .accept-terms-wrap input[type="checkbox"] {
     margin-right: 5px; }
 
-/* Modals */
+/*** Modals ***/
 .modal {
   display: none;
   width: 100%;
@@ -521,8 +534,6 @@ footer {
         font-size: 20px;
         color: #fff;
         position: absolute;
-        right: 20px;
-        top: 35px;
         opacity: 0.9; }
         .modal .modal-wrap .modal-video-container .modal-video-close:hover {
           cursor: pointer;
@@ -531,7 +542,7 @@ footer {
         height: inherit;
         width: 100%; }
 
-/* Define icons */
+/*** Define icons ***/
 @font-face {
   font-family: "fico";
   src: url("../fonts/fico.eot");
@@ -806,7 +817,7 @@ footer {
 .icon-zoom:before {
   content: "\f134"; }
 
-/* Define tooltips */
+/*** Define tooltips ***/
 .tooltip {
   position: relative;
   display: inline-block; }
@@ -848,7 +859,7 @@ footer {
       border-style: solid;
       border-color: #eee transparent transparent transparent; }
 
-/* Define specific elements */
+/*** Define specific elements ***/
 #scrollToTop {
   display: none;
   height: 50px;
@@ -889,10 +900,18 @@ footer {
     opacity: 1;
     /* Firefox 0.9+, Safari 2, Chrome, Opera 9+, IE 9+ */ }
 
-/* Define sizes regarding resolutions */
+/*///////////////////*/
+/* Page styling END */
+/*/////////////////*/
+/*////////////////////////////////////////////////*/
+/* Page resizing basen on resolution width START */
+/*//////////////////////////////////////////////*/
 @media only screen and (min-width: 320px) {
   /* Layout of the text on the speakers */
   /* Define @mixin for specific elements */
+  a.accent-button-alt-text-hover {
+    line-height: 2 !important; }
+
   /* Styling the header */
   header {
     height: 195vw;
@@ -1055,7 +1074,7 @@ footer {
       .modal .modal-wrap .modal-dialog .modal-content .modal-content-text {
         width: 95%; }
   .modal .modal-wrap .modal-video-container .modal-video-close {
-    right: 20px;
+    left: 15px;
     top: 35px; }
 
   /* Define specific elements */
@@ -1123,6 +1142,9 @@ footer {
     height: 90%; } }
 @media only screen and (min-width: 640px) {
   /* Layout of the text on the speakers */
+  a.accent-button-alt-text-hover {
+    line-height: 2.5 !important; }
+
   /* Styling the header */
   header {
     height: 85vw;
@@ -1210,10 +1232,7 @@ footer {
     width: 65vw;
     height: 90%; }
     .modal .modal-wrap .modal-dialog .modal-content .modal-content-text {
-      width: 85%; }
-  .modal .modal-wrap .modal-video-container .modal-video-close {
-    right: 50px;
-    top: 15px; } }
+      width: 85%; } }
 @media only screen and (min-width: 800px) {
   #sponsors {
     top: 36vw; }
@@ -1574,7 +1593,7 @@ footer {
   .modal .modal-wrap .modal-video-container .modal-video-close {
     font-size: 1.04166vw;
     /* 20px */
-    right: 1.04166vw;
+    left: 1.04166vw;
     /* 20px */
     top: 1.822vw;
     /* 35px */ }
@@ -1617,5 +1636,8 @@ footer {
     /* 3px */
     border-radius: 0.15625px;
     /* 3px */ } }
+/*//////////////////////////////////////////////*/
+/* Page resizing basen on resolution width END */
+/*////////////////////////////////////////////*/
 
 /*# sourceMappingURL=site.css.map */

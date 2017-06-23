@@ -1,4 +1,9 @@
-/* Defining global color variables */
+/*//////////////////////////////*/
+/* Define scss variables START */
+/*////////////////////////////*/
+
+/*** COLORS START ***/
+/* Defining global colors */
 $almost_black: #010101;
 $white: #fff;
 $light_green: #99cc00;
@@ -13,14 +18,16 @@ $power: #ee2a7b;
 $refresh: #809453;
 $star: #e41a52;
 
-/* Defining page colors with variables */
+/* Defining color variables used in page */
 $basic_color: $almost_black;
 $alt_color: $white;
 $accent_color: $light_green;
 $basic_content_backgroud: $cyan_to_green_little_grey;
 $accent_content_background: $cyan_little_grey;
+/* COLORS END */
 
-/* Define mixins */
+/* MIXINS START */
+/* All major sections 100% stretched */
 @mixin basic_layout() {
     width: 100%;
 }
@@ -107,6 +114,14 @@ $accent_content_background: $cyan_little_grey;
     -khtml-opacity: 1; /* Safari 1.x (pre WebKit!) */
     opacity: 1; /* Firefox 0.9+, Safari 2, Chrome, Opera 9+, IE 9+ */
 }
+/*** MIXINS END ***/
+/*////////////////////////////*/
+/* Define scss variables END */
+/*//////////////////////////*/
+
+/*/////////////////////*/
+/* Page styling START */
+/*///////////////////*/
 
 /* Add horizontal smooth transition to everything */
 * {
@@ -127,7 +142,7 @@ h4 {
     text-transform: uppercase;
 }
 
-/* Styling the header */
+/*** Styling the header ***/
 header {
     @include basic_layout();
     @include vertical_rezise();
@@ -260,7 +275,7 @@ header {
     @include speakers_layout();
 }
 
-/* Styling the page content sections and elements in them */
+/*** Styling the page content sections and elements in them ***/
 /* Style first section "Future work" */
 #futureWork {
     @include basic_layout();
@@ -391,7 +406,7 @@ footer {
     }
 }
 
-/* Define global classes */
+/*** Define global classes ***/
 .visible {
     display: block;
 }
@@ -438,42 +453,42 @@ footer {
     text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
 }
 .alt-text-accent-hover {
-    color: $alt_color;
+    color: $alt_color !important;
     &:hover {
-	color: $accent_color;
+	color: $accent_color !important;
     }
 }
 .accent-button-alt-text {
     @include buttons_layout();
-    color: $alt_color;
-    background: $accent_color;
+    color: $alt_color !important;
+    background: $accent_color !important;
 }
 .accent-button-alt-text-hover {
     @include buttons_layout();
-    color: $alt_color;
-    background: $accent_color;
+    color: $alt_color !important;
+    background: $accent_color !important;
     &:hover {
-	color: $accent_color;
-	background: $alt_color;
+	color: $accent_color !important;
+	background: $alt_color !important;
     }
 }
 .alt-button-accent-text-hover {
     @include buttons_layout();
-    color: $accent_color;
-    background: $alt_color;
+    color: $accent_color !important;
+    background: $alt_color !important;
     &:hover {
-	color: $alt_color;
-	background: $accent_color;
+	color: $alt_color !important;
+	background: $accent_color !important;
     }
 }
 .alt-button-basic-text-hover {
     @include buttons_layout();
-    color: $basic_color;
-    background: $alt_color;
+    color: $basic_color !important;
+    background: $alt_color !important;
     border: 1px solid $alt_color !important;
     &:hover {
-	color: $alt_color;
-	background: none;
+	color: $alt_color !important;
+	background: none !important;
 	border: 1px solid $alt_color !important;
     }
 }
@@ -528,7 +543,7 @@ footer {
     }
 }
 
-/* Modals */
+/*** Modals ***/
 .modal {
     display: none;
     width: 100%;
@@ -582,8 +597,6 @@ footer {
 		font-size: 20px;
 		color: $alt_color;
 		position: absolute;
-		right: 20px;
-		top: 35px;
 		opacity: 0.9;
 		&:hover {
 		    cursor: pointer;
@@ -598,7 +611,7 @@ footer {
     }
 }
 
-/* Define icons */
+/*** Define icons ***/
 @font-face {
     font-family: "fico";
     src: url("../fonts/fico.eot");
@@ -765,7 +778,7 @@ footer {
 .icon-wrench:before { content: "\f14d"; }
 .icon-zoom:before { content: "\f134"; }
 
-/* Define tooltips */
+/*** Define tooltips ***/
 .tooltip {
     position: relative;
     display: inline-block;
@@ -817,7 +830,7 @@ footer {
     }
 }
 
-/* Define specific elements */
+/*** Define specific elements ***/
 #scrollToTop {
     display: none;
     height: 50px;
@@ -836,8 +849,14 @@ footer {
 	@include reset_background_opacity();
     }
 }
+/*///////////////////*/
+/* Page styling END */
+/*/////////////////*/
 
-/* Define sizes regarding resolutions */
+/*////////////////////////////////////////////////*/
+/* Page resizing basen on resolution width START */
+/*//////////////////////////////////////////////*/
+
 @media only screen and (min-width: 320px) {
     /* Layout of the text on the speakers */
     @mixin speakers_layout() {
@@ -856,6 +875,12 @@ footer {
 	-webkit-border-radius: 3px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
 	-moz-border-radius: 3px; /* Firefox 1-3.6 */
 	border-radius: 3px; /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+    }
+    
+    a {
+	&.accent-button-alt-text-hover {
+	    line-height: 2 !important;
+	}
     }
     
     /* Styling the header */
@@ -1031,7 +1056,7 @@ footer {
 	    }
 	    & .modal-video-container {
 		& .modal-video-close {
-		    right: 20px;
+		    left: 15px;
 		    top: 35px;
 		}
 	    }
@@ -1125,6 +1150,12 @@ footer {
 	height: 40px;
 	line-height: 40px;
     }
+    a {
+	&.accent-button-alt-text-hover {
+	    line-height: 2.5 !important;
+	}
+    }
+    
     /* Styling the header */
     header {
 	height: 85vw;
@@ -1226,12 +1257,6 @@ footer {
 		    & .modal-content-text {
 			width: 85%;
 		    }
-		}
-	    }
-	    & .modal-video-container {
-		& .modal-video-close {
-		    right: 50px;
-		    top: 15px;
 		}
 	    }
 	}
@@ -1633,7 +1658,7 @@ footer {
 	    & .modal-video-container {
 		& .modal-video-close {
 		    font-size: 1.04166vw; /* 20px */
-		    right: 1.04166vw; /* 20px */
+		    left: 1.04166vw; /* 20px */
 		    top: 1.822vw; /* 35px */
 		}
 	    }
@@ -1666,3 +1691,6 @@ footer {
 	@include rounded_corners_3();
     }
 }
+/*//////////////////////////////////////////////*/
+/* Page resizing basen on resolution width END */
+/*////////////////////////////////////////////*/
